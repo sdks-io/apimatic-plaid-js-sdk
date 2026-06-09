@@ -3,8 +3,6 @@
 
 TransactionsGetRequest defines the request schema for `/transactions/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `TransactionsGetRequest`
@@ -19,7 +17,6 @@ TransactionsGetRequest defines the request schema for `/transactions/get`
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `startDate` | `string` | Required | The earliest date for which data should be returned. Dates should be formatted as YYYY-MM-DD. |
 | `endDate` | `string` | Required | The latest date for which data should be returned. Dates should be formatted as YYYY-MM-DD. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -35,20 +32,12 @@ TransactionsGetRequest defines the request schema for `/transactions/get`
     "count": 98,
     "offset": 50,
     "include_original_description": false,
-    "include_personal_finance_category_beta": false,
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "include_personal_finance_category_beta": false
   },
   "access_token": "access_token8",
   "secret": "secret6",
   "start_date": "2016-03-13T12:52:32.123Z",
-  "end_date": "2016-03-13T12:52:32.123Z",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "end_date": "2016-03-13T12:52:32.123Z"
 }
 ```
 

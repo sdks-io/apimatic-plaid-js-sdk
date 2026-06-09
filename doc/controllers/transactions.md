@@ -1,12 +1,12 @@
 # Transactions
 
 ```ts
-const transactionsApi = new TransactionsApi(client);
+const transactionsController = new TransactionsController(client);
 ```
 
 ## Class Name
 
-`TransactionsApi`
+`TransactionsController`
 
 ## Methods
 
@@ -54,7 +54,7 @@ const body: TransactionsRefreshRequest = {
 };
 
 try {
-  const response = await transactionsApi.transactionsRefresh(body);
+  const response = await transactionsController.transactionsRefresh(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -143,7 +143,7 @@ const body: TransactionsGetRequest = {
 };
 
 try {
-  const response = await transactionsApi.transactionsGet(body);
+  const response = await transactionsController.transactionsGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

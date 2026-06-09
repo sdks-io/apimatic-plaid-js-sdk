@@ -3,8 +3,6 @@
 
 Buying an investment
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `BuyType`
@@ -21,7 +19,6 @@ Buying an investment
 | `interestReinvestment` | `string \| undefined` | Optional | Purchase using proceeds from a cash interest payment |
 | `longTermCapitalGainReinvestment` | `string \| undefined` | Optional | Purchase using long-term capital gain cash proceeds |
 | `shortTermCapitalGainReinvestment` | `string \| undefined` | Optional | Purchase using short-term capital gain cash proceeds |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -31,11 +28,7 @@ Buying an investment
   "contribution": "contribution2",
   "buy": "buy6",
   "buy to cover": "buy to cover8",
-  "dividend reinvestment": "dividend reinvestment2",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "dividend reinvestment": "dividend reinvestment2"
 }
 ```
 

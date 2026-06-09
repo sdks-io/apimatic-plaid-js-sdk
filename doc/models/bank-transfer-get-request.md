@@ -3,8 +3,6 @@
 
 Defines the request schema for `/bank_transfer/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `BankTransferGetRequest`
@@ -16,7 +14,6 @@ Defines the request schema for `/bank_transfer/get`
 | `clientId` | `string \| undefined` | Optional | Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body. |
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `bankTransferId` | `string` | Required | Plaid’s unique identifier for a bank transfer. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -24,11 +21,7 @@ Defines the request schema for `/bank_transfer/get`
 {
   "client_id": "client_id4",
   "secret": "secret2",
-  "bank_transfer_id": "bank_transfer_id2",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "bank_transfer_id": "bank_transfer_id2"
 }
 ```
 

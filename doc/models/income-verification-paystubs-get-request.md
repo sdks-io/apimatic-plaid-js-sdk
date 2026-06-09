@@ -3,8 +3,6 @@
 
 IncomeVerificationPaystubsGetRequest defines the request schema for `/income/verification/paystubs/get`.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `IncomeVerificationPaystubsGetRequest`
@@ -17,7 +15,6 @@ IncomeVerificationPaystubsGetRequest defines the request schema for `/income/ver
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `incomeVerificationId` | `string \| null \| undefined` | Optional | The ID of the verification for which to get paystub information. |
 | `accessToken` | `string \| null \| undefined` | Optional | The access token associated with the Item data is being requested for. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,11 +23,7 @@ IncomeVerificationPaystubsGetRequest defines the request schema for `/income/ver
   "client_id": "client_id0",
   "secret": "secret4",
   "income_verification_id": "income_verification_id4",
-  "access_token": "access_token6",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "access_token": "access_token6"
 }
 ```
 

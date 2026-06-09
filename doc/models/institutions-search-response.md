@@ -3,8 +3,6 @@
 
 InstitutionsSearchResponse defines the response schema for `/institutions/search`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `InstitutionsSearchResponse`
@@ -15,7 +13,6 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
 |  --- | --- | --- | --- |
 | `institutions` | [`Institution[]`](../../doc/models/institution.md) | Required | An array of institutions matching the search criteria |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -52,15 +49,7 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
             "success": 164.84,
             "error_plaid": 201.78,
             "error_institution": 35.5,
-            "refresh_interval": "NORMAL",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
-          },
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
+            "refresh_interval": "NORMAL"
           }
         },
         "transactions_updates": {
@@ -70,15 +59,7 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
             "success": 164.84,
             "error_plaid": 201.78,
             "error_institution": 35.5,
-            "refresh_interval": "NORMAL",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
-          },
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
+            "refresh_interval": "NORMAL"
           }
         },
         "auth": {
@@ -88,15 +69,7 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
             "success": 164.84,
             "error_plaid": 201.78,
             "error_institution": 35.5,
-            "refresh_interval": "NORMAL",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
-          },
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
+            "refresh_interval": "NORMAL"
           }
         },
         "balance": {
@@ -106,15 +79,7 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
             "success": 164.84,
             "error_plaid": 201.78,
             "error_institution": 35.5,
-            "refresh_interval": "NORMAL",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
-          },
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
+            "refresh_interval": "NORMAL"
           }
         },
         "identity": {
@@ -124,15 +89,7 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
             "success": 164.84,
             "error_plaid": 201.78,
             "error_institution": 35.5,
-            "refresh_interval": "NORMAL",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
-          },
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
+            "refresh_interval": "NORMAL"
           }
         },
         "investments_updates": {
@@ -142,15 +99,7 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
             "success": 164.84,
             "error_plaid": 201.78,
             "error_institution": 35.5,
-            "refresh_interval": "NORMAL",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
-          },
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
+            "refresh_interval": "NORMAL"
           }
         },
         "liabilities_updates": {
@@ -160,15 +109,7 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
             "success": 164.84,
             "error_plaid": 201.78,
             "error_institution": 35.5,
-            "refresh_interval": "NORMAL",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
-          },
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
+            "refresh_interval": "NORMAL"
           }
         },
         "liabilities": {
@@ -178,15 +119,7 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
             "success": 164.84,
             "error_plaid": 201.78,
             "error_institution": 35.5,
-            "refresh_interval": "NORMAL",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
-          },
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
+            "refresh_interval": "NORMAL"
           }
         },
         "investments": {
@@ -196,15 +129,7 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
             "success": 164.84,
             "error_plaid": 201.78,
             "error_institution": 35.5,
-            "refresh_interval": "NORMAL",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
-          },
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
+            "refresh_interval": "NORMAL"
           }
         },
         "health_incidents": [
@@ -216,35 +141,19 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
               {
                 "description": "description2",
                 "status": "UNKNOWN",
-                "updated_date": "2016-03-13T12:52:32.123Z",
-                "exampleAdditionalProperty": {
-                  "key1": "val1",
-                  "key2": "val2"
-                }
+                "updated_date": "2016-03-13T12:52:32.123Z"
               },
               {
                 "description": "description2",
                 "status": "UNKNOWN",
-                "updated_date": "2016-03-13T12:52:32.123Z",
-                "exampleAdditionalProperty": {
-                  "key1": "val1",
-                  "key2": "val2"
-                }
+                "updated_date": "2016-03-13T12:52:32.123Z"
               },
               {
                 "description": "description2",
                 "status": "UNKNOWN",
-                "updated_date": "2016-03-13T12:52:32.123Z",
-                "exampleAdditionalProperty": {
-                  "key1": "val1",
-                  "key2": "val2"
-                }
+                "updated_date": "2016-03-13T12:52:32.123Z"
               }
-            ],
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
+            ]
           },
           {
             "start_date": "2016-03-13T12:52:32.123Z",
@@ -254,41 +163,21 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
               {
                 "description": "description2",
                 "status": "UNKNOWN",
-                "updated_date": "2016-03-13T12:52:32.123Z",
-                "exampleAdditionalProperty": {
-                  "key1": "val1",
-                  "key2": "val2"
-                }
+                "updated_date": "2016-03-13T12:52:32.123Z"
               },
               {
                 "description": "description2",
                 "status": "UNKNOWN",
-                "updated_date": "2016-03-13T12:52:32.123Z",
-                "exampleAdditionalProperty": {
-                  "key1": "val1",
-                  "key2": "val2"
-                }
+                "updated_date": "2016-03-13T12:52:32.123Z"
               },
               {
                 "description": "description2",
                 "status": "UNKNOWN",
-                "updated_date": "2016-03-13T12:52:32.123Z",
-                "exampleAdditionalProperty": {
-                  "key1": "val1",
-                  "key2": "val2"
-                }
+                "updated_date": "2016-03-13T12:52:32.123Z"
               }
-            ],
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
+            ]
           }
-        ],
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        ]
       },
       "payment_initiation_metadata": {
         "supports_international_payments": false,
@@ -304,28 +193,12 @@ InstitutionsSearchResponse defines the response schema for `/institutions/search
           "valid_standing_order_intervals": [
             "WEEKLY",
             "MONTHLY"
-          ],
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          ]
         }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
       }
     }
   ],
-  "request_id": "request_id6",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id6"
 }
 ```
 

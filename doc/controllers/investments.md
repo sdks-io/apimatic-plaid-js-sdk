@@ -1,12 +1,12 @@
 # Investments
 
 ```ts
-const investmentsApi = new InvestmentsApi(client);
+const investmentsController = new InvestmentsController(client);
 ```
 
 ## Class Name
 
-`InvestmentsApi`
+`InvestmentsController`
 
 ## Methods
 
@@ -58,7 +58,7 @@ const body: InvestmentsTransactionsGetRequest = {
 };
 
 try {
-  const response = await investmentsApi.investmentsTransactionsGet(body);
+  const response = await investmentsController.investmentsTransactionsGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -120,7 +120,7 @@ const body: InvestmentsHoldingsGetRequest = {
 };
 
 try {
-  const response = await investmentsApi.investmentsHoldingsGet(body);
+  const response = await investmentsController.investmentsHoldingsGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

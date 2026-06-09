@@ -1,8 +1,6 @@
 
 # Deposit Switch Target User
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `DepositSwitchTargetUser`
@@ -17,7 +15,6 @@
 | `email` | `string` | Required | The email address of the user. |
 | `address` | [`DepositSwitchAddressData \| undefined`](../../doc/models/deposit-switch-address-data.md) | Optional | The user's address. |
 | `taxPayerId` | `string \| undefined` | Optional | The taxpayer ID of the user, generally their SSN, EIN, or TIN. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -32,17 +29,9 @@
     "region": "region2",
     "street": "street6",
     "postal_code": "postal_code8",
-    "country": "country0",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "country": "country0"
   },
-  "tax_payer_id": "tax_payer_id4",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "tax_payer_id": "tax_payer_id4"
 }
 ```
 

@@ -3,8 +3,6 @@
 
 An object specifying information about the end user who will be linking their account.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `LinkTokenCreateRequestUser`
@@ -21,7 +19,6 @@ An object specifying information about the end user who will be linking their ac
 | `emailAddressVerifiedTime` | `string \| undefined` | Optional | The date and time the email address was verified in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDThh:mm:ssZ`). This is an optional field used in the [returning user experience](https://plaid.com/docs/link/returning-user).<br><br>Only pass a verification time for an email address that you have verified. If you have performed verification but don’t have the time, you may supply a signal value of the start of the UNIX epoch.<br><br>Example: `2020-01-01T00:00:00Z` |
 | `ssn` | `string \| undefined` | Optional | To be provided in the format "ddd-dd-dddd". This field is optional and will support not-yet-implemented functionality for new products. |
 | `dateOfBirth` | `string \| undefined` | Optional | To be provided in the format "yyyy-mm-dd". This field is optional and will support not-yet-implemented functionality for new products. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -32,11 +29,7 @@ An object specifying information about the end user who will be linking their ac
   "phone_number": "phone_number4",
   "phone_number_verified_time": "2016-03-13T12:52:32.123Z",
   "email_address": "email_address4",
-  "email_address_verified_time": "2016-03-13T12:52:32.123Z",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "email_address_verified_time": "2016-03-13T12:52:32.123Z"
 }
 ```
 

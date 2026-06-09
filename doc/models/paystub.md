@@ -3,8 +3,6 @@
 
 An object representing data extracted from the end user's paystub.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `Paystub`
@@ -23,8 +21,7 @@ An object representing data extracted from the end user's paystub.
 | `payPeriodDetails` | [`PayPeriodDetails`](../../doc/models/pay-period-details.md) | Required | Details about the pay period. |
 | `paystubDetails` | [`PaystubDetails \| undefined`](../../doc/models/paystub-details.md) | Optional | An object representing details that can be found on the paystub. |
 | `incomeBreakdown` | [`IncomeBreakdown[]`](../../doc/models/income-breakdown.md) | Required | - |
-| `ytdEarnings` | [`PaystubYtdDetails`](../../doc/models/paystub-ytd-details.md) | Required | The amount of income earned year to date, as based on paystub data. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
+| `ytdEarnings` | [`PaystubYTDDetails`](../../doc/models/paystub-ytd-details.md) | Required | The amount of income earned year to date, as based on paystub data. |
 
 ## Example (as JSON)
 
@@ -37,15 +34,7 @@ An object representing data extracted from the end user's paystub.
       "street": "street6",
       "line1": "line18",
       "line2": "line20",
-      "postal_code": "postal_code8",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
-    },
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
+      "postal_code": "postal_code8"
     }
   },
   "employee": {
@@ -55,24 +44,12 @@ An object representing data extracted from the end user's paystub.
       "street": "street6",
       "line1": "line18",
       "line2": "line20",
-      "postal_code": "postal_code8",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "postal_code": "postal_code8"
     },
     "marital_status": "marital_status6",
     "taxpayer_id": {
       "id_type": "id_type8",
-      "last_4_digits": "last_4_digits6",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
-    },
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
+      "last_4_digits": "last_4_digits6"
     }
   },
   "pay_period_details": {
@@ -80,31 +57,19 @@ An object representing data extracted from the end user's paystub.
     "end_date": "2016-03-13T12:52:32.123Z",
     "pay_day": "2016-03-13T12:52:32.123Z",
     "gross_earnings": 59.04,
-    "check_amount": 134.86,
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "check_amount": 134.86
   },
   "income_breakdown": [
     {
       "type": "bonus",
       "rate": 29.56,
       "hours": 6.52,
-      "total": 118.76,
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "total": 118.76
     }
   ],
   "ytd_earnings": {
     "gross_earnings": 4.84,
-    "net_earnings": 206.94,
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "net_earnings": 206.94
   },
   "deductions": {
     "subtotals": [
@@ -113,23 +78,11 @@ An object representing data extracted from the end user's paystub.
         "description": "description8",
         "current_pay": {
           "amount": 45.16,
-          "currency": "currency4",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency4"
         },
         "ytd_pay": {
           "amount": 28.98,
-          "currency": "currency0",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "currency": "currency0"
         }
       }
     ],
@@ -139,23 +92,11 @@ An object representing data extracted from the end user's paystub.
         "description": "description8",
         "current_pay": {
           "amount": 45.16,
-          "currency": "currency4",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency4"
         },
         "ytd_pay": {
           "amount": 28.98,
-          "currency": "currency0",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "currency": "currency0"
         }
       },
       {
@@ -163,23 +104,11 @@ An object representing data extracted from the end user's paystub.
         "description": "description8",
         "current_pay": {
           "amount": 45.16,
-          "currency": "currency4",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency4"
         },
         "ytd_pay": {
           "amount": 28.98,
-          "currency": "currency0",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "currency": "currency0"
         }
       },
       {
@@ -187,30 +116,14 @@ An object representing data extracted from the end user's paystub.
         "description": "description8",
         "current_pay": {
           "amount": 45.16,
-          "currency": "currency4",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency4"
         },
         "ytd_pay": {
           "amount": 28.98,
-          "currency": "currency0",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "currency": "currency0"
         }
       }
-    ],
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    ]
   },
   "doc_id": "doc_id2",
   "earnings": {
@@ -220,25 +133,13 @@ An object representing data extracted from the end user's paystub.
         "description": "description8",
         "current_pay": {
           "amount": 45.16,
-          "currency": "currency4",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency4"
         },
         "ytd_pay": {
           "amount": 28.98,
-          "currency": "currency0",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency0"
         },
-        "current_hours": "current_hours0",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "current_hours": "current_hours0"
       }
     ],
     "totals": [
@@ -247,96 +148,48 @@ An object representing data extracted from the end user's paystub.
         "description": "description8",
         "current_pay": {
           "amount": 45.16,
-          "currency": "currency4",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency4"
         },
         "ytd_pay": {
           "amount": 28.98,
-          "currency": "currency0",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency0"
         },
-        "current_hours": "current_hours4",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "current_hours": "current_hours4"
       },
       {
         "canonical_description": "BONUS",
         "description": "description8",
         "current_pay": {
           "amount": 45.16,
-          "currency": "currency4",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency4"
         },
         "ytd_pay": {
           "amount": 28.98,
-          "currency": "currency0",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency0"
         },
-        "current_hours": "current_hours4",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "current_hours": "current_hours4"
       },
       {
         "canonical_description": "BONUS",
         "description": "description8",
         "current_pay": {
           "amount": 45.16,
-          "currency": "currency4",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency4"
         },
         "ytd_pay": {
           "amount": 28.98,
-          "currency": "currency0",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency0"
         },
-        "current_hours": "current_hours4",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "current_hours": "current_hours4"
       }
-    ],
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    ]
   },
   "employment_details": {
     "annual_salary": {
       "amount": 106.22,
-      "currency": "currency0",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "currency": "currency0"
     },
-    "hire_date": "2016-03-13T12:52:32.123Z",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "hire_date": "2016-03-13T12:52:32.123Z"
   },
   "net_pay": {
     "distribution_details": [
@@ -346,17 +199,9 @@ An object representing data extracted from the end user's paystub.
         "bank_name": "bank_name4",
         "current_pay": {
           "amount": 45.16,
-          "currency": "currency4",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency4"
         },
-        "description": "description0",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "description": "description0"
       },
       {
         "account_number": "account_number0",
@@ -364,17 +209,9 @@ An object representing data extracted from the end user's paystub.
         "bank_name": "bank_name4",
         "current_pay": {
           "amount": 45.16,
-          "currency": "currency4",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "currency": "currency4"
         },
-        "description": "description0",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "description": "description0"
       }
     ],
     "total": {
@@ -382,33 +219,13 @@ An object representing data extracted from the end user's paystub.
       "description": "description0",
       "current_pay": {
         "amount": 45.16,
-        "currency": "currency4",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "currency": "currency4"
       },
       "ytd_pay": {
         "amount": 28.98,
-        "currency": "currency0",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "currency": "currency0"
       }
-    },
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
     }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
   }
 }
 ```

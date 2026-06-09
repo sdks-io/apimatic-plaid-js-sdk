@@ -3,8 +3,6 @@
 
 The user's address.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `DepositSwitchAddressData`
@@ -18,7 +16,6 @@ The user's address.
 | `street` | `string` | Required | The full street address<br>Example: `"564 Main Street, APT 15"` |
 | `postalCode` | `string` | Required | The postal code |
 | `country` | `string` | Required | The ISO 3166-1 alpha-2 country code |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,11 +25,7 @@ The user's address.
   "region": "region6",
   "street": "street0",
   "postal_code": "postal_code2",
-  "country": "country4",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "country": "country4"
 }
 ```
 

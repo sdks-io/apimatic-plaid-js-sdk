@@ -3,8 +3,6 @@
 
 An object representing data from a paystub.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `PaystubOverride`
@@ -17,18 +15,13 @@ An object representing data from a paystub.
 | `employee` | [`Employee2 \| undefined`](../../doc/models/employee-2.md) | Optional | The employee on the paystub. |
 | `incomeBreakdown` | [`IncomeBreakdown[] \| undefined`](../../doc/models/income-breakdown.md) | Optional | - |
 | `payPeriodDetails` | [`PayPeriodDetails \| undefined`](../../doc/models/pay-period-details.md) | Optional | Details about the pay period. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
 ```json
 {
   "employer": {
-    "name": "name2",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "name": "name2"
   },
   "employee": {
     "name": "name8",
@@ -37,15 +30,7 @@ An object representing data from a paystub.
       "region": "region2",
       "street": "street6",
       "postal_code": "postal_code8",
-      "country": "country0",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
-    },
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
+      "country": "country0"
     }
   },
   "income_breakdown": [
@@ -53,11 +38,7 @@ An object representing data from a paystub.
       "type": "bonus",
       "rate": 29.56,
       "hours": 6.52,
-      "total": 118.76,
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "total": 118.76
     }
   ],
   "pay_period_details": {
@@ -65,15 +46,7 @@ An object representing data from a paystub.
     "end_date": "2016-03-13T12:52:32.123Z",
     "pay_day": "2016-03-13T12:52:32.123Z",
     "gross_earnings": 59.04,
-    "check_amount": 134.86,
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    "check_amount": 134.86
   }
 }
 ```

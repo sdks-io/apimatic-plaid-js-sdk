@@ -3,8 +3,6 @@
 
 DepositSwitchCreateRequest defines the request schema for `/deposit_switch/create`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `DepositSwitchCreateRequest`
@@ -17,9 +15,8 @@ DepositSwitchCreateRequest defines the request schema for `/deposit_switch/creat
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `targetAccessToken` | `string` | Required | Access token for the target Item, typically provided in the Import Item response. |
 | `targetAccountId` | `string` | Required | Plaid Account ID that specifies the target bank account. This account will become the recipient for a user's direct deposit. |
-| `countryCode` | [`CountryCode1 \| undefined`](../../doc/models/country-code-1.md) | Optional | ISO-3166-1 alpha-2 country code standard. |
+| `countryCode` | [`CountryCode1Enum \| undefined`](../../doc/models/country-code-1-enum.md) | Optional | ISO-3166-1 alpha-2 country code standard. |
 | `options` | [`DepositSwitchCreateRequestOptions \| undefined`](../../doc/models/deposit-switch-create-request-options.md) | Optional | Options to configure the `/deposit_switch/create` request. If provided, cannot be `null`. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -36,15 +33,7 @@ DepositSwitchCreateRequest defines the request schema for `/deposit_switch/creat
       "transaction_item_access_tokens4",
       "transaction_item_access_tokens5",
       "transaction_item_access_tokens6"
-    ],
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    ]
   }
 }
 ```

@@ -3,8 +3,6 @@
 
 Details relating to a specific financial institution
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `Institution`
@@ -15,8 +13,8 @@ Details relating to a specific financial institution
 |  --- | --- | --- | --- |
 | `institutionId` | `string` | Required | Unique identifier for the institution |
 | `name` | `string` | Required | The official name of the institution |
-| `products` | [`Products[]`](../../doc/models/products.md) | Required | A list of the Plaid products supported by the institution. Note that only institutions that support Instant Auth will return `auth` in the product array; institutions that do not list `auth` may still support other Auth methods such as Instant Match or Automated Micro-deposit Verification. For more details, see [Full Auth coverage](https://plaid.com/docs/auth/coverage/). |
-| `countryCodes` | [`CountryCode[]`](../../doc/models/country-code.md) | Required | A list of the country codes supported by the institution. |
+| `products` | [`ProductsEnum[]`](../../doc/models/products-enum.md) | Required | A list of the Plaid products supported by the institution. Note that only institutions that support Instant Auth will return `auth` in the product array; institutions that do not list `auth` may still support other Auth methods such as Instant Match or Automated Micro-deposit Verification. For more details, see [Full Auth coverage](https://plaid.com/docs/auth/coverage/). |
+| `countryCodes` | [`CountryCodeEnum[]`](../../doc/models/country-code-enum.md) | Required | A list of the country codes supported by the institution. |
 | `url` | `string \| null \| undefined` | Optional | The URL for the institution's website |
 | `primaryColor` | `string \| null \| undefined` | Optional | Hexadecimal representation of the primary color used by the institution |
 | `logo` | `string \| null \| undefined` | Optional | Base64 encoded representation of the institution's logo |
@@ -25,7 +23,6 @@ Details relating to a specific financial institution
 | `status` | [`InstitutionStatus \| undefined`](../../doc/models/institution-status.md) | Optional | The status of an institution is determined by the health of its Item logins, Transactions updates, Investments updates, Liabilities updates, Auth requests, Balance requests, Identity requests, Investments requests, and Liabilities requests. A login attempt is conducted during the initial Item add in Link. If there is not enough traffic to accurately calculate an institution's status, Plaid will return null rather than potentially inaccurate data.<br><br>Institution status is accessible in the Dashboard and via the API using the `/institutions/get_by_id` endpoint with the `include_status` option set to true. Note that institution status is not available in the Sandbox environment. |
 | `paymentInitiationMetadata` | [`PaymentInitiationMetadata \| undefined`](../../doc/models/payment-initiation-metadata.md) | Optional | Metadata that captures what specific payment configurations an institution supports when making Payment Initiation requests. |
 | `authMetadata` | [`AuthMetadata \| undefined`](../../doc/models/auth-metadata.md) | Optional | Metadata that captures information about the Auth features of an institution. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -60,15 +57,7 @@ Details relating to a specific financial institution
         "success": 164.84,
         "error_plaid": 201.78,
         "error_institution": 35.5,
-        "refresh_interval": "NORMAL",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "refresh_interval": "NORMAL"
       }
     },
     "transactions_updates": {
@@ -78,15 +67,7 @@ Details relating to a specific financial institution
         "success": 164.84,
         "error_plaid": 201.78,
         "error_institution": 35.5,
-        "refresh_interval": "NORMAL",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "refresh_interval": "NORMAL"
       }
     },
     "auth": {
@@ -96,15 +77,7 @@ Details relating to a specific financial institution
         "success": 164.84,
         "error_plaid": 201.78,
         "error_institution": 35.5,
-        "refresh_interval": "NORMAL",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "refresh_interval": "NORMAL"
       }
     },
     "balance": {
@@ -114,15 +87,7 @@ Details relating to a specific financial institution
         "success": 164.84,
         "error_plaid": 201.78,
         "error_institution": 35.5,
-        "refresh_interval": "NORMAL",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "refresh_interval": "NORMAL"
       }
     },
     "identity": {
@@ -132,15 +97,7 @@ Details relating to a specific financial institution
         "success": 164.84,
         "error_plaid": 201.78,
         "error_institution": 35.5,
-        "refresh_interval": "NORMAL",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "refresh_interval": "NORMAL"
       }
     },
     "investments_updates": {
@@ -150,15 +107,7 @@ Details relating to a specific financial institution
         "success": 164.84,
         "error_plaid": 201.78,
         "error_institution": 35.5,
-        "refresh_interval": "NORMAL",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "refresh_interval": "NORMAL"
       }
     },
     "liabilities_updates": {
@@ -168,15 +117,7 @@ Details relating to a specific financial institution
         "success": 164.84,
         "error_plaid": 201.78,
         "error_institution": 35.5,
-        "refresh_interval": "NORMAL",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "refresh_interval": "NORMAL"
       }
     },
     "liabilities": {
@@ -186,15 +127,7 @@ Details relating to a specific financial institution
         "success": 164.84,
         "error_plaid": 201.78,
         "error_institution": 35.5,
-        "refresh_interval": "NORMAL",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "refresh_interval": "NORMAL"
       }
     },
     "investments": {
@@ -204,15 +137,7 @@ Details relating to a specific financial institution
         "success": 164.84,
         "error_plaid": 201.78,
         "error_institution": 35.5,
-        "refresh_interval": "NORMAL",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "refresh_interval": "NORMAL"
       }
     },
     "health_incidents": [
@@ -224,35 +149,19 @@ Details relating to a specific financial institution
           {
             "description": "description2",
             "status": "UNKNOWN",
-            "updated_date": "2016-03-13T12:52:32.123Z",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
+            "updated_date": "2016-03-13T12:52:32.123Z"
           },
           {
             "description": "description2",
             "status": "UNKNOWN",
-            "updated_date": "2016-03-13T12:52:32.123Z",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
+            "updated_date": "2016-03-13T12:52:32.123Z"
           },
           {
             "description": "description2",
             "status": "UNKNOWN",
-            "updated_date": "2016-03-13T12:52:32.123Z",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
+            "updated_date": "2016-03-13T12:52:32.123Z"
           }
-        ],
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        ]
       },
       {
         "start_date": "2016-03-13T12:52:32.123Z",
@@ -262,41 +171,21 @@ Details relating to a specific financial institution
           {
             "description": "description2",
             "status": "UNKNOWN",
-            "updated_date": "2016-03-13T12:52:32.123Z",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
+            "updated_date": "2016-03-13T12:52:32.123Z"
           },
           {
             "description": "description2",
             "status": "UNKNOWN",
-            "updated_date": "2016-03-13T12:52:32.123Z",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
+            "updated_date": "2016-03-13T12:52:32.123Z"
           },
           {
             "description": "description2",
             "status": "UNKNOWN",
-            "updated_date": "2016-03-13T12:52:32.123Z",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
+            "updated_date": "2016-03-13T12:52:32.123Z"
           }
-        ],
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        ]
       }
-    ],
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    ]
   },
   "payment_initiation_metadata": {
     "supports_international_payments": false,
@@ -312,20 +201,8 @@ Details relating to a specific financial institution
       "valid_standing_order_intervals": [
         "WEEKLY",
         "MONTHLY"
-      ],
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
-    },
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
+      ]
     }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
   }
 }
 ```

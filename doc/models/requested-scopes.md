@@ -3,8 +3,6 @@
 
 Scope of required and optional account features or content from a ConnectedApplication.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `RequestedScopes`
@@ -16,8 +14,7 @@ Scope of required and optional account features or content from a ConnectedAppli
 | `requiredProductAccess` | [`ProductAccess`](../../doc/models/product-access.md) | Required | The product access being requested. Used to or disallow product access across all accounts. If unset, defaults to all products allowed. |
 | `optionalProductAccess` | [`ProductAccess`](../../doc/models/product-access.md) | Required | The product access being requested. Used to or disallow product access across all accounts. If unset, defaults to all products allowed. |
 | `accountFilters` | [`AccountFilter \| undefined`](../../doc/models/account-filter.md) | Optional | Enumerates the account subtypes that the application wishes for the user to be able to select from. For more details refer to Plaid documentation on account filters. |
-| `accountSelectionCardinality` | [`AccountSelectionCardinality`](../../doc/models/account-selection-cardinality.md) | Required | The application requires that accounts be limited to a specific cardinality.<br>`MULTI_SELECT`: indicates that the user should be allowed to pick multiple accounts.<br>`SINGLE_SELECT`: indicates that the user should be allowed to pick only a single account.<br>`ALL`: indicates that the user must share all of their accounts and should not be given the opportunity to de-select |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
+| `accountSelectionCardinality` | [`AccountSelectionCardinalityEnum`](../../doc/models/account-selection-cardinality-enum.md) | Required | The application requires that accounts be limited to a specific cardinality.<br>`MULTI_SELECT`: indicates that the user should be allowed to pick multiple accounts.<br>`SINGLE_SELECT`: indicates that the user should be allowed to pick only a single account.<br>`ALL`: indicates that the user must share all of their accounts and should not be given the opportunity to de-select |
 
 ## Example (as JSON)
 
@@ -27,21 +24,13 @@ Scope of required and optional account features or content from a ConnectedAppli
     "statements": true,
     "identity": true,
     "auth": true,
-    "transactions": true,
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "transactions": true
   },
   "optional_product_access": {
     "statements": true,
     "identity": true,
     "auth": true,
-    "transactions": true,
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "transactions": true
   },
   "account_selection_cardinality": "ALL",
   "account_filters": {
@@ -59,15 +48,7 @@ Scope of required and optional account features or content from a ConnectedAppli
       "investment1",
       "investment2",
       "investment3"
-    ],
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    ]
   }
 }
 ```

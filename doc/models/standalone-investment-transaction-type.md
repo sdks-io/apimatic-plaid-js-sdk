@@ -3,8 +3,6 @@
 
 Valid values for investment transaction types and subtypes. Note that transactions representing inflow of cash will appear as negative amounts, outflow of cash will appear as positive amounts.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `StandaloneInvestmentTransactionType`
@@ -19,7 +17,6 @@ Valid values for investment transaction types and subtypes. Note that transactio
 | `cash` | [`CashType`](../../doc/models/cash-type.md) | Required | Activity that modifies a cash position |
 | `fee` | [`FeeType`](../../doc/models/fee-type.md) | Required | Fees on the account, e.g. commission, bookkeeping, options-related. |
 | `transfer` | [`TransferType`](../../doc/models/transfer-type.md) | Required | Activity that modifies a position, but not through buy/sell activity e.g. options exercise, portfolio transfer |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -30,21 +27,13 @@ Valid values for investment transaction types and subtypes. Note that transactio
     "contribution": "contribution0",
     "buy": "buy4",
     "buy to cover": "buy to cover6",
-    "dividend reinvestment": "dividend reinvestment0",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "dividend reinvestment": "dividend reinvestment0"
   },
   "sell": {
     "distribution": "distribution0",
     "exercise": "exercise2",
     "sell": "sell2",
-    "sell short": "sell short8",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "sell short": "sell short8"
   },
   "cancel": "cancel4",
   "cash": {
@@ -52,37 +41,21 @@ Valid values for investment transaction types and subtypes. Note that transactio
     "contribution": "contribution8",
     "deposit": "deposit4",
     "dividend": "dividend4",
-    "stock distribution": "stock distribution0",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "stock distribution": "stock distribution0"
   },
   "fee": {
     "account fee": "account fee6",
     "adjustment": "adjustment2",
     "dividend": "dividend6",
     "interest": "interest8",
-    "interest receivable": "interest receivable2",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "interest receivable": "interest receivable2"
   },
   "transfer": {
     "assignment": "assignment2",
     "adjustment": "adjustment6",
     "exercise": "exercise4",
     "expire": "expire4",
-    "merger": "merger2",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    "merger": "merger2"
   }
 }
 ```

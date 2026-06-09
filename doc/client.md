@@ -9,9 +9,8 @@ The following parameters are configurable for the API Client:
 | timeout | `number` | Timeout for API calls.<br>*Default*: `0` |
 | httpClientOptions | [`Partial<HttpClientOptions>`](../doc/http-client-options.md) | Stable configurable http client options. |
 | unstableHttpClientOptions | `any` | Unstable configurable http client options. |
-| logging | [`PartialLoggingOptions`](../doc/partial-logging-options.md) | Logging Configuration to enable logging |
-| plaidClientIdCredentials | [`PlaidClientIdCredentials`](auth/custom-header-signature.md) | The credential object for plaidClientId |
-| plaidSecretCredentials | [`PlaidSecretCredentials`](auth/custom-header-signature-1.md) | The credential object for plaidSecret |
+| pLAIDCLIENTIDCredentials | [`PLAIDCLIENTIDCredentials`](auth/custom-header-signature.md) | The credential object for pLAIDCLIENTID |
+| pLAIDSECRETCredentials | [`PLAIDSECRETCredentials`](auth/custom-header-signature-1.md) | The credential object for pLAIDSECRET |
 | plaidVersionCredentials | [`PlaidVersionCredentials`](auth/custom-header-signature-2.md) | The credential object for plaidVersion |
 
 The API client can be initialized as follows:
@@ -19,13 +18,13 @@ The API client can be initialized as follows:
 ## Code-Based Client Initialization
 
 ```ts
-import { Client, Environment, LogLevel } from 'apimatic-plaid-sdk';
+import { Client, Environment } from 'apimatic-plaid-sdk';
 
 const client = new Client({
-  plaidClientIdCredentials: {
+  pLAIDCLIENTIDCredentials: {
     'PLAID-CLIENT-ID': 'PLAID-CLIENT-ID'
   },
-  plaidSecretCredentials: {
+  pLAIDSECRETCredentials: {
     'PLAID-SECRET': 'PLAID-SECRET'
   },
   plaidVersionCredentials: {
@@ -33,15 +32,6 @@ const client = new Client({
   },
   timeout: 0,
   environment: Environment.Production,
-  logging: {
-    logLevel: LogLevel.Info,
-    logRequest: {
-      logBody: true
-    },
-    logResponse: {
-      logHeaders: true
-    }
-  },
 });
 ```
 

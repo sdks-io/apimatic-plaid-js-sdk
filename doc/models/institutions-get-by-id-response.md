@@ -3,8 +3,6 @@
 
 InstitutionsGetByIdResponse defines the response schema for `/institutions/get_by_id`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `InstitutionsGetByIdResponse`
@@ -15,7 +13,6 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
 |  --- | --- | --- | --- |
 | `institution` | [`Institution`](../../doc/models/institution.md) | Required | Details relating to a specific financial institution |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -51,15 +48,7 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
           "success": 164.84,
           "error_plaid": 201.78,
           "error_institution": 35.5,
-          "refresh_interval": "NORMAL",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "refresh_interval": "NORMAL"
         }
       },
       "transactions_updates": {
@@ -69,15 +58,7 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
           "success": 164.84,
           "error_plaid": 201.78,
           "error_institution": 35.5,
-          "refresh_interval": "NORMAL",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "refresh_interval": "NORMAL"
         }
       },
       "auth": {
@@ -87,15 +68,7 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
           "success": 164.84,
           "error_plaid": 201.78,
           "error_institution": 35.5,
-          "refresh_interval": "NORMAL",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "refresh_interval": "NORMAL"
         }
       },
       "balance": {
@@ -105,15 +78,7 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
           "success": 164.84,
           "error_plaid": 201.78,
           "error_institution": 35.5,
-          "refresh_interval": "NORMAL",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "refresh_interval": "NORMAL"
         }
       },
       "identity": {
@@ -123,15 +88,7 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
           "success": 164.84,
           "error_plaid": 201.78,
           "error_institution": 35.5,
-          "refresh_interval": "NORMAL",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "refresh_interval": "NORMAL"
         }
       },
       "investments_updates": {
@@ -141,15 +98,7 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
           "success": 164.84,
           "error_plaid": 201.78,
           "error_institution": 35.5,
-          "refresh_interval": "NORMAL",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "refresh_interval": "NORMAL"
         }
       },
       "liabilities_updates": {
@@ -159,15 +108,7 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
           "success": 164.84,
           "error_plaid": 201.78,
           "error_institution": 35.5,
-          "refresh_interval": "NORMAL",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "refresh_interval": "NORMAL"
         }
       },
       "liabilities": {
@@ -177,15 +118,7 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
           "success": 164.84,
           "error_plaid": 201.78,
           "error_institution": 35.5,
-          "refresh_interval": "NORMAL",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "refresh_interval": "NORMAL"
         }
       },
       "investments": {
@@ -195,15 +128,7 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
           "success": 164.84,
           "error_plaid": 201.78,
           "error_institution": 35.5,
-          "refresh_interval": "NORMAL",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "refresh_interval": "NORMAL"
         }
       },
       "health_incidents": [
@@ -215,35 +140,19 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
             {
               "description": "description2",
               "status": "UNKNOWN",
-              "updated_date": "2016-03-13T12:52:32.123Z",
-              "exampleAdditionalProperty": {
-                "key1": "val1",
-                "key2": "val2"
-              }
+              "updated_date": "2016-03-13T12:52:32.123Z"
             },
             {
               "description": "description2",
               "status": "UNKNOWN",
-              "updated_date": "2016-03-13T12:52:32.123Z",
-              "exampleAdditionalProperty": {
-                "key1": "val1",
-                "key2": "val2"
-              }
+              "updated_date": "2016-03-13T12:52:32.123Z"
             },
             {
               "description": "description2",
               "status": "UNKNOWN",
-              "updated_date": "2016-03-13T12:52:32.123Z",
-              "exampleAdditionalProperty": {
-                "key1": "val1",
-                "key2": "val2"
-              }
+              "updated_date": "2016-03-13T12:52:32.123Z"
             }
-          ],
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          ]
         },
         {
           "start_date": "2016-03-13T12:52:32.123Z",
@@ -253,41 +162,21 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
             {
               "description": "description2",
               "status": "UNKNOWN",
-              "updated_date": "2016-03-13T12:52:32.123Z",
-              "exampleAdditionalProperty": {
-                "key1": "val1",
-                "key2": "val2"
-              }
+              "updated_date": "2016-03-13T12:52:32.123Z"
             },
             {
               "description": "description2",
               "status": "UNKNOWN",
-              "updated_date": "2016-03-13T12:52:32.123Z",
-              "exampleAdditionalProperty": {
-                "key1": "val1",
-                "key2": "val2"
-              }
+              "updated_date": "2016-03-13T12:52:32.123Z"
             },
             {
               "description": "description2",
               "status": "UNKNOWN",
-              "updated_date": "2016-03-13T12:52:32.123Z",
-              "exampleAdditionalProperty": {
-                "key1": "val1",
-                "key2": "val2"
-              }
+              "updated_date": "2016-03-13T12:52:32.123Z"
             }
-          ],
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          ]
         }
-      ],
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      ]
     },
     "payment_initiation_metadata": {
       "supports_international_payments": false,
@@ -303,27 +192,11 @@ InstitutionsGetByIdResponse defines the response schema for `/institutions/get_b
         "valid_standing_order_intervals": [
           "WEEKLY",
           "MONTHLY"
-        ],
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        ]
       }
-    },
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
     }
   },
-  "request_id": "request_id0",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id0"
 }
 ```
 

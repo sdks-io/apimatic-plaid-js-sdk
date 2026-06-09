@@ -1,12 +1,12 @@
 # Application
 
 ```ts
-const applicationApi = new ApplicationApi(client);
+const applicationController = new ApplicationController(client);
 ```
 
 ## Class Name
 
-`ApplicationApi`
+`ApplicationController`
 
 
 # Application Get
@@ -47,7 +47,7 @@ const body: ApplicationGetRequest = {
 };
 
 try {
-  const response = await applicationApi.applicationGet(body);
+  const response = await applicationController.applicationGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

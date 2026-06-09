@@ -3,8 +3,6 @@
 
 Object containing fields describing property address.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `MortgagePropertyAddress`
@@ -18,7 +16,6 @@ Object containing fields describing property address.
 | `postalCode` | `string \| null` | Required | The five or nine digit postal code. |
 | `region` | `string \| null` | Required | The region or state (example "NC"). |
 | `street` | `string \| null` | Required | The full street address (example "564 Main Street, Apt 15"). |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,11 +25,7 @@ Object containing fields describing property address.
   "country": "country0",
   "postal_code": "postal_code8",
   "region": "region2",
-  "street": "street6",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "street": "street6"
 }
 ```
 

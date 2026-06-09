@@ -3,8 +3,6 @@
 
 BankTransferSweepGetRequest defines the request schema for `/bank_transfer/sweep/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `BankTransferSweepGetRequest`
@@ -17,7 +15,6 @@ BankTransferSweepGetRequest defines the request schema for `/bank_transfer/sweep
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `sweepId` | `bigint` | Required | Identifier of the sweep.<br><br>**Constraints**: `>= 0` |
 | `originationAccountId` | `string \| null \| undefined` | Optional | If multiple origination accounts are available, `origination_account_id` must be used to specify the account that the sweep belongs to. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,11 +23,7 @@ BankTransferSweepGetRequest defines the request schema for `/bank_transfer/sweep
   "client_id": "client_id8",
   "secret": "secret2",
   "sweep_id": 40,
-  "origination_account_id": "origination_account_id6",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "origination_account_id": "origination_account_id6"
 }
 ```
 

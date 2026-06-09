@@ -3,8 +3,6 @@
 
 Defines the response schema for `/transfer/authorization/create`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `TransferAuthorizationCreateResponse`
@@ -15,7 +13,6 @@ Defines the response schema for `/transfer/authorization/create`
 |  --- | --- | --- | --- |
 | `authorization` | [`TransferAuthorization`](../../doc/models/transfer-authorization.md) | Required | TransferAuthorization contains the authorization decision for a proposed transfer |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -27,11 +24,7 @@ Defines the response schema for `/transfer/authorization/create`
     "decision": "approved",
     "decision_rationale": {
       "code": "RISK",
-      "description": "description8",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "description": "description8"
     },
     "proposed_transfer": {
       "ach_class": "web",
@@ -46,35 +39,15 @@ Defines the response schema for `/transfer/authorization/create`
           "city": "city6",
           "region": "region2",
           "postal_code": "postal_code8",
-          "country": "country0",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
-        },
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
+          "country": "country0"
         }
       },
       "amount": "amount0",
       "network": "network6",
-      "origination_account_id": "origination_account_id8",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
-    },
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
+      "origination_account_id": "origination_account_id8"
     }
   },
-  "request_id": "request_id6",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id6"
 }
 ```
 

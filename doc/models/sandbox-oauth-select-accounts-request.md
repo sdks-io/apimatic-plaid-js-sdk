@@ -3,8 +3,6 @@
 
 Defines the request schema for `sandbox/oauth/select_accounts`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `SandboxOauthSelectAccountsRequest`
@@ -15,7 +13,6 @@ Defines the request schema for `sandbox/oauth/select_accounts`
 |  --- | --- | --- | --- |
 | `oauthStateId` | `string` | Required | - |
 | `accounts` | `string[]` | Required | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -24,11 +21,7 @@ Defines the request schema for `sandbox/oauth/select_accounts`
   "oauth_state_id": "oauth_state_id6",
   "accounts": [
     "accounts2"
-  ],
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  ]
 }
 ```
 

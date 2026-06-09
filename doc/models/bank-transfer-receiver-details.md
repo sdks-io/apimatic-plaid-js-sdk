@@ -3,8 +3,6 @@
 
 The receiver details if the type of this event is `reciever_pending` or `reciever_posted`. Null value otherwise.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `BankTransferReceiverDetails`
@@ -13,18 +11,13 @@ The receiver details if the type of this event is `reciever_pending` or `recieve
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `availableBalance` | [`AvailableBalance`](../../doc/models/available-balance.md) | Required | The sign of the available balance for the receiver bank account associated with the receiver event at the time the matching transaction was found. Can be `positive`, `negative`, or null if the balance was not available at the time. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
+| `availableBalance` | [`AvailableBalanceEnum`](../../doc/models/available-balance-enum.md) | Required | The sign of the available balance for the receiver bank account associated with the receiver event at the time the matching transaction was found. Can be `positive`, `negative`, or null if the balance was not available at the time. |
 
 ## Example (as JSON)
 
 ```json
 {
-  "available_balance": "positive",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "available_balance": "positive"
 }
 ```
 

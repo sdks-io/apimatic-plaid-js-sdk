@@ -3,8 +3,6 @@
 
 Used to configure Sandbox test data for the Liabilities product
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `LiabilityOverride`
@@ -32,12 +30,11 @@ Used to configure Sandbox test data for the Liabilities product
 | `loanName` | `string` | Required | Override the `loan_name` field. Can only be set if `type` is `student`. |
 | `loanStatus` | [`StudentLoanStatus`](../../doc/models/student-loan-status.md) | Required | An object representing the status of the student loan |
 | `paymentReferenceNumber` | `string` | Required | Override the `payment_reference_number` field. Can only be set if `type` is `student`. |
-| `pslfStatus` | [`PslfStatus`](../../doc/models/pslf-status.md) | Required | Information about the student's eligibility in the Public Service Loan Forgiveness program. This is only returned if the institution is Fedloan (`ins_116527`). |
+| `pslfStatus` | [`PSLFStatus`](../../doc/models/pslf-status.md) | Required | Information about the student's eligibility in the Public Service Loan Forgiveness program. This is only returned if the institution is Fedloan (`ins_116527`). |
 | `repaymentPlanDescription` | `string` | Required | Override the `repayment_plan.description` field. Can only be set if `type` is `student`. |
 | `repaymentPlanType` | `string` | Required | Override the `repayment_plan.type` field. Can only be set if `type` is `student`. Possible values are: `"extended graduated"`, `"extended standard"`, `"graduated"`, `"income-contingent repayment"`, `"income-based repayment"`, `"interest only"`, `"other"`, `"pay as you earn"`, `"revised pay as you earn"`, or `"standard"`. |
 | `sequenceNumber` | `string` | Required | Override the `sequence_number` field. Can only be set if `type` is `student`. |
 | `servicerAddress` | [`Address`](../../doc/models/address.md) | Required | A physical mailing address. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -58,11 +55,7 @@ Used to configure Sandbox test data for the Liabilities product
   "repayment_model": {
     "type": "type8",
     "non_repayment_months": 34.06,
-    "repayment_months": 100.72,
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "repayment_months": 100.72
   },
   "expected_payoff_date": "2016-03-13T12:52:32.123Z",
   "guarantor": "guarantor0",
@@ -70,21 +63,13 @@ Used to configure Sandbox test data for the Liabilities product
   "loan_name": "loan_name6",
   "loan_status": {
     "end_date": "2016-03-13T12:52:32.123Z",
-    "type": "cancelled",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "type": "cancelled"
   },
   "payment_reference_number": "payment_reference_number0",
   "pslf_status": {
     "estimated_eligibility_date": "2016-03-13T12:52:32.123Z",
     "payments_made": 175.34,
-    "payments_remaining": 221.32,
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "payments_remaining": 221.32
   },
   "repayment_plan_description": "repayment_plan_description6",
   "repayment_plan_type": "repayment_plan_type4",
@@ -95,21 +80,9 @@ Used to configure Sandbox test data for the Liabilities product
       "region": "region6",
       "street": "street0",
       "postal_code": "postal_code2",
-      "country": "country4",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "country": "country4"
     },
-    "primary": false,
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    "primary": false
   }
 }
 ```

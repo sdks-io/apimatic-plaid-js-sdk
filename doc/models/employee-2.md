@@ -3,8 +3,6 @@
 
 The employee on the paystub.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `Employee2`
@@ -15,7 +13,6 @@ The employee on the paystub.
 |  --- | --- | --- | --- |
 | `name` | `string \| undefined` | Optional | The name of the employee. |
 | `address` | [`Address1 \| undefined`](../../doc/models/address-1.md) | Optional | The address of the employee. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -27,15 +24,7 @@ The employee on the paystub.
     "region": "region2",
     "street": "street6",
     "postal_code": "postal_code8",
-    "country": "country0",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    "country": "country0"
   }
 }
 ```

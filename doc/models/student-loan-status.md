@@ -3,8 +3,6 @@
 
 An object representing the status of the student loan
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `StudentLoanStatus`
@@ -14,19 +12,14 @@ An object representing the status of the student loan
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `endDate` | `string \| null` | Required | The date until which the loan will be in its current status. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). |
-| `type` | [`Type2`](../../doc/models/type-2.md) | Required | The status type of the student loan |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
+| `type` | [`Type2Enum`](../../doc/models/type-2-enum.md) | Required | The status type of the student loan |
 
 ## Example (as JSON)
 
 ```json
 {
   "end_date": "2016-03-13T12:52:32.123Z",
-  "type": "paid in full",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "type": "paid in full"
 }
 ```
 

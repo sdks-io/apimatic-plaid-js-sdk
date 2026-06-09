@@ -3,8 +3,6 @@
 
 Fired when new bank transfer events are available. Receiving this webhook indicates you should fetch the new events from `/bank_transfer/event/sync`.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `BankTransfersEventsUpdateWebhook`
@@ -15,18 +13,13 @@ Fired when new bank transfer events are available. Receiving this webhook indica
 |  --- | --- | --- | --- |
 | `webhookType` | `string` | Required | `BANK_TRANSFERS` |
 | `webhookCode` | `string` | Required | `BANK_TRANSFERS_EVENTS_UPDATE` |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
 ```json
 {
   "webhook_type": "webhook_type0",
-  "webhook_code": "webhook_code0",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "webhook_code": "webhook_code0"
 }
 ```
 

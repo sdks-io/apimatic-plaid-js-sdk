@@ -1,12 +1,12 @@
 # Signal
 
 ```ts
-const signalApi = new SignalApi(client);
+const signalController = new SignalController(client);
 ```
 
 ## Class Name
 
-`SignalApi`
+`SignalController`
 
 ## Methods
 
@@ -58,7 +58,7 @@ const body: SignalEvaluateRequest = {
 };
 
 try {
-  const response = await signalApi.signalEvaluate(body);
+  const response = await signalController.signalEvaluate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -185,7 +185,7 @@ const body: SignalDecisionReportRequest = {
 };
 
 try {
-  const response = await signalApi.signalDecisionReport(body);
+  const response = await signalController.signalDecisionReport(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -265,7 +265,7 @@ const body: SignalReturnReportRequest = {
 };
 
 try {
-  const response = await signalApi.signalReturnReport(body);
+  const response = await signalController.signalReturnReport(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

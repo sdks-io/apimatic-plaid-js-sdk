@@ -1,8 +1,6 @@
 
 # Account Assets
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `AccountAssets`
@@ -16,14 +14,13 @@
 | `mask` | `string \| null` | Required | The last 2-4 alphanumeric characters of an account's official account number. Note that the mask may be non-unique between an Item's accounts, and it may also not match the mask that the bank displays to the user. |
 | `name` | `string` | Required | The name of the account, either assigned by the user or by the financial institution itself |
 | `officialName` | `string \| null` | Required | The official name of the account as given by the financial institution |
-| `type` | [`AccountType`](../../doc/models/account-type.md) | Required | `investment:` Investment account<br><br>`credit:` Credit card<br><br>`depository:` Depository account<br><br>`loan:` Loan account<br><br>`brokerage`: An investment account. Used for `/assets/` endpoints only; other endpoints use `investment`.<br><br>`other:` Non-specified account type<br><br>See the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes. |
-| `subtype` | [`AccountSubtype`](../../doc/models/account-subtype.md) | Required | See the [Account type schema](https://plaid.com/docs/api/accounts/#account-type-schema) for a full listing of account types and corresponding subtypes. |
-| `verificationStatus` | [`VerificationStatus4 \| undefined`](../../doc/models/verification-status-4.md) | Optional | The current verification status of an Auth Item initiated through Automated or Manual micro-deposits.  Returned for Auth Items only.<br><br>`pending_automatic_verification`: The Item is pending automatic verification<br><br>`pending_manual_verification`: The Item is pending manual micro-deposit verification. Items remain in this state until the user successfully verifies the two amounts.<br><br>`automatically_verified`: The Item has successfully been automatically verified<br><br>`manually_verified`: The Item has successfully been manually verified<br><br>`verification_expired`: Plaid was unable to automatically verify the deposit within 7 calendar days and will no longer attempt to validate the Item. Users may retry by submitting their information again through Link.<br><br>`verification_failed`: The Item failed manual micro-deposit verification because the user exhausted all 3 verification attempts. Users may retry by submitting their information again through Link. |
+| `type` | [`AccountTypeEnum`](../../doc/models/account-type-enum.md) | Required | `investment:` Investment account<br><br>`credit:` Credit card<br><br>`depository:` Depository account<br><br>`loan:` Loan account<br><br>`brokerage`: An investment account. Used for `/assets/` endpoints only; other endpoints use `investment`.<br><br>`other:` Non-specified account type<br><br>See the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes. |
+| `subtype` | [`AccountSubtypeEnum`](../../doc/models/account-subtype-enum.md) | Required | See the [Account type schema](https://plaid.com/docs/api/accounts/#account-type-schema) for a full listing of account types and corresponding subtypes. |
+| `verificationStatus` | [`VerificationStatus4Enum \| undefined`](../../doc/models/verification-status-4-enum.md) | Optional | The current verification status of an Auth Item initiated through Automated or Manual micro-deposits.  Returned for Auth Items only.<br><br>`pending_automatic_verification`: The Item is pending automatic verification<br><br>`pending_manual_verification`: The Item is pending manual micro-deposit verification. Items remain in this state until the user successfully verifies the two amounts.<br><br>`automatically_verified`: The Item has successfully been automatically verified<br><br>`manually_verified`: The Item has successfully been manually verified<br><br>`verification_expired`: Plaid was unable to automatically verify the deposit within 7 calendar days and will no longer attempt to validate the Item. Users may retry by submitting their information again through Link.<br><br>`verification_failed`: The Item failed manual micro-deposit verification because the user exhausted all 3 verification attempts. Users may retry by submitting their information again through Link. |
 | `daysAvailable` | `number` | Required | The duration of transaction history available for this Item, typically defined as the time since the date of the earliest transaction in that account. Only returned by Assets endpoints. |
 | `transactions` | [`AssetReportTransaction[]`](../../doc/models/asset-report-transaction.md) | Required | Transaction history associated with the account. Only returned by Assets endpoints. Transaction history returned by endpoints such as `/transactions/get` or `/investments/transactions/get` will be returned in the top-level `transactions` field instead. |
 | `owners` | [`Owner[]`](../../doc/models/owner.md) | Required | Data returned by the financial institution about the account owner or owners. Only returned by Identity or Assets endpoints. Multiple owners on a single account will be represented in the same `owner` object, not in multiple owner objects within the array. |
 | `historicalBalances` | [`HistoricalBalance[]`](../../doc/models/historical-balance.md) | Required | Calculated data about the historical balances on the account. Only returned by Assets endpoints. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -36,11 +33,7 @@
     "limit": 30.84,
     "iso_currency_code": "iso_currency_code6",
     "unofficial_currency_code": "unofficial_currency_code2",
-    "last_updated_datetime": "2016-03-13T12:52:32.123Z",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "last_updated_datetime": "2016-03-13T12:52:32.123Z"
   },
   "mask": "mask6",
   "name": "name2",
@@ -66,11 +59,7 @@
         "country": "country8",
         "lat": 205.22,
         "lon": 217.68,
-        "store_number": "store_number0",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "store_number": "store_number0"
       },
       "original_description": "original_description6",
       "account_id": "account_id0",
@@ -79,11 +68,7 @@
       "unofficial_currency_code": "unofficial_currency_code0",
       "date": "2016-03-13T12:52:32.123Z",
       "pending": false,
-      "transaction_id": "transaction_id6",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "transaction_id": "transaction_id6"
     }
   ],
   "owners": [
@@ -96,22 +81,14 @@
         {
           "data": "data0",
           "primary": false,
-          "type": "office",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "type": "office"
         }
       ],
       "emails": [
         {
           "data": "data6",
           "primary": false,
-          "type": "other",
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "type": "other"
         }
       ],
       "addresses": [
@@ -121,23 +98,11 @@
             "region": "region6",
             "street": "street0",
             "postal_code": "postal_code2",
-            "country": "country4",
-            "exampleAdditionalProperty": {
-              "key1": "val1",
-              "key2": "val2"
-            }
+            "country": "country4"
           },
-          "primary": false,
-          "exampleAdditionalProperty": {
-            "key1": "val1",
-            "key2": "val2"
-          }
+          "primary": false
         }
-      ],
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      ]
     }
   ],
   "historical_balances": [
@@ -145,18 +110,10 @@
       "date": "2016-03-13T12:52:32.123Z",
       "current": 192.42,
       "iso_currency_code": "iso_currency_code2",
-      "unofficial_currency_code": "unofficial_currency_code6",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "unofficial_currency_code": "unofficial_currency_code6"
     }
   ],
-  "verification_status": "verification_expired",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "verification_status": "verification_expired"
 }
 ```
 

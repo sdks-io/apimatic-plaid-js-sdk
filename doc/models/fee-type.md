@@ -3,8 +3,6 @@
 
 Fees on the account, e.g. commission, bookkeeping, options-related.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `FeeType`
@@ -33,7 +31,6 @@ Fees on the account, e.g. commission, bookkeeping, options-related.
 | `transferFee` | `string \| undefined` | Optional | Fees incurred for transfer of a holding or account |
 | `trustFee` | `string \| undefined` | Optional | Fees related to adminstration of a trust account |
 | `unqualifiedGain` | `string \| undefined` | Optional | Unqualified capital gain received as cash |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -43,11 +40,7 @@ Fees on the account, e.g. commission, bookkeeping, options-related.
   "adjustment": "adjustment4",
   "dividend": "dividend4",
   "interest": "interest0",
-  "interest receivable": "interest receivable0",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "interest receivable": "interest receivable0"
 }
 ```
 

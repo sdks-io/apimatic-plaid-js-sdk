@@ -1,8 +1,6 @@
 
 # Asset Report Transaction
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `AssetReportTransaction`
@@ -11,7 +9,7 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `transactionType` | [`TransactionType \| undefined`](../../doc/models/transaction-type.md) | Optional | Please use the `payment_channel` field, `transaction_type` will be deprecated in the future.<br><br>`digital:` transactions that took place online.<br><br>`place:` transactions that were made at a physical location.<br><br>`special:` transactions that relate to banks, e.g. fees or deposits.<br><br>`unresolved:` transactions that do not fit into the other three types. |
+| `transactionType` | [`TransactionTypeEnum \| undefined`](../../doc/models/transaction-type-enum.md) | Optional | Please use the `payment_channel` field, `transaction_type` will be deprecated in the future.<br><br>`digital:` transactions that took place online.<br><br>`place:` transactions that were made at a physical location.<br><br>`special:` transactions that relate to banks, e.g. fees or deposits.<br><br>`unresolved:` transactions that do not fit into the other three types. |
 | `pendingTransactionId` | `string \| null \| undefined` | Optional | The ID of a posted transaction's associated pending transaction, where applicable. |
 | `categoryId` | `string \| null \| undefined` | Optional | The ID of the category to which this transaction belongs. See [Categories](https://plaid.com/docs/#category-overview).<br><br>If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get/` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights. |
 | `category` | `string[] \| null \| undefined` | Optional | A hierarchical array of the categories to which this transaction belongs. See [Categories](https://plaid.com/docs/#category-overview).<br><br>If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get/` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights. |
@@ -28,7 +26,6 @@
 | `pending` | `boolean` | Required | When `true`, identifies the transaction as pending or unsettled. Pending transaction details (name, type, amount, category ID) may change before they are settled. |
 | `transactionId` | `string` | Required | The unique ID of the transaction. Like all Plaid identifiers, the `transaction_id` is case sensitive. |
 | `dateTransacted` | `string \| null \| undefined` | Optional | The date on which the transaction took place, in IS0 8601 format. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -50,11 +47,7 @@
     "country": "country8",
     "lat": 205.22,
     "lon": 217.68,
-    "store_number": "store_number0",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "store_number": "store_number0"
   },
   "original_description": "original_description0",
   "account_id": "account_id4",
@@ -63,11 +56,7 @@
   "unofficial_currency_code": "unofficial_currency_code4",
   "date": "2016-03-13T12:52:32.123Z",
   "pending": false,
-  "transaction_id": "transaction_id0",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "transaction_id": "transaction_id0"
 }
 ```
 

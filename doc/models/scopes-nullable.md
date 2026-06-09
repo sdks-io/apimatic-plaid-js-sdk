@@ -1,8 +1,6 @@
 
 # Scopes Nullable
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `ScopesNullable`
@@ -14,7 +12,6 @@
 | `productAccess` | [`ProductAccess \| undefined`](../../doc/models/product-access.md) | Optional | The product access being requested. Used to or disallow product access across all accounts. If unset, defaults to all products allowed. |
 | `accounts` | [`AccountAccess[] \| undefined`](../../doc/models/account-access.md) | Optional | - |
 | `newAccounts` | `boolean \| null \| undefined` | Optional | Allow access to newly opened accounts as they are opened. If unset, defaults to `true`.<br><br>**Default**: `true` |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -25,26 +22,14 @@
     "statements": false,
     "identity": false,
     "auth": false,
-    "transactions": false,
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "transactions": false
   },
   "accounts": [
     {
       "unique_id": "unique_id6",
-      "authorized": false,
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "authorized": false
     }
-  ],
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  ]
 }
 ```
 

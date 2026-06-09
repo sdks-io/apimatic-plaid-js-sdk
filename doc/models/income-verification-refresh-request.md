@@ -3,8 +3,6 @@
 
 IncomeVerificationRefreshRequest defines the request schema for `/income/verification/refresh`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `IncomeVerificationRefreshRequest`
@@ -17,7 +15,6 @@ IncomeVerificationRefreshRequest defines the request schema for `/income/verific
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `incomeVerificationId` | `string \| null \| undefined` | Optional | The ID of the verification. |
 | `accessToken` | `string \| null \| undefined` | Optional | The access token associated with the Item data is being requested for. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,11 +23,7 @@ IncomeVerificationRefreshRequest defines the request schema for `/income/verific
   "client_id": "client_id8",
   "secret": "secret8",
   "income_verification_id": "income_verification_id6",
-  "access_token": "access_token4",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "access_token": "access_token4"
 }
 ```
 

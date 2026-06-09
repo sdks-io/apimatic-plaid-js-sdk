@@ -3,8 +3,6 @@
 
 TransactionsGetResponse defines the response schema for `/transactions/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `TransactionsGetResponse`
@@ -18,7 +16,6 @@ TransactionsGetResponse defines the response schema for `/transactions/get`
 | `totalTransactions` | `number` | Required | The total number of transactions available within the date range specified. If `total_transactions` is larger than the size of the `transactions` array, more transactions are available and can be fetched via manipulating the `offset` parameter. |
 | `item` | [`Item`](../../doc/models/item.md) | Required | Metadata about the Item. |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -33,22 +30,14 @@ TransactionsGetResponse defines the response schema for `/transactions/get`
         "limit": 30.84,
         "iso_currency_code": "iso_currency_code6",
         "unofficial_currency_code": "unofficial_currency_code2",
-        "last_updated_datetime": "2016-03-13T12:52:32.123Z",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "last_updated_datetime": "2016-03-13T12:52:32.123Z"
       },
       "mask": "mask4",
       "name": "name0",
       "official_name": "official_name2",
       "type": "depository",
       "subtype": "consumer",
-      "verification_status": "automatically_verified",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "verification_status": "automatically_verified"
     }
   ],
   "transactions": [
@@ -69,11 +58,7 @@ TransactionsGetResponse defines the response schema for `/transactions/get`
         "country": "country8",
         "lat": 205.22,
         "lon": 217.68,
-        "store_number": "store_number0",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "store_number": "store_number0"
       },
       "payment_meta": {
         "reference_number": "reference_number2",
@@ -83,11 +68,7 @@ TransactionsGetResponse defines the response schema for `/transactions/get`
         "payer": "payer2",
         "payment_method": "payment_method4",
         "payment_processor": "payment_processor4",
-        "reason": "reason8",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "reason": "reason8"
       },
       "account_owner": "account_owner6",
       "name": "name8",
@@ -108,15 +89,7 @@ TransactionsGetResponse defines the response schema for `/transactions/get`
       "transaction_code": "cash",
       "personal_finance_category": {
         "primary": "primary4",
-        "detailed": "detailed4",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "detailed": "detailed4"
       }
     }
   ],
@@ -147,11 +120,7 @@ TransactionsGetResponse defines the response schema for `/transactions/get`
       ],
       "status": 217.06,
       "documentation_url": "documentation_url6",
-      "suggested_action": "suggested_action0",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "suggested_action": "suggested_action0"
     },
     "available_products": [
       "transfer",
@@ -162,17 +131,9 @@ TransactionsGetResponse defines the response schema for `/transactions/get`
       "standing_orders"
     ],
     "consent_expiration_time": "2016-03-13T12:52:32.123Z",
-    "update_type": "background",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "update_type": "background"
   },
-  "request_id": "request_id4",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id4"
 }
 ```
 

@@ -1,12 +1,12 @@
 # Bank Transfer
 
 ```ts
-const bankTransferApi = new BankTransferApi(client);
+const bankTransferController = new BankTransferController(client);
 ```
 
 ## Class Name
 
-`BankTransferApi`
+`BankTransferController`
 
 ## Methods
 
@@ -60,7 +60,7 @@ const body: BankTransferCancelRequest = {
 };
 
 try {
-  const response = await bankTransferApi.bankTransferCancel(body);
+  const response = await bankTransferController.bankTransferCancel(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -139,7 +139,7 @@ const body: BankTransferSweepGetRequest = {
 };
 
 try {
-  const response = await bankTransferApi.bankTransferSweepGet(body);
+  const response = await bankTransferController.bankTransferSweepGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -230,7 +230,7 @@ const body: BankTransferListRequest = {
 };
 
 try {
-  const response = await bankTransferApi.bankTransferList(body);
+  const response = await bankTransferController.bankTransferList(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -341,7 +341,7 @@ const body: BankTransferEventSyncRequest = {
 };
 
 try {
-  const response = await bankTransferApi.bankTransferEventSync(body);
+  const response = await bankTransferController.bankTransferEventSync(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -414,7 +414,7 @@ const body: BankTransferMigrateAccountRequest = {
 };
 
 try {
-  const response = await bankTransferApi.bankTransferMigrateAccount(body);
+  const response = await bankTransferController.bankTransferMigrateAccount(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -494,8 +494,8 @@ const body: BankTransferCreateRequest = {
   idempotencyKey: 'idempotency_key2',
   accessToken: 'access_token4',
   accountId: 'account_id8',
-  type: BankTransferType.Debit,
-  network: BankTransferNetwork.Samedayach,
+  type: BankTransferTypeEnum.Debit,
+  network: BankTransferNetworkEnum.Samedayach,
   amount: 'amount8',
   isoCurrencyCode: 'iso_currency_code0',
   description: 'description4',
@@ -505,7 +505,7 @@ const body: BankTransferCreateRequest = {
 };
 
 try {
-  const response = await bankTransferApi.bankTransferCreate(body);
+  const response = await bankTransferController.bankTransferCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -576,7 +576,7 @@ const body: BankTransferSweepListRequest = {
 };
 
 try {
-  const response = await bankTransferApi.bankTransferSweepList(body);
+  const response = await bankTransferController.bankTransferSweepList(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -669,7 +669,7 @@ const body: BankTransferEventListRequest = {
 };
 
 try {
-  const response = await bankTransferApi.bankTransferEventList(body);
+  const response = await bankTransferController.bankTransferEventList(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -740,7 +740,7 @@ const body: BankTransferGetRequest = {
 };
 
 try {
-  const response = await bankTransferApi.bankTransferGet(body);
+  const response = await bankTransferController.bankTransferGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -851,7 +851,7 @@ const body: BankTransferBalanceGetRequest = {
 };
 
 try {
-  const response = await bankTransferApi.bankTransferBalanceGet(body);
+  const response = await bankTransferController.bankTransferBalanceGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

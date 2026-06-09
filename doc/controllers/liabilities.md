@@ -1,12 +1,12 @@
 # Liabilities
 
 ```ts
-const liabilitiesApi = new LiabilitiesApi(client);
+const liabilitiesController = new LiabilitiesController(client);
 ```
 
 ## Class Name
 
-`LiabilitiesApi`
+`LiabilitiesController`
 
 
 # Liabilities Get
@@ -51,7 +51,7 @@ const body: LiabilitiesGetRequest = {
 };
 
 try {
-  const response = await liabilitiesApi.liabilitiesGet(body);
+  const response = await liabilitiesController.liabilitiesGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

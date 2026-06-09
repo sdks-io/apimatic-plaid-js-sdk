@@ -3,8 +3,6 @@
 
 Defines the request schema for `/bank_transfer/event/list`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `BankTransferEventListRequest`
@@ -19,13 +17,12 @@ Defines the request schema for `/bank_transfer/event/list`
 | `endDate` | `string \| null \| undefined` | Optional | The end datetime of bank transfers to list. This should be in RFC 3339 format (i.e. `2019-12-06T22:35:49Z`) |
 | `bankTransferId` | `string \| null \| undefined` | Optional | Plaid’s unique identifier for a bank transfer. |
 | `accountId` | `string \| null \| undefined` | Optional | The account ID to get events for all transactions to/from an account. |
-| `bankTransferType` | [`BankTransferType1 \| undefined`](../../doc/models/bank-transfer-type-1.md) | Optional | The type of bank transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into your origination account; a `credit` indicates a transfer of money out of your origination account. |
-| `eventTypes` | [`BankTransferEventType[] \| undefined`](../../doc/models/bank-transfer-event-type.md) | Optional | Filter events by event type. |
+| `bankTransferType` | [`BankTransferType1Enum \| undefined`](../../doc/models/bank-transfer-type-1-enum.md) | Optional | The type of bank transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into your origination account; a `credit` indicates a transfer of money out of your origination account. |
+| `eventTypes` | [`BankTransferEventTypeEnum[] \| undefined`](../../doc/models/bank-transfer-event-type-enum.md) | Optional | Filter events by event type. |
 | `count` | `number \| null \| undefined` | Optional | The maximum number of bank transfer events to return. If the number of events matching the above parameters is greater than `count`, the most recent events will be returned.<br><br>**Default**: `25`<br><br>**Constraints**: `>= 1`, `<= 25` |
 | `offset` | `number \| null \| undefined` | Optional | The offset into the list of bank transfer events. When `count`=25 and `offset`=0, the first 25 events will be returned. When `count`=25 and `offset`=25, the next 25 bank transfer events will be returned.<br><br>**Default**: `0`<br><br>**Constraints**: `>= 0` |
 | `originationAccountId` | `string \| null \| undefined` | Optional | The origination account ID to get events for transfers from a specific origination account. |
-| `direction` | [`BankTransferDirection1 \| undefined`](../../doc/models/bank-transfer-direction-1.md) | Optional | Indicates the direction of the transfer: `outbound`: for API-initiated transfers<br>`inbound`: for payments received by the FBO account. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
+| `direction` | [`BankTransferDirection1Enum \| undefined`](../../doc/models/bank-transfer-direction-1-enum.md) | Optional | Indicates the direction of the transfer: `outbound`: for API-initiated transfers<br>`inbound`: for payments received by the FBO account. |
 
 ## Example (as JSON)
 
@@ -37,11 +34,7 @@ Defines the request schema for `/bank_transfer/event/list`
   "secret": "secret8",
   "start_date": "2016-03-13T12:52:32.123Z",
   "end_date": "2016-03-13T12:52:32.123Z",
-  "bank_transfer_id": "bank_transfer_id8",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "bank_transfer_id": "bank_transfer_id8"
 }
 ```
 

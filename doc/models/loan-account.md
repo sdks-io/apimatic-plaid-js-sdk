@@ -3,8 +3,6 @@
 
 A loan type account. Supported products for `loan` accounts are: Balance, Liabilities, and Transactions.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `LoanAccount`
@@ -25,7 +23,6 @@ A loan type account. Supported products for `loan` accounts are: Balance, Liabil
 | `lineOfCredit` | `string` | Required | Pre-approved line of credit |
 | `student` | `string` | Required | Student loan |
 | `other` | `string` | Required | Other loan type or unknown loan type |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -42,11 +39,7 @@ A loan type account. Supported products for `loan` accounts are: Balance, Liabil
   "overdraft": "overdraft2",
   "line of credit": "line of credit0",
   "student": "student6",
-  "other": "other8",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "other": "other8"
 }
 ```
 

@@ -3,8 +3,6 @@
 
 An investment account. Supported products for `investment` accounts are: Balance and Investments.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `InvestmentAccountSubtype`
@@ -13,11 +11,11 @@ An investment account. Supported products for `investment` accounts are: Balance
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `m529A` | `string` | Required | Tax-advantaged college savings and prepaid tuition 529 plans (US) |
-| `m401A` | `string` | Required | Employer-sponsored money-purchase 401(a) retirement plan (US) |
-| `m401K` | `string` | Required | Standard 401(k) retirement account (US) |
-| `m403B` | `string` | Required | 403(b) retirement savings account for non-profits and schools (US) |
-| `m457B` | `string` | Required | Tax-advantaged deferred-compensation 457(b) retirement plan for governments and non-profits (US) |
+| `m529a` | `string` | Required | Tax-advantaged college savings and prepaid tuition 529 plans (US) |
+| `m401a` | `string` | Required | Employer-sponsored money-purchase 401(a) retirement plan (US) |
+| `m401k` | `string` | Required | Standard 401(k) retirement account (US) |
+| `m403b` | `string` | Required | 403(b) retirement savings account for non-profits and schools (US) |
+| `m457b` | `string` | Required | Tax-advantaged deferred-compensation 457(b) retirement plan for governments and non-profits (US) |
 | `brokerage` | `string` | Required | Standard brokerage account |
 | `cashIsa` | `string` | Required | Individual Savings Account (ISA) that pays interest tax-free (UK) |
 | `educationSavingsAccount` | `string` | Required | Tax-advantaged Coverdell Education Savings Account (ESA) (US) |
@@ -47,7 +45,7 @@ An investment account. Supported products for `investment` accounts are: Balance
 | `retirement` | `string` | Required | Retirement account not covered by other subtypes |
 | `rlif` | `string` | Required | Restricted Life Income Fund (RLIF) (Canada) |
 | `roth` | `string` | Required | Roth IRA (US) |
-| `roth401K` | `string` | Required | Employer-sponsored Roth 401(k) plan (US) |
+| `roth401k` | `string` | Required | Employer-sponsored Roth 401(k) plan (US) |
 | `rrif` | `string` | Required | Registered Retirement Income Fund (RRIF) (Canada) |
 | `rrsp` | `string` | Required | Registered Retirement Savings Plan (Canadian, similar to US 401(k)) |
 | `sarsep` | `string` | Required | Salary Reduction Simplified Employee Pension Plan (SARSEP), discontinued retirement plan (US) |
@@ -60,7 +58,6 @@ An investment account. Supported products for `investment` accounts are: Balance
 | `ugma` | `string` | Required | 'Uniform Gift to Minors Act' (brokerage account for minors, US) |
 | `utma` | `string` | Required | 'Uniform Transfers to Minors Act' (brokerage account for minors, US) |
 | `variableAnnuity` | `string \| undefined` | Optional | Tax-deferred capital accumulation annuity contract |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -112,11 +109,7 @@ An investment account. Supported products for `investment` accounts are: Balance
   "trust": "trust8",
   "ugma": "ugma4",
   "utma": "utma2",
-  "variable annuity": "variable annuity2",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "variable annuity": "variable annuity2"
 }
 ```
 

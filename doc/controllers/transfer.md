@@ -1,12 +1,12 @@
 # Transfer
 
 ```ts
-const transferApi = new TransferApi(client);
+const transferController = new TransferController(client);
 ```
 
 ## Class Name
 
-`TransferApi`
+`TransferController`
 
 ## Methods
 
@@ -58,7 +58,7 @@ const body: TransferEventSyncRequest = {
 };
 
 try {
-  const response = await transferApi.transferEventSync(body);
+  const response = await transferController.transferEventSync(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -130,7 +130,7 @@ const body: TransferListRequest = {
 };
 
 try {
-  const response = await transferApi.transferList(body);
+  const response = await transferController.transferList(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -201,7 +201,7 @@ const body: TransferGetRequest = {
 };
 
 try {
-  const response = await transferApi.transferGet(body);
+  const response = await transferController.transferGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -272,7 +272,7 @@ const body: TransferCancelRequest = {
 };
 
 try {
-  const response = await transferApi.transferCancel(body);
+  const response = await transferController.transferCancel(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -351,18 +351,18 @@ const body: TransferCreateRequest = {
   accessToken: 'access_token4',
   accountId: 'account_id8',
   authorizationId: 'authorization_id2',
-  type: TransferType1.Debit,
-  network: TransferNetwork.Ach,
+  type: TransferType1Enum.Debit,
+  network: TransferNetworkEnum.Ach,
   amount: 'amount8',
   description: 'description4',
-  achClass: AchClass.Ccd,
+  achClass: ACHClassEnum.Ccd,
   user: {
     legalName: 'legal_name8',
   },
 };
 
 try {
-  const response = await transferApi.transferCreate(body);
+  const response = await transferController.transferCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -445,17 +445,17 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const body: TransferAuthorizationCreateRequest = {
   accessToken: 'access_token4',
   accountId: 'account_id8',
-  type: TransferType1.Debit,
-  network: TransferNetwork.Ach,
+  type: TransferType1Enum.Debit,
+  network: TransferNetworkEnum.Ach,
   amount: 'amount8',
-  achClass: AchClass.Ccd,
+  achClass: ACHClassEnum.Ccd,
   user: {
     legalName: 'legal_name8',
   },
 };
 
 try {
-  const response = await transferApi.transferAuthorizationCreate(body);
+  const response = await transferController.transferAuthorizationCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -527,7 +527,7 @@ const body: TransferEventListRequest = {
 };
 
 try {
-  const response = await transferApi.transferEventList(body);
+  const response = await transferController.transferEventList(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

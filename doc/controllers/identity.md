@@ -1,12 +1,12 @@
 # Identity
 
 ```ts
-const identityApi = new IdentityApi(client);
+const identityController = new IdentityController(client);
 ```
 
 ## Class Name
 
-`IdentityApi`
+`IdentityController`
 
 
 # Identity Get
@@ -49,7 +49,7 @@ const body: IdentityGetRequest = {
 };
 
 try {
-  const response = await identityApi.identityGet(body);
+  const response = await identityController.identityGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

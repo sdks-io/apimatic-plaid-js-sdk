@@ -1,8 +1,6 @@
 
 # Sandbox Processor Token Create Request
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `SandboxProcessorTokenCreateRequest`
@@ -15,7 +13,6 @@
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `institutionId` | `string` | Required | The ID of the institution the Item will be associated with |
 | `options` | [`SandboxProcessorTokenCreateRequestOptions \| undefined`](../../doc/models/sandbox-processor-token-create-request-options.md) | Optional | An optional set of options to be used when configuring the Item. If specified, must not be `null`. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,15 +23,7 @@
   "institution_id": "institution_id4",
   "options": {
     "override_username": "override_username0",
-    "override_password": "override_password8",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    "override_password": "override_password8"
   }
 }
 ```

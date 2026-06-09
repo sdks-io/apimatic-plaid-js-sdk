@@ -3,8 +3,6 @@
 
 ProcessorStripeBankAccountTokenCreateRequest defines the request schema for `/processor/stripe/bank_account/create`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `ProcessorStripeBankAccountTokenCreateRequest`
@@ -17,7 +15,6 @@ ProcessorStripeBankAccountTokenCreateRequest defines the request schema for `/pr
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `accessToken` | `string` | Required | The access token associated with the Item data is being requested for. |
 | `accountId` | `string` | Required | The `account_id` value obtained from the `onSuccess` callback in Link |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,11 +23,7 @@ ProcessorStripeBankAccountTokenCreateRequest defines the request schema for `/pr
   "client_id": "client_id2",
   "secret": "secret4",
   "access_token": "access_token8",
-  "account_id": "account_id2",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "account_id": "account_id2"
 }
 ```
 

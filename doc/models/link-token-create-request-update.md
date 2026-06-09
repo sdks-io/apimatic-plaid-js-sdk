@@ -3,8 +3,6 @@
 
 Specifies options for initializing Link for [update mode](https://plaid.com/docs/link/update-mode).
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `LinkTokenCreateRequestUpdate`
@@ -14,17 +12,12 @@ Specifies options for initializing Link for [update mode](https://plaid.com/docs
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `accountSelectionEnabled` | `boolean \| undefined` | Optional | If `true`, enables [update mode with Account Select](https://plaid.com/docs/link/update-mode/#using-update-mode-to-request-new-accounts).<br><br>**Default**: `false` |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
 ```json
 {
-  "account_selection_enabled": false,
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "account_selection_enabled": false
 }
 ```
 

@@ -3,8 +3,6 @@
 
 Additional payment options
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `PaymentOptions`
@@ -17,7 +15,6 @@ Additional payment options
 | `iban` | `string \| null \| undefined` | Optional | The International Bank Account Number (IBAN) for the payer's account. If provided, the end user will be able to send payments only from the specified bank account.<br><br>**Constraints**: *Minimum Length*: `15`, *Maximum Length*: `34` |
 | `bacs` | [`PaymentInitiationOptionalRestrictionBacs \| undefined`](../../doc/models/payment-initiation-optional-restriction-bacs.md) | Optional | - |
 | `emiAccountId` | `string \| null \| undefined` | Optional | The EMI (E-Money Institution) account that this payment is associated with, if any. This EMI account is used as an intermediary account to enable Plaid to reconcile the settlement of funds for Payment Initiation requests.<br><br>**Constraints**: *Minimum Length*: `1` |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -27,17 +24,9 @@ Additional payment options
   "iban": "iban8",
   "bacs": {
     "account": "account4",
-    "sort_code": "sort_code4",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "sort_code": "sort_code4"
   },
-  "emi_account_id": "emi_account_id2",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "emi_account_id": "emi_account_id2"
 }
 ```
 

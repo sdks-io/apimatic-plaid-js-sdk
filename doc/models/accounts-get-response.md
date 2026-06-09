@@ -3,8 +3,6 @@
 
 AccountsGetResponse defines the response schema for `/accounts/get` and `/accounts/balance/get`.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `AccountsGetResponse`
@@ -16,7 +14,6 @@ AccountsGetResponse defines the response schema for `/accounts/get` and `/accoun
 | `accounts` | [`Account[]`](../../doc/models/account.md) | Required | An array of financial institution accounts associated with the Item.<br>If `/accounts/balance/get` was called, each account will include real-time balance information. |
 | `item` | [`Item`](../../doc/models/item.md) | Required | Metadata about the Item. |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -31,22 +28,14 @@ AccountsGetResponse defines the response schema for `/accounts/get` and `/accoun
         "limit": 30.84,
         "iso_currency_code": "iso_currency_code6",
         "unofficial_currency_code": "unofficial_currency_code2",
-        "last_updated_datetime": "2016-03-13T12:52:32.123Z",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "last_updated_datetime": "2016-03-13T12:52:32.123Z"
       },
       "mask": "mask4",
       "name": "name0",
       "official_name": "official_name2",
       "type": "depository",
       "subtype": "consumer",
-      "verification_status": "automatically_verified",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "verification_status": "automatically_verified"
     }
   ],
   "item": {
@@ -75,11 +64,7 @@ AccountsGetResponse defines the response schema for `/accounts/get` and `/accoun
       ],
       "status": 217.06,
       "documentation_url": "documentation_url6",
-      "suggested_action": "suggested_action0",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "suggested_action": "suggested_action0"
     },
     "available_products": [
       "transfer",
@@ -90,17 +75,9 @@ AccountsGetResponse defines the response schema for `/accounts/get` and `/accoun
       "standing_orders"
     ],
     "consent_expiration_time": "2016-03-13T12:52:32.123Z",
-    "update_type": "background",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "update_type": "background"
   },
-  "request_id": "request_id6",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id6"
 }
 ```
 

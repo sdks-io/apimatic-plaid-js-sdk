@@ -3,8 +3,6 @@
 
 SignalEvaluateRequest defines the request schema for `/signal/evaluate`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `SignalEvaluateRequest`
@@ -22,7 +20,6 @@ SignalEvaluateRequest defines the request schema for `/signal/evaluate`
 | `clientUserId` | `string \| undefined` | Optional | A unique ID that identifies the end user in your system. This ID is used to correlate requests by a user with multiple Items. The max length for this field is 36 characters.<br><br>**Constraints**: *Maximum Length*: `36` |
 | `user` | [`SignalUser \| undefined`](../../doc/models/signal-user.md) | Optional | Details about the end user initiating the transaction (i.e., the account holder). |
 | `device` | [`SignalEvaluateDevice \| undefined`](../../doc/models/signal-evaluate-device.md) | Optional | Details about the end user's device |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -41,11 +38,7 @@ SignalEvaluateRequest defines the request schema for `/signal/evaluate`
       "given_name": "given_name2",
       "middle_name": "middle_name0",
       "family_name": "family_name4",
-      "suffix": "suffix0",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "suffix": "suffix0"
     },
     "phone_number": "phone_number2",
     "email_address": "email_address2",
@@ -54,28 +47,12 @@ SignalEvaluateRequest defines the request schema for `/signal/evaluate`
       "region": "region2",
       "street": "street6",
       "postal_code": "postal_code8",
-      "country": "country0",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
-    },
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
+      "country": "country0"
     }
   },
   "device": {
     "ip_address": "ip_address6",
-    "user_agent": "user_agent8",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    "user_agent": "user_agent8"
   }
 }
 ```

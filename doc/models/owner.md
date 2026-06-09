@@ -3,8 +3,6 @@
 
 Data returned from the financial institution about the owner or owners of an account. Only the `names` array must be non-empty.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `Owner`
@@ -17,7 +15,6 @@ Data returned from the financial institution about the owner or owners of an acc
 | `phoneNumbers` | [`PhoneNumber[]`](../../doc/models/phone-number.md) | Required | A list of phone numbers associated with the account by the financial institution. May be an empty array if no relevant information is returned from the financial institution. |
 | `emails` | [`Email[]`](../../doc/models/email.md) | Required | A list of email addresses associated with the account by the financial institution. May be an empty array if no relevant information is returned from the financial institution. |
 | `addresses` | [`Address[]`](../../doc/models/address.md) | Required | Data about the various addresses associated with the account by the financial institution. May be an empty array if no relevant information is returned from the financial institution. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -30,22 +27,14 @@ Data returned from the financial institution about the owner or owners of an acc
     {
       "data": "data0",
       "primary": false,
-      "type": "office",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "type": "office"
     }
   ],
   "emails": [
     {
       "data": "data6",
       "primary": false,
-      "type": "other",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "type": "other"
     }
   ],
   "addresses": [
@@ -55,23 +44,11 @@ Data returned from the financial institution about the owner or owners of an acc
         "region": "region6",
         "street": "street0",
         "postal_code": "postal_code2",
-        "country": "country4",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "country": "country4"
       },
-      "primary": false,
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "primary": false
     }
-  ],
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  ]
 }
 ```
 

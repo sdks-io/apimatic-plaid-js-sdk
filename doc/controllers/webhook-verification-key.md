@@ -1,12 +1,12 @@
 # Webhook Verification Key
 
 ```ts
-const webhookVerificationKeyApi = new WebhookVerificationKeyApi(client);
+const webhookVerificationKeyController = new WebhookVerificationKeyController(client);
 ```
 
 ## Class Name
 
-`WebhookVerificationKeyApi`
+`WebhookVerificationKeyController`
 
 
 # Webhook Verification Key Get
@@ -49,7 +49,7 @@ const body: WebhookVerificationKeyGetRequest = {
 };
 
 try {
-  const response = await webhookVerificationKeyApi.webhookVerificationKeyGet(body);
+  const response = await webhookVerificationKeyController.webhookVerificationKeyGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

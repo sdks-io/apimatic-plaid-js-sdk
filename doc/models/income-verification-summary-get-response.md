@@ -3,8 +3,6 @@
 
 IncomeVerificationSummaryGetResponse defines the response schema for `/income/verification/summary/get`.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `IncomeVerificationSummaryGetResponse`
@@ -16,7 +14,6 @@ IncomeVerificationSummaryGetResponse defines the response schema for `/income/ve
 | `incomeSummaries` | [`IncomeSummary[]`](../../doc/models/income-summary.md) | Required | A list of income summaries. |
 | `error` | [`Error \| undefined`](../../doc/models/error.md) | Optional | We use standard HTTP response codes for success and failure notifications, and our errors are further classified by `error_type`. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures, and 50X codes are for Plaid-related issues.  Error fields will be `null` if no error has occurred. |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,66 +23,34 @@ IncomeVerificationSummaryGetResponse defines the response schema for `/income/ve
     {
       "employer_name": {
         "value": "value8",
-        "verification_status": "UNKNOWN",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "verification_status": "UNKNOWN"
       },
       "employee_name": {
         "value": "value4",
-        "verification_status": "UNABLE_TO_VERIFY",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "verification_status": "UNABLE_TO_VERIFY"
       },
       "ytd_gross_income": {
         "value": 80.36,
-        "verification_status": "UNKNOWN",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "verification_status": "UNKNOWN"
       },
       "ytd_net_income": {
         "value": 101.8,
-        "verification_status": "UNABLE_TO_VERIFY",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "verification_status": "UNABLE_TO_VERIFY"
       },
       "pay_frequency": {
         "value": "monthly",
-        "verification_status": "UNABLE_TO_VERIFY",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "verification_status": "UNABLE_TO_VERIFY"
       },
       "projected_wage": {
         "value": 108.54,
-        "verification_status": "NEEDS_INFO",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "verification_status": "NEEDS_INFO"
       },
       "verified_transaction": {
         "description": "description8",
         "amount": 228.3,
         "date": "2016-03-13T12:52:32.123Z",
         "account_id": "account_id0",
-        "transaction_id": "transaction_id6",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "transaction_id": "transaction_id6"
       }
     }
   ],
@@ -112,15 +77,7 @@ IncomeVerificationSummaryGetResponse defines the response schema for `/income/ve
     ],
     "status": 217.06,
     "documentation_url": "documentation_url6",
-    "suggested_action": "suggested_action0",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    "suggested_action": "suggested_action0"
   }
 }
 ```

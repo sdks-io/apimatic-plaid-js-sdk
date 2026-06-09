@@ -3,8 +3,6 @@
 
 InvestmentsHoldingsGetResponse defines the response schema for `/investments/holdings/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `InvestmentsHoldingsGetResponse`
@@ -18,7 +16,6 @@ InvestmentsHoldingsGetResponse defines the response schema for `/investments/hol
 | `securities` | [`Security[]`](../../doc/models/security.md) | Required | Objects describing the securities held in the accounts associated with the Item. |
 | `item` | [`Item`](../../doc/models/item.md) | Required | Metadata about the Item. |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -33,22 +30,14 @@ InvestmentsHoldingsGetResponse defines the response schema for `/investments/hol
         "limit": 30.84,
         "iso_currency_code": "iso_currency_code6",
         "unofficial_currency_code": "unofficial_currency_code2",
-        "last_updated_datetime": "2016-03-13T12:52:32.123Z",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "last_updated_datetime": "2016-03-13T12:52:32.123Z"
       },
       "mask": "mask4",
       "name": "name0",
       "official_name": "official_name2",
       "type": "depository",
       "subtype": "consumer",
-      "verification_status": "automatically_verified",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "verification_status": "automatically_verified"
     }
   ],
   "holdings": [
@@ -61,11 +50,7 @@ InvestmentsHoldingsGetResponse defines the response schema for `/investments/hol
       "cost_basis": 171.84,
       "quantity": 180.32,
       "iso_currency_code": "iso_currency_code0",
-      "unofficial_currency_code": "unofficial_currency_code8",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "unofficial_currency_code": "unofficial_currency_code8"
     }
   ],
   "securities": [
@@ -84,11 +69,7 @@ InvestmentsHoldingsGetResponse defines the response schema for `/investments/hol
       "close_price": 88.1,
       "close_price_as_of": "2016-03-13T12:52:32.123Z",
       "iso_currency_code": "iso_currency_code4",
-      "unofficial_currency_code": "unofficial_currency_code4",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "unofficial_currency_code": "unofficial_currency_code4"
     }
   ],
   "item": {
@@ -117,11 +98,7 @@ InvestmentsHoldingsGetResponse defines the response schema for `/investments/hol
       ],
       "status": 217.06,
       "documentation_url": "documentation_url6",
-      "suggested_action": "suggested_action0",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "suggested_action": "suggested_action0"
     },
     "available_products": [
       "transfer",
@@ -132,17 +109,9 @@ InvestmentsHoldingsGetResponse defines the response schema for `/investments/hol
       "standing_orders"
     ],
     "consent_expiration_time": "2016-03-13T12:52:32.123Z",
-    "update_type": "background",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "update_type": "background"
   },
-  "request_id": "request_id4",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id4"
 }
 ```
 

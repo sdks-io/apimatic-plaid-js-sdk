@@ -3,8 +3,6 @@
 
 Defines the response schema for `/transfer/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `TransferGetResponse`
@@ -15,7 +13,6 @@ Defines the response schema for `/transfer/get`
 |  --- | --- | --- | --- |
 | `transfer` | [`Transfer`](../../doc/models/transfer.md) | Required | Represents a transfer within the Transfers API. |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -35,15 +32,7 @@ Defines the response schema for `/transfer/get`
         "city": "city6",
         "region": "region2",
         "postal_code": "postal_code8",
-        "country": "country0",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "country": "country0"
       }
     },
     "amount": "amount0",
@@ -54,28 +43,16 @@ Defines the response schema for `/transfer/get`
     "cancellable": false,
     "failure_reason": {
       "ach_return_code": "ach_return_code6",
-      "description": "description0",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "description": "description0"
     },
     "metadata": {
       "key0": "metadata5",
       "key1": "metadata4",
       "key2": "metadata3"
     },
-    "origination_account_id": "origination_account_id8",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "origination_account_id": "origination_account_id8"
   },
-  "request_id": "request_id8",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id8"
 }
 ```
 

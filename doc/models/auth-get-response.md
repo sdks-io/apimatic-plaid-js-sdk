@@ -3,8 +3,6 @@
 
 AuthGetResponse defines the response schema for `/auth/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `AuthGetResponse`
@@ -17,7 +15,6 @@ AuthGetResponse defines the response schema for `/auth/get`
 | `numbers` | [`AuthGetNumbers`](../../doc/models/auth-get-numbers.md) | Required | An object containing identifying numbers used for making electronic transfers to and from the `accounts`. The identifying number type (ACH, EFT, IBAN, or BACS) used will depend on the country of the account. An account may have more than one number type. If a particular identifying number type is not used by any `accounts` for which data has been requested, the array for that type will be empty. |
 | `item` | [`Item`](../../doc/models/item.md) | Required | Metadata about the Item. |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -32,22 +29,14 @@ AuthGetResponse defines the response schema for `/auth/get`
         "limit": 30.84,
         "iso_currency_code": "iso_currency_code6",
         "unofficial_currency_code": "unofficial_currency_code2",
-        "last_updated_datetime": "2016-03-13T12:52:32.123Z",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "last_updated_datetime": "2016-03-13T12:52:32.123Z"
       },
       "mask": "mask4",
       "name": "name0",
       "official_name": "official_name2",
       "type": "depository",
       "subtype": "consumer",
-      "verification_status": "automatically_verified",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "verification_status": "automatically_verified"
     }
   ],
   "numbers": {
@@ -56,11 +45,7 @@ AuthGetResponse defines the response schema for `/auth/get`
         "account_id": "account_id8",
         "account": "account6",
         "routing": "routing2",
-        "wire_routing": "wire_routing4",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "wire_routing": "wire_routing4"
       }
     ],
     "eft": [
@@ -68,39 +53,23 @@ AuthGetResponse defines the response schema for `/auth/get`
         "account_id": "account_id4",
         "account": "account2",
         "institution": "institution2",
-        "branch": "branch8",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "branch": "branch8"
       }
     ],
     "international": [
       {
         "account_id": "account_id2",
         "iban": "iban4",
-        "bic": "bic2",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "bic": "bic2"
       }
     ],
     "bacs": [
       {
         "account_id": "account_id6",
         "account": "account4",
-        "sort_code": "sort_code4",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "sort_code": "sort_code4"
       }
-    ],
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    ]
   },
   "item": {
     "item_id": "item_id2",
@@ -128,11 +97,7 @@ AuthGetResponse defines the response schema for `/auth/get`
       ],
       "status": 217.06,
       "documentation_url": "documentation_url6",
-      "suggested_action": "suggested_action0",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "suggested_action": "suggested_action0"
     },
     "available_products": [
       "transfer",
@@ -143,17 +108,9 @@ AuthGetResponse defines the response schema for `/auth/get`
       "standing_orders"
     ],
     "consent_expiration_time": "2016-03-13T12:52:32.123Z",
-    "update_type": "background",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "update_type": "background"
   },
-  "request_id": "request_id0",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id0"
 }
 ```
 

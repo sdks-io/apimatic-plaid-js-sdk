@@ -3,8 +3,6 @@
 
 InvestmentsTransactionsGetRequest defines the request schema for `/investments/transactions/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `InvestmentsTransactionsGetRequest`
@@ -19,7 +17,6 @@ InvestmentsTransactionsGetRequest defines the request schema for `/investments/t
 | `startDate` | `string` | Required | The earliest date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD. |
 | `endDate` | `string` | Required | The most recent date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD. |
 | `options` | [`InvestmentsTransactionsGetRequestOptions \| undefined`](../../doc/models/investments-transactions-get-request-options.md) | Optional | An optional object to filter `/investments/transactions/get` results. If provided, must be non-`null`. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -37,15 +34,7 @@ InvestmentsTransactionsGetRequest defines the request schema for `/investments/t
       "account_ids5"
     ],
     "count": 98,
-    "offset": 50,
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    "offset": 50
   }
 }
 ```

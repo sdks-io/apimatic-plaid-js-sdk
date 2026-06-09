@@ -3,8 +3,6 @@
 
 Fired when an Item was not verified via automated micro-deposits after ten days since the automated micro-deposit was made.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `VerificationExpiredWebhook`
@@ -17,7 +15,6 @@ Fired when an Item was not verified via automated micro-deposits after ten days 
 | `webhookCode` | `string` | Required | `VERIFICATION_EXPIRED` |
 | `itemId` | `string` | Required | The `item_id` of the Item associated with this webhook, warning, or error |
 | `accountId` | `string` | Required | The `account_id` of the account associated with the webhook |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,11 +23,7 @@ Fired when an Item was not verified via automated micro-deposits after ten days 
   "webhook_type": "webhook_type0",
   "webhook_code": "webhook_code0",
   "item_id": "item_id4",
-  "account_id": "account_id8",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "account_id": "account_id8"
 }
 ```
 

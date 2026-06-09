@@ -1,12 +1,12 @@
 # Asset Report
 
 ```ts
-const assetReportApi = new AssetReportApi(client);
+const assetReportController = new AssetReportController(client);
 ```
 
 ## Class Name
 
-`AssetReportApi`
+`AssetReportController`
 
 ## Methods
 
@@ -62,7 +62,7 @@ const body: AssetReportAuditCopyCreateRequest = {
 };
 
 try {
-  const response = await assetReportApi.assetReportAuditCopyCreate(body);
+  const response = await assetReportController.assetReportAuditCopyCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -135,7 +135,7 @@ const body: AssetReportRefreshRequest = {
 };
 
 try {
-  const response = await assetReportApi.assetReportRefresh(body);
+  const response = await assetReportController.assetReportRefresh(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -217,7 +217,7 @@ const body: AssetReportFilterRequest = {
 };
 
 try {
-  const response = await assetReportApi.assetReportFilter(body);
+  const response = await assetReportController.assetReportFilter(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -298,7 +298,7 @@ const body: AssetReportCreateRequest = {
 };
 
 try {
-  const response = await assetReportApi.assetReportCreate(body);
+  const response = await assetReportController.assetReportCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -372,7 +372,7 @@ const body: AssetReportRemoveRequest = {
 };
 
 try {
-  const response = await assetReportApi.assetReportRemove(body);
+  const response = await assetReportController.assetReportRemove(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -417,7 +417,7 @@ Find out more here: [/api/products/#asset_reportpdfget](/api/products/#asset_rep
 
 ```ts
 async assetReportPdfGet(
-  body: AssetReportPdfGetRequest,
+  body: AssetReportPDFGetRequest,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<unknown>>
 ```
@@ -430,7 +430,7 @@ This endpoint requires [PLAID-CLIENT-ID](../../doc/auth/custom-header-signature.
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`AssetReportPdfGetRequest`](../../doc/models/asset-report-pdf-get-request.md) | Body, Required | - |
+| `body` | [`AssetReportPDFGetRequest`](../../doc/models/asset-report-pdf-get-request.md) | Body, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
@@ -442,12 +442,12 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ## Example Usage
 
 ```ts
-const body: AssetReportPdfGetRequest = {
+const body: AssetReportPDFGetRequest = {
   assetReportToken: 'asset_report_token6',
 };
 
 try {
-  const response = await assetReportApi.assetReportPdfGet(body);
+  const response = await assetReportController.assetReportPdfGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -513,7 +513,7 @@ const body: AssetReportGetRequest = {
 };
 
 try {
-  const response = await assetReportApi.assetReportGet(body);
+  const response = await assetReportController.assetReportGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -893,7 +893,7 @@ const body: AssetReportAuditCopyRemoveRequest = {
 };
 
 try {
-  const response = await assetReportApi.assetReportAuditCopyRemove(body);
+  const response = await assetReportController.assetReportAuditCopyRemove(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -964,7 +964,7 @@ const body: AssetReportAuditCopyGetRequest = {
 };
 
 try {
-  const response = await assetReportApi.assetReportAuditCopyGet(body);
+  const response = await assetReportController.assetReportAuditCopyGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

@@ -3,8 +3,6 @@
 
 InvestmentsTransactionsGetResponse defines the response schema for `/investments/transactions/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `InvestmentsTransactionsGetResponse`
@@ -19,7 +17,6 @@ InvestmentsTransactionsGetResponse defines the response schema for `/investments
 | `investmentTransactions` | [`InvestmentTransaction[]`](../../doc/models/investment-transaction.md) | Required | The transactions being fetched |
 | `totalInvestmentTransactions` | `number` | Required | The total number of transactions available within the date range specified. If `total_investment_transactions` is larger than the size of the `transactions` array, more transactions are available and can be fetched via manipulating the `offset` parameter.' |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -51,11 +48,7 @@ InvestmentsTransactionsGetResponse defines the response schema for `/investments
       ],
       "status": 217.06,
       "documentation_url": "documentation_url6",
-      "suggested_action": "suggested_action0",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "suggested_action": "suggested_action0"
     },
     "available_products": [
       "transfer",
@@ -66,11 +59,7 @@ InvestmentsTransactionsGetResponse defines the response schema for `/investments
       "standing_orders"
     ],
     "consent_expiration_time": "2016-03-13T12:52:32.123Z",
-    "update_type": "background",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "update_type": "background"
   },
   "accounts": [
     {
@@ -81,22 +70,14 @@ InvestmentsTransactionsGetResponse defines the response schema for `/investments
         "limit": 30.84,
         "iso_currency_code": "iso_currency_code6",
         "unofficial_currency_code": "unofficial_currency_code2",
-        "last_updated_datetime": "2016-03-13T12:52:32.123Z",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "last_updated_datetime": "2016-03-13T12:52:32.123Z"
       },
       "mask": "mask4",
       "name": "name0",
       "official_name": "official_name2",
       "type": "depository",
       "subtype": "consumer",
-      "verification_status": "automatically_verified",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "verification_status": "automatically_verified"
     }
   ],
   "securities": [
@@ -115,11 +96,7 @@ InvestmentsTransactionsGetResponse defines the response schema for `/investments
       "close_price": 88.1,
       "close_price_as_of": "2016-03-13T12:52:32.123Z",
       "iso_currency_code": "iso_currency_code4",
-      "unofficial_currency_code": "unofficial_currency_code4",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "unofficial_currency_code": "unofficial_currency_code4"
     }
   ],
   "investment_transactions": [
@@ -137,19 +114,11 @@ InvestmentsTransactionsGetResponse defines the response schema for `/investments
       "type": "cancel",
       "subtype": "dividend reinvestment",
       "iso_currency_code": "iso_currency_code0",
-      "unofficial_currency_code": "unofficial_currency_code8",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "unofficial_currency_code": "unofficial_currency_code8"
     }
   ],
   "total_investment_transactions": 68,
-  "request_id": "request_id8",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id8"
 }
 ```
 

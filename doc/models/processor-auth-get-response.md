@@ -3,8 +3,6 @@
 
 ProcessorAuthGetResponse defines the response schema for `/processor/auth/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `ProcessorAuthGetResponse`
@@ -16,7 +14,6 @@ ProcessorAuthGetResponse defines the response schema for `/processor/auth/get`
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
 | `numbers` | [`ProcessorNumber`](../../doc/models/processor-number.md) | Required | An object containing identifying numbers used for making electronic transfers to and from the `account`. The identifying number type (ACH, EFT, IBAN, or BACS) used will depend on the country of the account. An account may have more than one number type. If a particular identifying number type is not used by the `account` for which auth data has been requested, a null value will be returned. |
 | `account` | [`Account`](../../doc/models/account.md) | Required | A single account at a financial institution. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,43 +25,23 @@ ProcessorAuthGetResponse defines the response schema for `/processor/auth/get`
       "account_id": "account_id8",
       "account": "account6",
       "routing": "routing2",
-      "wire_routing": "wire_routing4",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "wire_routing": "wire_routing4"
     },
     "eft": {
       "account_id": "account_id4",
       "account": "account2",
       "institution": "institution2",
-      "branch": "branch8",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "branch": "branch8"
     },
     "international": {
       "account_id": "account_id2",
       "iban": "iban4",
-      "bic": "bic2",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "bic": "bic2"
     },
     "bacs": {
       "account_id": "account_id6",
       "account": "account4",
-      "sort_code": "sort_code4",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
-    },
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
+      "sort_code": "sort_code4"
     }
   },
   "account": {
@@ -75,26 +52,14 @@ ProcessorAuthGetResponse defines the response schema for `/processor/auth/get`
       "limit": 30.84,
       "iso_currency_code": "iso_currency_code6",
       "unofficial_currency_code": "unofficial_currency_code2",
-      "last_updated_datetime": "2016-03-13T12:52:32.123Z",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "last_updated_datetime": "2016-03-13T12:52:32.123Z"
     },
     "mask": "mask4",
     "name": "name0",
     "official_name": "official_name2",
     "type": "brokerage",
     "subtype": "tfsa",
-    "verification_status": "pending_manual_verification",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    "verification_status": "pending_manual_verification"
   }
 }
 ```

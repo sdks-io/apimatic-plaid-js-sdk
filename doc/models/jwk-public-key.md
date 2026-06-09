@@ -1,13 +1,11 @@
 
-# Jwk Public Key
+# JWK Public Key
 
 A JSON Web Key (JWK) that can be used in conjunction with [JWT libraries](https://jwt.io/#libraries-io) to verify Plaid webhooks
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
-`JwkPublicKey`
+`JWKPublicKey`
 
 ## Fields
 
@@ -22,7 +20,6 @@ A JSON Web Key (JWK) that can be used in conjunction with [JWT libraries](https:
 | `y` | `string` | Required | The y member contains the y coordinate for the elliptic curve point. |
 | `createdAt` | `number` | Required | The timestamp when the key was created, in Unix time. |
 | `expiredAt` | `number \| null` | Required | The timestamp when the key expired, in Unix time. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -36,11 +33,7 @@ A JSON Web Key (JWK) that can be used in conjunction with [JWT libraries](https:
   "x": "x8",
   "y": "y6",
   "created_at": 188,
-  "expired_at": 142,
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "expired_at": 142
 }
 ```
 

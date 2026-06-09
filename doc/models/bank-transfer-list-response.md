@@ -3,8 +3,6 @@
 
 Defines the response schema for `/bank_transfer/list`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `BankTransferListResponse`
@@ -15,7 +13,6 @@ Defines the response schema for `/bank_transfer/list`
 |  --- | --- | --- | --- |
 | `bankTransfers` | [`BankTransfer[]`](../../doc/models/bank-transfer.md) | Required | - |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -30,11 +27,7 @@ Defines the response schema for `/bank_transfer/list`
       "user": {
         "legal_name": "legal_name8",
         "email_address": "email_address2",
-        "routing_number": "routing_number4",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "routing_number": "routing_number4"
       },
       "amount": "amount2",
       "iso_currency_code": "iso_currency_code0",
@@ -45,29 +38,17 @@ Defines the response schema for `/bank_transfer/list`
       "cancellable": false,
       "failure_reason": {
         "ach_return_code": "ach_return_code6",
-        "description": "description0",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "description": "description0"
       },
       "custom_tag": "custom_tag2",
       "metadata": {
         "key0": "metadata7"
       },
       "origination_account_id": "origination_account_id6",
-      "direction": "outbound",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "direction": "outbound"
     }
   ],
-  "request_id": "request_id0",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id0"
 }
 ```
 

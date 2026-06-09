@@ -3,8 +3,6 @@
 
 Defines the response schema for `/transfer/event/list`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `TransferEventListResponse`
@@ -15,7 +13,6 @@ Defines the response schema for `/transfer/event/list`
 |  --- | --- | --- | --- |
 | `transferEvents` | [`TransferEvent[]`](../../doc/models/transfer-event.md) | Required | - |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -33,23 +30,11 @@ Defines the response schema for `/transfer/event/list`
       "transfer_amount": "transfer_amount8",
       "failure_reason": {
         "ach_return_code": "ach_return_code6",
-        "description": "description0",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "description": "description0"
       }
     }
   ],
-  "request_id": "request_id2",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id2"
 }
 ```
 

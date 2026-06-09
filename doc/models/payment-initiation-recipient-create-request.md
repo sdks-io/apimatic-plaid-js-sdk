@@ -3,8 +3,6 @@
 
 PaymentInitiationRecipientCreateRequest defines the request schema for `/payment_initiation/recipient/create`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `PaymentInitiationRecipientCreateRequest`
@@ -17,9 +15,8 @@ PaymentInitiationRecipientCreateRequest defines the request schema for `/payment
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `name` | `string` | Required | The name of the recipient<br><br>**Constraints**: *Minimum Length*: `1` |
 | `iban` | `string \| null \| undefined` | Optional | The International Bank Account Number (IBAN) for the recipient. If BACS data is not provided, an IBAN is required.<br><br>**Constraints**: *Minimum Length*: `15`, *Maximum Length*: `34` |
-| `bacs` | [`RecipientBacsNullable \| undefined`](../../doc/models/recipient-bacs-nullable.md) | Optional | - |
+| `bacs` | [`RecipientBACSNullable \| undefined`](../../doc/models/recipient-bacs-nullable.md) | Optional | - |
 | `address` | [`PaymentInitiationAddress \| undefined`](../../doc/models/payment-initiation-address.md) | Optional | The optional address of the payment recipient. This object is not currently required to make payments from UK institutions and should not be populated, though may be necessary for future European expansion. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -31,11 +28,7 @@ PaymentInitiationRecipientCreateRequest defines the request schema for `/payment
   "iban": "iban8",
   "bacs": {
     "account": "account4",
-    "sort_code": "sort_code4",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "sort_code": "sort_code4"
   },
   "address": {
     "street": [
@@ -43,15 +36,7 @@ PaymentInitiationRecipientCreateRequest defines the request schema for `/payment
     ],
     "city": "city6",
     "postal_code": "postal_code8",
-    "country": "country0",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    "country": "country0"
   }
 }
 ```

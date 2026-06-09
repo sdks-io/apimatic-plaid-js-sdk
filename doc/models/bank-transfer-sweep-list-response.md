@@ -3,8 +3,6 @@
 
 BankTransferSweepListResponse defines the response schema for `/bank_transfer/sweep/list`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `BankTransferSweepListResponse`
@@ -15,7 +13,6 @@ BankTransferSweepListResponse defines the response schema for `/bank_transfer/sw
 |  --- | --- | --- | --- |
 | `sweeps` | [`BankTransferSweep[]`](../../doc/models/bank-transfer-sweep.md) | Required | - |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -30,23 +27,11 @@ BankTransferSweepListResponse defines the response schema for `/bank_transfer/sw
       "iso_currency_code": "iso_currency_code4",
       "sweep_account": {
         "account_number": "account_number2",
-        "routing_number": "routing_number2",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "routing_number": "routing_number2"
       }
     }
   ],
-  "request_id": "request_id6",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id6"
 }
 ```
 

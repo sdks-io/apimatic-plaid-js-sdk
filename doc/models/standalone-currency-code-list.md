@@ -3,8 +3,6 @@
 
 The following currency codes are supported by Plaid.
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `StandaloneCurrencyCodeList`
@@ -15,7 +13,6 @@ The following currency codes are supported by Plaid.
 |  --- | --- | --- | --- |
 | `isoCurrencyCode` | `string` | Required | Plaid supports all ISO 4217 currency codes. |
 | `unofficialCurrencyCode` | [`UnofficialCurrencyCodeList`](../../doc/models/unofficial-currency-code-list.md) | Required | List of unofficial currency codes |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -44,15 +41,7 @@ The following currency codes are supported by Plaid.
     "XMR": "XMR0",
     "XRP": "XRP0",
     "ZEC": "ZEC4",
-    "ZRX": "ZRX2",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
-  },
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
+    "ZRX": "ZRX2"
   }
 }
 ```

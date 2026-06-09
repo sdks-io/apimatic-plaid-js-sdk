@@ -3,8 +3,6 @@
 
 Defines the response schema for `/bank_transfer/event/sync`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `BankTransferEventSyncResponse`
@@ -15,7 +13,6 @@ Defines the response schema for `/bank_transfer/event/sync`
 |  --- | --- | --- | --- |
 | `bankTransferEvents` | [`BankTransferEvent[]`](../../doc/models/bank-transfer-event.md) | Required | - |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -34,31 +31,15 @@ Defines the response schema for `/bank_transfer/event/sync`
       "bank_transfer_iso_currency_code": "bank_transfer_iso_currency_code4",
       "failure_reason": {
         "ach_return_code": "ach_return_code6",
-        "description": "description0",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
+        "description": "description0"
       },
       "direction": "outbound",
       "receiver_details": {
-        "available_balance": "positive",
-        "exampleAdditionalProperty": {
-          "key1": "val1",
-          "key2": "val2"
-        }
-      },
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
+        "available_balance": "positive"
       }
     }
   ],
-  "request_id": "request_id0",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id0"
 }
 ```
 

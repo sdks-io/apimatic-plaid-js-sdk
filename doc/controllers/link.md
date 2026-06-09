@@ -1,12 +1,12 @@
 # Link
 
 ```ts
-const linkApi = new LinkApi(client);
+const linkController = new LinkController(client);
 ```
 
 ## Class Name
 
-`LinkApi`
+`LinkController`
 
 ## Methods
 
@@ -53,7 +53,7 @@ const body: LinkTokenGetRequest = {
 };
 
 try {
-  const response = await linkApi.linkTokenGet(body);
+  const response = await linkController.linkTokenGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -147,7 +147,7 @@ const body: LinkTokenCreateRequest = {
   clientName: 'client_name0',
   language: 'language8',
   countryCodes: [
-    CountryCode.Ca
+    CountryCodeEnum.CA
   ],
   user: {
     clientUserId: 'client_user_id4',
@@ -155,7 +155,7 @@ const body: LinkTokenCreateRequest = {
 };
 
 try {
-  const response = await linkApi.linkTokenCreate(body);
+  const response = await linkController.linkTokenCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

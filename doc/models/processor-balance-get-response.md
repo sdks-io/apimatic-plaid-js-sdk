@@ -3,8 +3,6 @@
 
 ProcessorBalanceGetResponse defines the response schema for `/processor/balance/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `ProcessorBalanceGetResponse`
@@ -15,7 +13,6 @@ ProcessorBalanceGetResponse defines the response schema for `/processor/balance/
 |  --- | --- | --- | --- |
 | `account` | [`Account`](../../doc/models/account.md) | Required | A single account at a financial institution. |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -29,28 +26,16 @@ ProcessorBalanceGetResponse defines the response schema for `/processor/balance/
       "limit": 30.84,
       "iso_currency_code": "iso_currency_code6",
       "unofficial_currency_code": "unofficial_currency_code2",
-      "last_updated_datetime": "2016-03-13T12:52:32.123Z",
-      "exampleAdditionalProperty": {
-        "key1": "val1",
-        "key2": "val2"
-      }
+      "last_updated_datetime": "2016-03-13T12:52:32.123Z"
     },
     "mask": "mask4",
     "name": "name0",
     "official_name": "official_name2",
     "type": "brokerage",
     "subtype": "tfsa",
-    "verification_status": "pending_manual_verification",
-    "exampleAdditionalProperty": {
-      "key1": "val1",
-      "key2": "val2"
-    }
+    "verification_status": "pending_manual_verification"
   },
-  "request_id": "request_id2",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "request_id": "request_id2"
 }
 ```
 

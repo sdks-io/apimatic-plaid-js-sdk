@@ -3,8 +3,6 @@
 
 SignalReturnReportRequest defines the request schema for `/signal/return/report`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `SignalReturnReportRequest`
@@ -17,7 +15,6 @@ SignalReturnReportRequest defines the request schema for `/signal/return/report`
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `clientTransactionId` | `string` | Required | Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate` |
 | `returnCode` | `string` | Required | Must be a valid ACH return code (e.g. "R01") |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,11 +23,7 @@ SignalReturnReportRequest defines the request schema for `/signal/return/report`
   "client_id": "client_id8",
   "secret": "secret8",
   "client_transaction_id": "client_transaction_id6",
-  "return_code": "return_code6",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "return_code": "return_code6"
 }
 ```
 

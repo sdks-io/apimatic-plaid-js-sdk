@@ -3,8 +3,6 @@
 
 ItemGetRequest defines the request schema for `/item/get`
 
-*This model accepts additional fields of type unknown.*
-
 ## Structure
 
 `ItemGetRequest`
@@ -16,7 +14,6 @@ ItemGetRequest defines the request schema for `/item/get`
 | `clientId` | `string \| undefined` | Optional | Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body. |
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `accessToken` | `string` | Required | The access token associated with the Item data is being requested for. |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -24,11 +21,7 @@ ItemGetRequest defines the request schema for `/item/get`
 {
   "client_id": "client_id0",
   "secret": "secret4",
-  "access_token": "access_token6",
-  "exampleAdditionalProperty": {
-    "key1": "val1",
-    "key2": "val2"
-  }
+  "access_token": "access_token6"
 }
 ```
 
