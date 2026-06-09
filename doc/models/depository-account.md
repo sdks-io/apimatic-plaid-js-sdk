@@ -3,6 +3,8 @@
 
 An account type holding cash, in which funds are deposited. Supported products for `depository` accounts are: Auth, Balance, Transactions, Identity, Payment Initiation, and Assets.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `DepositoryAccount`
@@ -20,6 +22,7 @@ An account type holding cash, in which funds are deposited. Supported products f
 | `prepaid` | `string` | Required | Prepaid debit card |
 | `cashManagement` | `string` | Required | A cash management account, typically a cash account at a brokerage |
 | `ebt` | `string` | Required | An Electronic Benefit Transfer (EBT) account, used by certain public assistance programs to distribute funds (US only) |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -33,7 +36,11 @@ An account type holding cash, in which funds are deposited. Supported products f
   "paypal": "paypal2",
   "prepaid": "prepaid8",
   "cash management": "cash management8",
-  "ebt": "ebt0"
+  "ebt": "ebt0",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

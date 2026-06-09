@@ -3,6 +3,8 @@
 
 Data about the owner or owners of an account. Any fields not specified will be filled in with default Sandbox information.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `OwnerOverride`
@@ -15,6 +17,7 @@ Data about the owner or owners of an account. Any fields not specified will be f
 | `phoneNumbers` | [`PhoneNumber[]`](../../doc/models/phone-number.md) | Required | A list of phone numbers associated with the account. |
 | `emails` | [`Email[]`](../../doc/models/email.md) | Required | A list of email addresses associated with the account. |
 | `addresses` | [`Address[]`](../../doc/models/address.md) | Required | Data about the various addresses associated with the account. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -29,14 +32,22 @@ Data about the owner or owners of an account. Any fields not specified will be f
     {
       "data": "data0",
       "primary": false,
-      "type": "office"
+      "type": "office",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
   ],
   "emails": [
     {
       "data": "data6",
       "primary": false,
-      "type": "other"
+      "type": "other",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
   ],
   "addresses": [
@@ -46,11 +57,23 @@ Data about the owner or owners of an account. Any fields not specified will be f
         "region": "region6",
         "street": "street0",
         "postal_code": "postal_code2",
-        "country": "country4"
+        "country": "country4",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
-      "primary": false
+      "primary": false,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

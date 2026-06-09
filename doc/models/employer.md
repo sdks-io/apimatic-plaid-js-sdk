@@ -3,6 +3,8 @@
 
 Data about the employer.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `Employer`
@@ -15,6 +17,7 @@ Data about the employer.
 | `name` | `string` | Required | The name of the employer |
 | `address` | [`AddressDataNullable`](../../doc/models/address-data-nullable.md) | Required | - |
 | `confidenceScore` | `number` | Required | A number from 0 to 1 indicating Plaid's level of confidence in the pairing between the employer and the institution (not yet implemented). |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -27,9 +30,17 @@ Data about the employer.
     "region": "region2",
     "street": "street6",
     "postal_code": "postal_code8",
-    "country": "country0"
+    "country": "country0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
-  "confidence_score": 116.56
+  "confidence_score": 116.56,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

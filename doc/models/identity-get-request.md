@@ -3,6 +3,8 @@
 
 IdentityGetRequest defines the request schema for `/identity/get`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `IdentityGetRequest`
@@ -15,6 +17,7 @@ IdentityGetRequest defines the request schema for `/identity/get`
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `accessToken` | `string` | Required | The access token associated with the Item data is being requested for. |
 | `options` | [`IdentityGetRequestOptions \| undefined`](../../doc/models/identity-get-request-options.md) | Optional | An optional object to filter `/identity/get` results. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,7 +31,15 @@ IdentityGetRequest defines the request schema for `/identity/get`
       "account_ids3",
       "account_ids4",
       "account_ids5"
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

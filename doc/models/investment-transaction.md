@@ -3,6 +3,8 @@
 
 A transaction within an investment account.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `InvestmentTransaction`
@@ -21,10 +23,11 @@ A transaction within an investment account.
 | `amount` | `number` | Required | The complete value of the transaction. Positive values when cash is debited, e.g. purchases of stock; negative values when cash is credited, e.g. sales of stock. Treatment remains the same for cash-only movements unassociated with securities. |
 | `price` | `number` | Required | The price of the security at which this transaction occurred. |
 | `fees` | `number \| null` | Required | The combined value of all fees applied to this transaction |
-| `type` | [`Type4Enum`](../../doc/models/type-4-enum.md) | Required | Value is one of the following:<br>`buy`: Buying an investment<br>`sell`: Selling an investment<br>`cancel`: A cancellation of a pending transaction<br>`cash`: Activity that modifies a cash position<br>`fee`: A fee on the account<br>`transfer`: Activity which modifies a position, but not through buy/sell activity e.g. options exercise, portfolio transfer<br><br>For descriptions of possible transaction types and subtypes, see the [Investment transaction types schema](https://plaid.com/docs/api/accounts/#investment-transaction-types-schema). |
-| `subtype` | [`SubtypeEnum`](../../doc/models/subtype-enum.md) | Required | For descriptions of possible transaction types and subtypes, see the [Investment transaction types schema](https://plaid.com/docs/api/accounts/#investment-transaction-types-schema). |
+| `type` | [`Type4`](../../doc/models/type-4.md) | Required | Value is one of the following:<br>`buy`: Buying an investment<br>`sell`: Selling an investment<br>`cancel`: A cancellation of a pending transaction<br>`cash`: Activity that modifies a cash position<br>`fee`: A fee on the account<br>`transfer`: Activity which modifies a position, but not through buy/sell activity e.g. options exercise, portfolio transfer<br><br>For descriptions of possible transaction types and subtypes, see the [Investment transaction types schema](https://plaid.com/docs/api/accounts/#investment-transaction-types-schema). |
+| `subtype` | [`Subtype`](../../doc/models/subtype.md) | Required | For descriptions of possible transaction types and subtypes, see the [Investment transaction types schema](https://plaid.com/docs/api/accounts/#investment-transaction-types-schema). |
 | `isoCurrencyCode` | `string \| null` | Required | The ISO-4217 currency code of the transaction. Always `null` if `unofficial_currency_code` is non-`null`. |
 | `unofficialCurrencyCode` | `string \| null` | Required | The unofficial currency code associated with the holding. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.<br><br>See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -43,7 +46,11 @@ A transaction within an investment account.
   "type": "fee",
   "subtype": "spin off",
   "iso_currency_code": "iso_currency_code4",
-  "unofficial_currency_code": "unofficial_currency_code4"
+  "unofficial_currency_code": "unofficial_currency_code4",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

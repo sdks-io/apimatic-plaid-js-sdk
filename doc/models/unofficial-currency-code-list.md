@@ -3,6 +3,8 @@
 
 List of unofficial currency codes
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `UnofficialCurrencyCodeList`
@@ -11,28 +13,29 @@ List of unofficial currency codes
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `aDA` | `string` | Required | Cardano |
-| `bAT` | `string` | Required | Basic Attention Token |
-| `bCH` | `string` | Required | Bitcoin Cash |
-| `bNB` | `string` | Required | Binance Coin |
-| `bTC` | `string` | Required | Bitcoin |
-| `bTG` | `string` | Required | Bitcoin Gold |
-| `cNH` | `string` | Required | Chinese Yuan (offshore) |
-| `dASH` | `string` | Required | Dash |
-| `dOGE` | `string` | Required | Dogecoin |
-| `eTC` | `string` | Required | Ethereum Classic |
-| `eTH` | `string` | Required | Ethereum |
-| `gBX` | `string` | Required | Pence sterling, i.e. British penny |
-| `lSK` | `string` | Required | Lisk |
-| `nEO` | `string` | Required | Neo |
-| `oMG` | `string` | Required | OmiseGO |
-| `qTUM` | `string` | Required | Qtum |
-| `uSDT` | `string` | Required | TehterUS |
-| `xLM` | `string` | Required | Stellar Lumen |
-| `xMR` | `string` | Required | Monero |
-| `xRP` | `string` | Required | Ripple |
-| `zEC` | `string` | Required | Zcash |
-| `zRX` | `string` | Required | 0x |
+| `ada` | `string` | Required | Cardano |
+| `bat` | `string` | Required | Basic Attention Token |
+| `bch` | `string` | Required | Bitcoin Cash |
+| `bnb` | `string` | Required | Binance Coin |
+| `btc` | `string` | Required | Bitcoin |
+| `btg` | `string` | Required | Bitcoin Gold |
+| `cnh` | `string` | Required | Chinese Yuan (offshore) |
+| `dash` | `string` | Required | Dash |
+| `doge` | `string` | Required | Dogecoin |
+| `etc` | `string` | Required | Ethereum Classic |
+| `eth` | `string` | Required | Ethereum |
+| `gbx` | `string` | Required | Pence sterling, i.e. British penny |
+| `lsk` | `string` | Required | Lisk |
+| `neo` | `string` | Required | Neo |
+| `omg` | `string` | Required | OmiseGO |
+| `qtum` | `string` | Required | Qtum |
+| `usdt` | `string` | Required | TehterUS |
+| `xlm` | `string` | Required | Stellar Lumen |
+| `xmr` | `string` | Required | Monero |
+| `xrp` | `string` | Required | Ripple |
+| `zec` | `string` | Required | Zcash |
+| `zrx` | `string` | Required | 0x |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -59,7 +62,11 @@ List of unofficial currency codes
   "XMR": "XMR0",
   "XRP": "XRP0",
   "ZEC": "ZEC4",
-  "ZRX": "ZRX8"
+  "ZRX": "ZRX8",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -3,6 +3,8 @@
 
 PaymentInitiationRecipient defines a payment initiation recipient
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `PaymentInitiationRecipient`
@@ -15,8 +17,9 @@ PaymentInitiationRecipient defines a payment initiation recipient
 | `name` | `string` | Required | The name of the recipient. |
 | `address` | [`PaymentInitiationAddress \| undefined`](../../doc/models/payment-initiation-address.md) | Optional | The optional address of the payment recipient. This object is not currently required to make payments from UK institutions and should not be populated, though may be necessary for future European expansion. |
 | `iban` | `string \| null \| undefined` | Optional | The International Bank Account Number (IBAN) for the recipient. |
-| `bacs` | [`RecipientBACSNullable \| undefined`](../../doc/models/recipient-bacs-nullable.md) | Optional | - |
+| `bacs` | [`RecipientBacsNullable \| undefined`](../../doc/models/recipient-bacs-nullable.md) | Optional | - |
 | `emiRecipientId` | `string \| null \| undefined` | Optional | The EMI (E-Money Institution) recipient that this recipient is associated with, if any. This EMI recipient is used as an intermediary account to enable Plaid to reconcile the settlement of funds for Payment Initiation requests. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -30,14 +33,26 @@ PaymentInitiationRecipient defines a payment initiation recipient
     ],
     "city": "city6",
     "postal_code": "postal_code8",
-    "country": "country0"
+    "country": "country0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "iban": "iban6",
   "bacs": {
     "account": "account4",
-    "sort_code": "sort_code4"
+    "sort_code": "sort_code4",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
-  "emi_recipient_id": "emi_recipient_id2"
+  "emi_recipient_id": "emi_recipient_id2",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

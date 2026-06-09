@@ -1,12 +1,12 @@
 # Institutions
 
 ```ts
-const institutionsController = new InstitutionsController(client);
+const institutionsApi = new InstitutionsApi(client);
 ```
 
 ## Class Name
 
-`InstitutionsController`
+`InstitutionsApi`
 
 ## Methods
 
@@ -51,12 +51,12 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const body: InstitutionsGetByIdRequest = {
   institutionId: 'institution_id4',
   countryCodes: [
-    CountryCodeEnum.CA
+    CountryCode.Ca
   ],
 };
 
 try {
-  const response = await institutionsController.institutionsGetById(body);
+  const response = await institutionsApi.institutionsGetById(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -242,12 +242,12 @@ const body: InstitutionsGetRequest = {
   count: 52,
   offset: 4,
   countryCodes: [
-    CountryCodeEnum.CA
+    CountryCode.Ca
   ],
 };
 
 try {
-  const response = await institutionsController.institutionsGet(body);
+  const response = await institutionsApi.institutionsGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -378,15 +378,15 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const body: InstitutionsSearchRequest = {
   query: 'query6',
   products: [
-    ProductsEnum.Balance
+    Products.Balance
   ],
   countryCodes: [
-    CountryCodeEnum.CA
+    CountryCode.Ca
   ],
 };
 
 try {
-  const response = await institutionsController.institutionsSearch(body);
+  const response = await institutionsApi.institutionsSearch(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

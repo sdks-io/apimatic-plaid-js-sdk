@@ -5,6 +5,8 @@ Transaction information specific to inter-bank transfers. If the transaction was
 
 If the `transactions` object was returned by a Transactions endpoint such as `/transactions/get`, the `payment_meta` key will always appear, but no data elements are guaranteed. If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get/` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `PaymentMeta`
@@ -21,6 +23,7 @@ If the `transactions` object was returned by a Transactions endpoint such as `/t
 | `paymentMethod` | `string \| null` | Required | The type of transfer, e.g. 'ACH' |
 | `paymentProcessor` | `string \| null` | Required | The name of the payment processor |
 | `reason` | `string \| null` | Required | The payer-supplied description of the transfer. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -33,7 +36,11 @@ If the `transactions` object was returned by a Transactions endpoint such as `/t
   "payer": "payer6",
   "payment_method": "payment_method2",
   "payment_processor": "payment_processor2",
-  "reason": "reason8"
+  "reason": "reason8",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

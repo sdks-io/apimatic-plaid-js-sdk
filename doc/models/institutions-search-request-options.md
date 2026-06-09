@@ -3,6 +3,8 @@
 
 An optional object to filter `/institutions/search` results.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `InstitutionsSearchRequestOptions`
@@ -16,6 +18,7 @@ An optional object to filter `/institutions/search` results.
 | `includeAuthMetadata` | `boolean \| undefined` | Optional | When `true`, returns metadata related to the Auth product indicating which auth methods are supported.<br><br>**Default**: `false` |
 | `includePaymentInitiationMetadata` | `boolean \| undefined` | Optional | When `true`, returns metadata related to the Payment Initiation product indicating which payment configurations are supported.<br><br>**Default**: `false` |
 | `paymentInitiation` | [`InstitutionsSearchPaymentInitiationOptions \| undefined`](../../doc/models/institutions-search-payment-initiation-options.md) | Optional | Additional options that will be used to filter institutions by various Payment Initiation configurations. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,7 +29,15 @@ An optional object to filter `/institutions/search` results.
   "oauth": false,
   "include_optional_metadata": false,
   "payment_initiation": {
-    "payment_id": "payment_id6"
+    "payment_id": "payment_id6",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

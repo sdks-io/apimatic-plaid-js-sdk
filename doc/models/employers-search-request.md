@@ -3,6 +3,8 @@
 
 EmployersSearchRequest defines the request schema for `/employers/search`.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `EmployersSearchRequest`
@@ -15,6 +17,7 @@ EmployersSearchRequest defines the request schema for `/employers/search`.
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `query` | `string` | Required | The employer name to be searched for. |
 | `products` | `string[]` | Required | The Plaid products the returned employers should support. Currently, this field must be set to `"deposit_switch"`. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -27,7 +30,11 @@ EmployersSearchRequest defines the request schema for `/employers/search`.
     "products2",
     "products3",
     "products4"
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

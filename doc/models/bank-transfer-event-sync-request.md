@@ -3,6 +3,8 @@
 
 Defines the request schema for `/bank_transfer/event/sync`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `BankTransferEventSyncRequest`
@@ -15,6 +17,7 @@ Defines the request schema for `/bank_transfer/event/sync`
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `afterId` | `number` | Required | The latest (largest) `event_id` fetched via the sync endpoint, or 0 initially.<br><br>**Constraints**: `>= 0` |
 | `count` | `number \| null \| undefined` | Optional | The maximum number of bank transfer events to return.<br><br>**Default**: `25`<br><br>**Constraints**: `>= 1`, `<= 25` |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -23,7 +26,11 @@ Defines the request schema for `/bank_transfer/event/sync`
   "after_id": 112,
   "count": 25,
   "client_id": "client_id8",
-  "secret": "secret4"
+  "secret": "secret4",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

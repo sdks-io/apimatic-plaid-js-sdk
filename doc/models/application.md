@@ -3,6 +3,8 @@
 
 Metadata about the application
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `Application`
@@ -17,6 +19,7 @@ Metadata about the application
 | `logoUrl` | `string \| null` | Required | A URL that links to the application logo image. |
 | `applicationUrl` | `string \| null` | Required | The URL for the application's website |
 | `reasonForAccess` | `string \| null` | Required | A string provided by the connected app stating why they use their respective enabled products. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -27,7 +30,11 @@ Metadata about the application
   "created_at": "2016-03-13T12:52:32.123Z",
   "logo_url": "logo_url8",
   "application_url": "application_url2",
-  "reason_for_access": "reason_for_access0"
+  "reason_for_access": "reason_for_access0",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

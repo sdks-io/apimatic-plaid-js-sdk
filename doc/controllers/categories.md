@@ -1,12 +1,12 @@
 # Categories
 
 ```ts
-const categoriesController = new CategoriesController(client);
+const categoriesApi = new CategoriesApi(client);
 ```
 
 ## Class Name
 
-`CategoriesController`
+`CategoriesApi`
 
 
 # Categories Get
@@ -43,7 +43,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const body = { 'key1': 'val1', 'key2': 'val2' };
 
 try {
-  const response = await categoriesController.categoriesGet(body);
+  const response = await categoriesApi.categoriesGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

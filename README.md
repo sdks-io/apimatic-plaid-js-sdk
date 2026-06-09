@@ -10,39 +10,40 @@ The Plaid REST API. Please see https://plaid.com/docs/api for more details.
 Run the following command from your project directory to install the package from npm:
 
 ```bash
-npm install apimatic-plaid-sdk@0.0.3
+npm install apimatic-plaid-sdk@0.0.5
 ```
 
-For additional package details, see the [Npm page for the apimatic-plaid-sdk@0.0.3 npm](https://www.npmjs.com/package/apimatic-plaid-sdk/v/0.0.3).
+For additional package details, see the [Npm page for the apimatic-plaid-sdk@0.0.5 npm](https://www.npmjs.com/package/apimatic-plaid-sdk/v/0.0.5).
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](doc/client.md)
 
 The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| environment | [`Environment`](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/README.md#environments) | The API environment. <br> **Default: `Environment.Production`** |
+| environment | [`Environment`](README.md#environments) | The API environment. <br> **Default: `Environment.Production`** |
 | timeout | `number` | Timeout for API calls.<br>*Default*: `0` |
-| httpClientOptions | [`Partial<HttpClientOptions>`](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/http-client-options.md) | Stable configurable http client options. |
+| httpClientOptions | [`Partial<HttpClientOptions>`](doc/http-client-options.md) | Stable configurable http client options. |
 | unstableHttpClientOptions | `any` | Unstable configurable http client options. |
-| pLAIDCLIENTIDCredentials | [`PLAIDCLIENTIDCredentials`](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/auth/custom-header-signature.md) | The credential object for pLAIDCLIENTID |
-| pLAIDSECRETCredentials | [`PLAIDSECRETCredentials`](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/auth/custom-header-signature-1.md) | The credential object for pLAIDSECRET |
-| plaidVersionCredentials | [`PlaidVersionCredentials`](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/auth/custom-header-signature-2.md) | The credential object for plaidVersion |
+| logging | [`PartialLoggingOptions`](doc/partial-logging-options.md) | Logging Configuration to enable logging |
+| plaidClientIdCredentials | [`PlaidClientIdCredentials`](doc/auth/custom-header-signature.md) | The credential object for plaidClientId |
+| plaidSecretCredentials | [`PlaidSecretCredentials`](doc/auth/custom-header-signature-1.md) | The credential object for plaidSecret |
+| plaidVersionCredentials | [`PlaidVersionCredentials`](doc/auth/custom-header-signature-2.md) | The credential object for plaidVersion |
 
 The API client can be initialized as follows:
 
 ### Code-Based Client Initialization
 
 ```ts
-import { Client, Environment } from 'apimatic-plaid-sdk';
+import { Client, Environment, LogLevel } from 'apimatic-plaid-sdk';
 
 const client = new Client({
-  pLAIDCLIENTIDCredentials: {
+  plaidClientIdCredentials: {
     'PLAID-CLIENT-ID': 'PLAID-CLIENT-ID'
   },
-  pLAIDSECRETCredentials: {
+  plaidSecretCredentials: {
     'PLAID-SECRET': 'PLAID-SECRET'
   },
   plaidVersionCredentials: {
@@ -50,6 +51,15 @@ const client = new Client({
   },
   timeout: 0,
   environment: Environment.Production,
+  logging: {
+    logLevel: LogLevel.Info,
+    logRequest: {
+      logBody: true
+    },
+    logResponse: {
+      logHeaders: true
+    }
+  },
 });
 ```
 
@@ -70,7 +80,7 @@ const fileContent = fs.readFileSync(absolutePath, 'utf-8');
 const client = Client.fromJsonConfig(fileContent);
 ```
 
-See the [Configuration-Based Client Initialization](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/configuration-based-client-initialization.md) section for details.
+See the [Configuration-Based Client Initialization](doc/configuration-based-client-initialization.md) section for details.
 
 ### Environment-Based Client Initialization
 
@@ -92,7 +102,7 @@ if (fs.existsSync(absolutePath)) {
 const client = Client.fromEnvironment(process.env);
 ```
 
-See the [Environment-Based Client Initialization](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/environment-based-client-initialization.md) section for details.
+See the [Environment-Based Client Initialization](doc/environment-based-client-initialization.md) section for details.
 
 ## Environments
 
@@ -110,51 +120,55 @@ The SDK can be configured to use a different environment for making API calls. A
 
 This API uses the following authentication schemes.
 
-* [`PLAID-CLIENT-ID (Custom Header Signature)`](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/auth/custom-header-signature.md)
-* [`PLAID-SECRET (Custom Header Signature)`](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/auth/custom-header-signature-1.md)
-* [`Plaid-Version (Custom Header Signature)`](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/auth/custom-header-signature-2.md)
+* [`PLAID-CLIENT-ID (Custom Header Signature)`](doc/auth/custom-header-signature.md)
+* [`PLAID-SECRET (Custom Header Signature)`](doc/auth/custom-header-signature-1.md)
+* [`Plaid-Version (Custom Header Signature)`](doc/auth/custom-header-signature-2.md)
 
 ## List of APIs
 
-* [Item](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/item.md)
-* [Asset Report](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/asset-report.md)
-* [Processor](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/processor.md)
-* [Payment Initiation](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/payment-initiation.md)
-* [Sandbox](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/sandbox.md)
-* [Investments](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/investments.md)
-* [Institutions](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/institutions.md)
-* [Application](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/application.md)
-* [Accounts](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/accounts.md)
-* [Identity](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/identity.md)
-* [Liabilities](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/liabilities.md)
-* [Auth](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/auth.md)
-* [Transactions](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/transactions.md)
-* [Categories](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/categories.md)
-* [Webhook Verification Key](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/webhook-verification-key.md)
-* [Deposit Switch](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/deposit-switch.md)
-* [Link](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/link.md)
-* [Transfer](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/transfer.md)
-* [Bank Transfer](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/bank-transfer.md)
-* [Employers](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/employers.md)
-* [Income](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/income.md)
-* [Signal](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/controllers/signal.md)
+* [Item](doc/controllers/item.md)
+* [Asset Report](doc/controllers/asset-report.md)
+* [Processor](doc/controllers/processor.md)
+* [Payment Initiation](doc/controllers/payment-initiation.md)
+* [Sandbox](doc/controllers/sandbox.md)
+* [Investments](doc/controllers/investments.md)
+* [Institutions](doc/controllers/institutions.md)
+* [Application](doc/controllers/application.md)
+* [Accounts](doc/controllers/accounts.md)
+* [Identity](doc/controllers/identity.md)
+* [Liabilities](doc/controllers/liabilities.md)
+* [Auth](doc/controllers/auth.md)
+* [Transactions](doc/controllers/transactions.md)
+* [Categories](doc/controllers/categories.md)
+* [Webhook Verification Key](doc/controllers/webhook-verification-key.md)
+* [Deposit Switch](doc/controllers/deposit-switch.md)
+* [Link](doc/controllers/link.md)
+* [Transfer](doc/controllers/transfer.md)
+* [Bank Transfer](doc/controllers/bank-transfer.md)
+* [Employers](doc/controllers/employers.md)
+* [Income](doc/controllers/income.md)
+* [Signal](doc/controllers/signal.md)
 
 ## SDK Infrastructure
 
 ### Configuration
 
-* [HttpClientOptions](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/http-client-options.md)
-* [RetryConfiguration](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/retry-configuration.md)
-* [ProxySettings](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/proxy-settings.md)
-* [Configuration-Based Client Initialization](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/configuration-based-client-initialization.md)
-* [Environment-Based Client Initialization](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/environment-based-client-initialization.md)
+* [HttpClientOptions](doc/http-client-options.md)
+* [RetryConfiguration](doc/retry-configuration.md)
+* [ProxySettings](doc/proxy-settings.md)
+* [Configuration-Based Client Initialization](doc/configuration-based-client-initialization.md)
+* [Environment-Based Client Initialization](doc/environment-based-client-initialization.md)
+* [PartialLoggingOptions](doc/partial-logging-options.md)
+* [PartialRequestLoggingOptions](doc/partial-request-logging-options.md)
+* [PartialResponseLoggingOptions](doc/partial-response-logging-options.md)
+* [LoggerInterface](doc/logger-interface.md)
 
 ### HTTP
 
-* [HttpRequest](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/http-request.md)
+* [HttpRequest](doc/http-request.md)
 
 ### Utilities
 
-* [ApiResponse](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/api-response.md)
-* [ApiError](https://www.github.com/sdks-io/apimatic-plaid-js-sdk/tree/0.0.3/doc/api-error.md)
+* [ApiResponse](doc/api-response.md)
+* [ApiError](doc/api-error.md)
 

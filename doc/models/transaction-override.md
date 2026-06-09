@@ -3,6 +3,8 @@
 
 Data to populate as test transaction data. If not specified, random transactions will be generated instead.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `TransactionOverride`
@@ -16,6 +18,7 @@ Data to populate as test transaction data. If not specified, random transactions
 | `amount` | `number` | Required | The transaction amount. Can be negative. |
 | `description` | `string` | Required | The transaction description. |
 | `currency` | `string \| undefined` | Optional | The ISO-4217 format currency code for the transaction. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -25,7 +28,11 @@ Data to populate as test transaction data. If not specified, random transactions
   "date_posted": "2016-03-13T12:52:32.123Z",
   "amount": 77.84,
   "description": "description2",
-  "currency": "currency2"
+  "currency": "currency2",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

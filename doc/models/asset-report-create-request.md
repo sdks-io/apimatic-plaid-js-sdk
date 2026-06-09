@@ -3,6 +3,8 @@
 
 AssetReportCreateRequest defines the request schema for `/asset_report/create`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `AssetReportCreateRequest`
@@ -16,6 +18,7 @@ AssetReportCreateRequest defines the request schema for `/asset_report/create`
 | `accessTokens` | `string[]` | Required | An array of access tokens corresponding to the Items that will be included in the report. The `assets` product must have been initialized for the Items during link; the Assets product cannot be added after initialization.<br><br>**Constraints**: *Minimum Items*: `1`, *Maximum Items*: `99` |
 | `daysRequested` | `number` | Required | The maximum integer number of days of history to include in the Asset Report. If using Fannie Mae Day 1 Certainty, `days_requested` must be at least 61 for new originations or at least 31 for refinancings.<br><br>**Constraints**: `>= 0`, `<= 730` |
 | `options` | [`AssetReportCreateRequestOptions \| undefined`](../../doc/models/asset-report-create-request-options.md) | Optional | An optional object to filter `/asset_report/create` results. If provided, must be non-`null`. The optional `user` object is required for the report to be eligible for Fannie Mae's Day 1 Certainty program. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -37,8 +40,20 @@ AssetReportCreateRequest defines the request schema for `/asset_report/create`
       "first_name": "first_name0",
       "middle_name": "middle_name0",
       "last_name": "last_name8",
-      "ssn": "ssn6"
+      "ssn": "ssn6",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

@@ -3,6 +3,8 @@
 
 A filter to apply to `credit`-type accounts
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `Credit`
@@ -11,7 +13,8 @@ A filter to apply to `credit`-type accounts
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `accountSubtypes` | [`AccountSubtypeEnum[] \| undefined`](../../doc/models/account-subtype-enum.md) | Optional | An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#accounts-schema). |
+| `accountSubtypes` | [`AccountSubtype[] \| undefined`](../../doc/models/account-subtype.md) | Optional | An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#accounts-schema). |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -21,7 +24,11 @@ A filter to apply to `credit`-type accounts
     "ugma",
     "utma",
     "variable annuity"
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

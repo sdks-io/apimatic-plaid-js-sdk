@@ -3,6 +3,8 @@
 
 The legal name and other information for the account holder.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `TransferUserInRequest`
@@ -15,6 +17,7 @@ The legal name and other information for the account holder.
 | `phoneNumber` | `string \| undefined` | Optional | The user's phone number. |
 | `emailAddress` | `string \| undefined` | Optional | The user's email address. |
 | `address` | [`TransferUserAddressInRequest \| undefined`](../../doc/models/transfer-user-address-in-request.md) | Optional | The address associated with the account holder. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,7 +31,15 @@ The legal name and other information for the account holder.
     "city": "city6",
     "region": "region2",
     "postal_code": "postal_code8",
-    "country": "country0"
+    "country": "country0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

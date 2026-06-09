@@ -1,12 +1,12 @@
 # Accounts
 
 ```ts
-const accountsController = new AccountsController(client);
+const accountsApi = new AccountsApi(client);
 ```
 
 ## Class Name
 
-`AccountsController`
+`AccountsApi`
 
 ## Methods
 
@@ -61,7 +61,7 @@ const body: AccountsGetRequest = {
 };
 
 try {
-  const response = await accountsController.accountsGet(body);
+  const response = await accountsApi.accountsGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -139,7 +139,7 @@ const body: AccountsBalanceGetRequest = {
 };
 
 try {
-  const response = await accountsController.accountsBalanceGet(body);
+  const response = await accountsApi.accountsBalanceGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

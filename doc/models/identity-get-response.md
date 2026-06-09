@@ -3,6 +3,8 @@
 
 IdentityGetResponse defines the response schema for `/identity/get`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `IdentityGetResponse`
@@ -14,6 +16,7 @@ IdentityGetResponse defines the response schema for `/identity/get`
 | `accounts` | [`AccountIdentity[]`](../../doc/models/account-identity.md) | Required | The accounts for which Identity data has been requested |
 | `item` | [`Item`](../../doc/models/item.md) | Required | Metadata about the Item. |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,7 +31,11 @@ IdentityGetResponse defines the response schema for `/identity/get`
         "limit": 30.84,
         "iso_currency_code": "iso_currency_code6",
         "unofficial_currency_code": "unofficial_currency_code2",
-        "last_updated_datetime": "2016-03-13T12:52:32.123Z"
+        "last_updated_datetime": "2016-03-13T12:52:32.123Z",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       "mask": "mask4",
       "name": "name0",
@@ -45,14 +52,22 @@ IdentityGetResponse defines the response schema for `/identity/get`
             {
               "data": "data0",
               "primary": false,
-              "type": "office"
+              "type": "office",
+              "exampleAdditionalProperty": {
+                "key1": "val1",
+                "key2": "val2"
+              }
             }
           ],
           "emails": [
             {
               "data": "data6",
               "primary": false,
-              "type": "other"
+              "type": "other",
+              "exampleAdditionalProperty": {
+                "key1": "val1",
+                "key2": "val2"
+              }
             }
           ],
           "addresses": [
@@ -62,14 +77,30 @@ IdentityGetResponse defines the response schema for `/identity/get`
                 "region": "region6",
                 "street": "street0",
                 "postal_code": "postal_code2",
-                "country": "country4"
+                "country": "country4",
+                "exampleAdditionalProperty": {
+                  "key1": "val1",
+                  "key2": "val2"
+                }
               },
-              "primary": false
+              "primary": false,
+              "exampleAdditionalProperty": {
+                "key1": "val1",
+                "key2": "val2"
+              }
             }
-          ]
+          ],
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         }
       ],
-      "verification_status": "automatically_verified"
+      "verification_status": "automatically_verified",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
   ],
   "item": {
@@ -98,7 +129,11 @@ IdentityGetResponse defines the response schema for `/identity/get`
       ],
       "status": 217.06,
       "documentation_url": "documentation_url6",
-      "suggested_action": "suggested_action0"
+      "suggested_action": "suggested_action0",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "available_products": [
       "transfer",
@@ -109,9 +144,17 @@ IdentityGetResponse defines the response schema for `/identity/get`
       "standing_orders"
     ],
     "consent_expiration_time": "2016-03-13T12:52:32.123Z",
-    "update_type": "background"
+    "update_type": "background",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
-  "request_id": "request_id2"
+  "request_id": "request_id2",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

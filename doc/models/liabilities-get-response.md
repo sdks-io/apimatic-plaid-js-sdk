@@ -3,6 +3,8 @@
 
 LiabilitiesGetResponse defines the response schema for `/liabilities/get`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `LiabilitiesGetResponse`
@@ -15,6 +17,7 @@ LiabilitiesGetResponse defines the response schema for `/liabilities/get`
 | `item` | [`Item`](../../doc/models/item.md) | Required | Metadata about the Item. |
 | `liabilities` | [`LiabilitiesObject`](../../doc/models/liabilities-object.md) | Required | An object containing liability accounts |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -29,14 +32,22 @@ LiabilitiesGetResponse defines the response schema for `/liabilities/get`
         "limit": 30.84,
         "iso_currency_code": "iso_currency_code6",
         "unofficial_currency_code": "unofficial_currency_code2",
-        "last_updated_datetime": "2016-03-13T12:52:32.123Z"
+        "last_updated_datetime": "2016-03-13T12:52:32.123Z",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       "mask": "mask4",
       "name": "name0",
       "official_name": "official_name2",
       "type": "depository",
       "subtype": "consumer",
-      "verification_status": "automatically_verified"
+      "verification_status": "automatically_verified",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
   ],
   "item": {
@@ -65,7 +76,11 @@ LiabilitiesGetResponse defines the response schema for `/liabilities/get`
       ],
       "status": 217.06,
       "documentation_url": "documentation_url6",
-      "suggested_action": "suggested_action0"
+      "suggested_action": "suggested_action0",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "available_products": [
       "transfer",
@@ -76,7 +91,11 @@ LiabilitiesGetResponse defines the response schema for `/liabilities/get`
       "standing_orders"
     ],
     "consent_expiration_time": "2016-03-13T12:52:32.123Z",
-    "update_type": "background"
+    "update_type": "background",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "liabilities": {
     "credit": [
@@ -87,7 +106,11 @@ LiabilitiesGetResponse defines the response schema for `/liabilities/get`
             "apr_percentage": 185.0,
             "apr_type": "balance_transfer_apr",
             "balance_subject_to_apr": 23.44,
-            "interest_charge_amount": 112.32
+            "interest_charge_amount": 112.32,
+            "exampleAdditionalProperty": {
+              "key1": "val1",
+              "key2": "val2"
+            }
           }
         ],
         "is_overdue": false,
@@ -95,7 +118,11 @@ LiabilitiesGetResponse defines the response schema for `/liabilities/get`
         "last_payment_date": "2016-03-13T12:52:32.123Z",
         "last_statement_issue_date": "2016-03-13T12:52:32.123Z",
         "minimum_payment_amount": 187.22,
-        "next_payment_due_date": "2016-03-13T12:52:32.123Z"
+        "next_payment_due_date": "2016-03-13T12:52:32.123Z",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       }
     ],
     "mortgage": [
@@ -108,7 +135,11 @@ LiabilitiesGetResponse defines the response schema for `/liabilities/get`
         "has_prepayment_penalty": false,
         "interest_rate": {
           "percentage": 105.9,
-          "type": "type2"
+          "type": "type2",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
         "last_payment_amount": 35.66,
         "last_payment_date": "2016-03-13T12:52:32.123Z",
@@ -125,10 +156,18 @@ LiabilitiesGetResponse defines the response schema for `/liabilities/get`
           "country": "country4",
           "postal_code": "postal_code2",
           "region": "region6",
-          "street": "street0"
+          "street": "street0",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
         "ytd_interest_paid": 185.52,
-        "ytd_principal_paid": 218.5
+        "ytd_principal_paid": 218.5,
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       }
     ],
     "student": [
@@ -149,7 +188,11 @@ LiabilitiesGetResponse defines the response schema for `/liabilities/get`
         "loan_name": "loan_name6",
         "loan_status": {
           "end_date": "2016-03-13T12:52:32.123Z",
-          "type": "cancelled"
+          "type": "cancelled",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
         "minimum_payment_amount": 204.64,
         "next_payment_due_date": "2016-03-13T12:52:32.123Z",
@@ -160,11 +203,19 @@ LiabilitiesGetResponse defines the response schema for `/liabilities/get`
         "pslf_status": {
           "estimated_eligibility_date": "2016-03-13T12:52:32.123Z",
           "payments_made": 175.34,
-          "payments_remaining": 221.32
+          "payments_remaining": 221.32,
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
         "repayment_plan": {
           "description": "description6",
-          "type": "income-based repayment"
+          "type": "income-based repayment",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
         "sequence_number": "sequence_number0",
         "servicer_address": {
@@ -172,14 +223,30 @@ LiabilitiesGetResponse defines the response schema for `/liabilities/get`
           "region": "region8",
           "street": "street2",
           "postal_code": "postal_code4",
-          "country": "country6"
+          "country": "country6",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
         "ytd_interest_paid": 188.28,
-        "ytd_principal_paid": 221.26
+        "ytd_principal_paid": 221.26,
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       }
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
-  "request_id": "request_id2"
+  "request_id": "request_id2",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

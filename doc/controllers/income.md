@@ -1,12 +1,12 @@
 # Income
 
 ```ts
-const incomeController = new IncomeController(client);
+const incomeApi = new IncomeApi(client);
 ```
 
 ## Class Name
 
-`IncomeController`
+`IncomeApi`
 
 ## Methods
 
@@ -57,7 +57,7 @@ const body: IncomeVerificationTaxformsGetRequest = {
 };
 
 try {
-  const response = await incomeController.incomeVerificationTaxformsGet(body);
+  const response = await incomeApi.incomeVerificationTaxformsGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -125,7 +125,7 @@ const body: IncomeVerificationPaystubGetRequest = {
 };
 
 try {
-  const response = await incomeController.incomeVerificationPaystubGet(body);
+  const response = await incomeApi.incomeVerificationPaystubGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -275,7 +275,7 @@ const body: IncomeVerificationDocumentsDownloadRequest = {
 };
 
 try {
-  const response = await incomeController.incomeVerificationDocumentsDownload(body);
+  const response = await incomeApi.incomeVerificationDocumentsDownload(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -336,7 +336,7 @@ const body: IncomeVerificationRefreshRequest = {
 };
 
 try {
-  const response = await incomeController.incomeVerificationRefresh(body);
+  const response = await incomeApi.incomeVerificationRefresh(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -406,7 +406,7 @@ const body: IncomeVerificationPaystubsGetRequest = {
 };
 
 try {
-  const response = await incomeController.incomeVerificationPaystubsGet(body);
+  const response = await incomeApi.incomeVerificationPaystubsGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -465,7 +465,7 @@ const body: IncomeVerificationPrecheckRequest = {
 };
 
 try {
-  const response = await incomeController.incomeVerificationPrecheck(body);
+  const response = await incomeApi.incomeVerificationPrecheck(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -526,7 +526,7 @@ const body: IncomeVerificationSummaryGetRequest = {
 };
 
 try {
-  const response = await incomeController.incomeVerificationSummaryGet(body);
+  const response = await incomeApi.incomeVerificationSummaryGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -588,7 +588,7 @@ const body: IncomeVerificationCreateRequest = {
 };
 
 try {
-  const response = await incomeController.incomeVerificationCreate(body);
+  const response = await incomeApi.incomeVerificationCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

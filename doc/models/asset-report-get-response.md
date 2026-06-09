@@ -3,6 +3,8 @@
 
 AssetReportGetResponse defines the response schema for `/asset_report/get`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `AssetReportGetResponse`
@@ -14,6 +16,7 @@ AssetReportGetResponse defines the response schema for `/asset_report/get`
 | `report` | [`AssetReport`](../../doc/models/asset-report.md) | Required | An object representing an Asset Report |
 | `warnings` | [`Warning[]`](../../doc/models/warning.md) | Required | If the Asset Report generation was successful but identity information cannot be returned, this array will contain information about the errors causing identity information to be missing |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -29,7 +32,11 @@ AssetReportGetResponse defines the response schema for `/asset_report/get`
       "first_name": "first_name0",
       "middle_name": "middle_name0",
       "last_name": "last_name8",
-      "ssn": "ssn6"
+      "ssn": "ssn6",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "items": [
       {
@@ -46,7 +53,11 @@ AssetReportGetResponse defines the response schema for `/asset_report/get`
               "limit": 30.84,
               "iso_currency_code": "iso_currency_code6",
               "unofficial_currency_code": "unofficial_currency_code2",
-              "last_updated_datetime": "2016-03-13T12:52:32.123Z"
+              "last_updated_datetime": "2016-03-13T12:52:32.123Z",
+              "exampleAdditionalProperty": {
+                "key1": "val1",
+                "key2": "val2"
+              }
             },
             "mask": "mask4",
             "name": "name0",
@@ -72,7 +83,11 @@ AssetReportGetResponse defines the response schema for `/asset_report/get`
                   "country": "country8",
                   "lat": 205.22,
                   "lon": 217.68,
-                  "store_number": "store_number0"
+                  "store_number": "store_number0",
+                  "exampleAdditionalProperty": {
+                    "key1": "val1",
+                    "key2": "val2"
+                  }
                 },
                 "original_description": "original_description6",
                 "account_id": "account_id0",
@@ -81,7 +96,11 @@ AssetReportGetResponse defines the response schema for `/asset_report/get`
                 "unofficial_currency_code": "unofficial_currency_code0",
                 "date": "2016-03-13T12:52:32.123Z",
                 "pending": false,
-                "transaction_id": "transaction_id6"
+                "transaction_id": "transaction_id6",
+                "exampleAdditionalProperty": {
+                  "key1": "val1",
+                  "key2": "val2"
+                }
               }
             ],
             "owners": [
@@ -94,14 +113,22 @@ AssetReportGetResponse defines the response schema for `/asset_report/get`
                   {
                     "data": "data0",
                     "primary": false,
-                    "type": "office"
+                    "type": "office",
+                    "exampleAdditionalProperty": {
+                      "key1": "val1",
+                      "key2": "val2"
+                    }
                   }
                 ],
                 "emails": [
                   {
                     "data": "data6",
                     "primary": false,
-                    "type": "other"
+                    "type": "other",
+                    "exampleAdditionalProperty": {
+                      "key1": "val1",
+                      "key2": "val2"
+                    }
                   }
                 ],
                 "addresses": [
@@ -111,11 +138,23 @@ AssetReportGetResponse defines the response schema for `/asset_report/get`
                       "region": "region6",
                       "street": "street0",
                       "postal_code": "postal_code2",
-                      "country": "country4"
+                      "country": "country4",
+                      "exampleAdditionalProperty": {
+                        "key1": "val1",
+                        "key2": "val2"
+                      }
                     },
-                    "primary": false
+                    "primary": false,
+                    "exampleAdditionalProperty": {
+                      "key1": "val1",
+                      "key2": "val2"
+                    }
                   }
-                ]
+                ],
+                "exampleAdditionalProperty": {
+                  "key1": "val1",
+                  "key2": "val2"
+                }
               }
             ],
             "historical_balances": [
@@ -123,14 +162,30 @@ AssetReportGetResponse defines the response schema for `/asset_report/get`
                 "date": "2016-03-13T12:52:32.123Z",
                 "current": 192.42,
                 "iso_currency_code": "iso_currency_code2",
-                "unofficial_currency_code": "unofficial_currency_code6"
+                "unofficial_currency_code": "unofficial_currency_code6",
+                "exampleAdditionalProperty": {
+                  "key1": "val1",
+                  "key2": "val2"
+                }
               }
             ],
-            "verification_status": "automatically_verified"
+            "verification_status": "automatically_verified",
+            "exampleAdditionalProperty": {
+              "key1": "val1",
+              "key2": "val2"
+            }
           }
-        ]
+        ],
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       }
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "warnings": [
     {
@@ -160,12 +215,28 @@ AssetReportGetResponse defines the response schema for `/asset_report/get`
           ],
           "status": 217.06,
           "documentation_url": "documentation_url6",
-          "suggested_action": "suggested_action0"
+          "suggested_action": "suggested_action0",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
+        },
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
         }
+      },
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
       }
     }
   ],
-  "request_id": "request_id6"
+  "request_id": "request_id6",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

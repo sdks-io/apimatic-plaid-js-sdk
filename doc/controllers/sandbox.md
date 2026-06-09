@@ -1,12 +1,12 @@
 # Sandbox
 
 ```ts
-const sandboxController = new SandboxController(client);
+const sandboxApi = new SandboxApi(client);
 ```
 
 ## Class Name
 
-`SandboxController`
+`SandboxApi`
 
 ## Methods
 
@@ -62,11 +62,11 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const body: SandboxItemSetVerificationStatusRequest = {
   accessToken: 'access_token4',
   accountId: 'account_id8',
-  verificationStatus: VerificationStatus1Enum.AutomaticallyVerified,
+  verificationStatus: VerificationStatus1.AutomaticallyVerified,
 };
 
 try {
-  const response = await sandboxController.sandboxItemSetVerificationStatus(body);
+  const response = await sandboxApi.sandboxItemSetVerificationStatus(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -134,12 +134,12 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const body: SandboxPublicTokenCreateRequest = {
   institutionId: 'institution_id4',
   initialProducts: [
-    ProductsEnum.DepositSwitch
+    Products.DepositSwitch
   ],
 };
 
 try {
-  const response = await sandboxController.sandboxPublicTokenCreate(body);
+  const response = await sandboxApi.sandboxPublicTokenCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -219,7 +219,7 @@ const body: SandboxProcessorTokenCreateRequest = {
 };
 
 try {
-  const response = await sandboxController.sandboxProcessorTokenCreate(body);
+  const response = await sandboxApi.sandboxProcessorTokenCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -300,7 +300,7 @@ const body: SandboxItemFireWebhookRequest = {
 };
 
 try {
-  const response = await sandboxController.sandboxItemFireWebhook(body);
+  const response = await sandboxApi.sandboxItemFireWebhook(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -382,7 +382,7 @@ const body: SandboxItemResetLoginRequest = {
 };
 
 try {
-  const response = await sandboxController.sandboxItemResetLogin(body);
+  const response = await sandboxApi.sandboxItemResetLogin(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -451,11 +451,11 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const body: SandboxIncomeFireWebhookRequest = {
   incomeVerificationId: 'income_verification_id6',
   webhook: 'webhook4',
-  verificationStatus: VerificationStatus3Enum.VERIFICATIONSTATUSPROCESSINGCOMPLETE,
+  verificationStatus: VerificationStatus3.VerificationStatusProcessingComplete,
 };
 
 try {
-  const response = await sandboxController.sandboxIncomeFireWebhook(body);
+  const response = await sandboxApi.sandboxIncomeFireWebhook(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -535,7 +535,7 @@ const body: SandboxOauthSelectAccountsRequest = {
 };
 
 try {
-  const response = await sandboxController.sandboxOauthSelectAccounts(body);
+  const response = await sandboxApi.sandboxOauthSelectAccounts(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -607,7 +607,7 @@ const body: SandboxTransferSimulateRequest = {
 };
 
 try {
-  const response = await sandboxController.sandboxTransferSimulate(body);
+  const response = await sandboxApi.sandboxTransferSimulate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -686,7 +686,7 @@ const body: SandboxBankTransferFireWebhookRequest = {
 };
 
 try {
-  const response = await sandboxController.sandboxBankTransferFireWebhook(body);
+  const response = await sandboxApi.sandboxBankTransferFireWebhook(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -766,7 +766,7 @@ const body: SandboxBankTransferSimulateRequest = {
 };
 
 try {
-  const response = await sandboxController.sandboxBankTransferSimulate(body);
+  const response = await sandboxApi.sandboxBankTransferSimulate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

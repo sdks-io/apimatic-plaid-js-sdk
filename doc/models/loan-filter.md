@@ -3,6 +3,8 @@
 
 A filter to apply to `loan`-type accounts
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `LoanFilter`
@@ -11,7 +13,8 @@ A filter to apply to `loan`-type accounts
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `accountSubtypes` | [`AccountSubtypeEnum[]`](../../doc/models/account-subtype-enum.md) | Required | An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#accounts-schema). |
+| `accountSubtypes` | [`AccountSubtype[]`](../../doc/models/account-subtype.md) | Required | An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#accounts-schema). |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -19,7 +22,11 @@ A filter to apply to `loan`-type accounts
 {
   "account_subtypes": [
     "sarsep"
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

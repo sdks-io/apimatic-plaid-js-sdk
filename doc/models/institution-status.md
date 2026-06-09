@@ -5,6 +5,8 @@ The status of an institution is determined by the health of its Item logins, Tra
 
 Institution status is accessible in the Dashboard and via the API using the `/institutions/get_by_id` endpoint with the `include_status` option set to true. Note that institution status is not available in the Sandbox environment.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `InstitutionStatus`
@@ -23,6 +25,7 @@ Institution status is accessible in the Dashboard and via the API using the `/in
 | `liabilities` | [`ProductStatus \| undefined`](../../doc/models/product-status.md) | Optional | A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object. |
 | `investments` | [`ProductStatus \| undefined`](../../doc/models/product-status.md) | Optional | A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object. |
 | `healthIncidents` | [`HealthIncident[] \| null \| undefined`](../../doc/models/health-incident.md) | Optional | Details of recent health incidents associated with the institution. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -35,7 +38,15 @@ Institution status is accessible in the Dashboard and via the API using the `/in
       "success": 164.84,
       "error_plaid": 201.78,
       "error_institution": 35.5,
-      "refresh_interval": "NORMAL"
+      "refresh_interval": "NORMAL",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
   },
   "transactions_updates": {
@@ -45,7 +56,15 @@ Institution status is accessible in the Dashboard and via the API using the `/in
       "success": 164.84,
       "error_plaid": 201.78,
       "error_institution": 35.5,
-      "refresh_interval": "NORMAL"
+      "refresh_interval": "NORMAL",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
   },
   "auth": {
@@ -55,7 +74,15 @@ Institution status is accessible in the Dashboard and via the API using the `/in
       "success": 164.84,
       "error_plaid": 201.78,
       "error_institution": 35.5,
-      "refresh_interval": "NORMAL"
+      "refresh_interval": "NORMAL",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
   },
   "balance": {
@@ -65,7 +92,15 @@ Institution status is accessible in the Dashboard and via the API using the `/in
       "success": 164.84,
       "error_plaid": 201.78,
       "error_institution": 35.5,
-      "refresh_interval": "NORMAL"
+      "refresh_interval": "NORMAL",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
   },
   "identity": {
@@ -75,7 +110,15 @@ Institution status is accessible in the Dashboard and via the API using the `/in
       "success": 164.84,
       "error_plaid": 201.78,
       "error_institution": 35.5,
-      "refresh_interval": "NORMAL"
+      "refresh_interval": "NORMAL",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
   },
   "investments_updates": {
@@ -85,7 +128,15 @@ Institution status is accessible in the Dashboard and via the API using the `/in
       "success": 164.84,
       "error_plaid": 201.78,
       "error_institution": 35.5,
-      "refresh_interval": "NORMAL"
+      "refresh_interval": "NORMAL",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
   },
   "liabilities_updates": {
@@ -95,7 +146,15 @@ Institution status is accessible in the Dashboard and via the API using the `/in
       "success": 164.84,
       "error_plaid": 201.78,
       "error_institution": 35.5,
-      "refresh_interval": "NORMAL"
+      "refresh_interval": "NORMAL",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
   },
   "liabilities": {
@@ -105,7 +164,15 @@ Institution status is accessible in the Dashboard and via the API using the `/in
       "success": 164.84,
       "error_plaid": 201.78,
       "error_institution": 35.5,
-      "refresh_interval": "NORMAL"
+      "refresh_interval": "NORMAL",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
   },
   "investments": {
@@ -115,7 +182,15 @@ Institution status is accessible in the Dashboard and via the API using the `/in
       "success": 164.84,
       "error_plaid": 201.78,
       "error_institution": 35.5,
-      "refresh_interval": "NORMAL"
+      "refresh_interval": "NORMAL",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
   },
   "health_incidents": [
@@ -127,21 +202,41 @@ Institution status is accessible in the Dashboard and via the API using the `/in
         {
           "description": "description2",
           "status": "UNKNOWN",
-          "updated_date": "2016-03-13T12:52:32.123Z"
+          "updated_date": "2016-03-13T12:52:32.123Z",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
         {
           "description": "description2",
           "status": "UNKNOWN",
-          "updated_date": "2016-03-13T12:52:32.123Z"
+          "updated_date": "2016-03-13T12:52:32.123Z",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
         {
           "description": "description2",
           "status": "UNKNOWN",
-          "updated_date": "2016-03-13T12:52:32.123Z"
+          "updated_date": "2016-03-13T12:52:32.123Z",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         }
-      ]
+      ],
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

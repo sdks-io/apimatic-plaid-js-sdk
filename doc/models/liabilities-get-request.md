@@ -3,6 +3,8 @@
 
 LiabilitiesGetRequest defines the request schema for `/liabilities/get`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `LiabilitiesGetRequest`
@@ -15,6 +17,7 @@ LiabilitiesGetRequest defines the request schema for `/liabilities/get`
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `accessToken` | `string` | Required | The access token associated with the Item data is being requested for. |
 | `options` | [`LiabilitiesGetRequestOptions \| undefined`](../../doc/models/liabilities-get-request-options.md) | Optional | An optional object to filter `/liabilities/get` results. If provided, `options` cannot be null. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,7 +31,15 @@ LiabilitiesGetRequest defines the request schema for `/liabilities/get`
       "account_ids3",
       "account_ids4",
       "account_ids5"
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

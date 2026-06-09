@@ -1,6 +1,8 @@
 
 # Institutions Search Account Filter
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `InstitutionsSearchAccountFilter`
@@ -9,10 +11,11 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `loan` | [`AccountSubtypeEnum[] \| undefined`](../../doc/models/account-subtype-enum.md) | Optional | - |
-| `depository` | [`AccountSubtypeEnum[] \| undefined`](../../doc/models/account-subtype-enum.md) | Optional | - |
-| `credit` | [`AccountSubtypeEnum[] \| undefined`](../../doc/models/account-subtype-enum.md) | Optional | - |
-| `investment` | [`AccountSubtypeEnum[] \| undefined`](../../doc/models/account-subtype-enum.md) | Optional | - |
+| `loan` | [`AccountSubtype[] \| undefined`](../../doc/models/account-subtype.md) | Optional | - |
+| `depository` | [`AccountSubtype[] \| undefined`](../../doc/models/account-subtype.md) | Optional | - |
+| `credit` | [`AccountSubtype[] \| undefined`](../../doc/models/account-subtype.md) | Optional | - |
+| `investment` | [`AccountSubtype[] \| undefined`](../../doc/models/account-subtype.md) | Optional | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -33,7 +36,11 @@
   ],
   "investment": [
     "construction"
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

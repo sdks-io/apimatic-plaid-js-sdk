@@ -3,6 +3,8 @@
 
 Contains details about a student loan account
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `StudentLoan`
@@ -29,12 +31,13 @@ Contains details about a student loan account
 | `originationPrincipalAmount` | `number \| null` | Required | The original principal balance of the loan. |
 | `outstandingInterestAmount` | `number \| null` | Required | The total dollar amount of the accrued interest balance. For Sallie Mae ( `ins_116944`), this amount is included in the current balance of the loan, so this field will return as `null`. |
 | `paymentReferenceNumber` | `string \| null` | Required | The relevant account number that should be used to reference this loan for payments. In the majority of cases, `payment_reference_number` will match a`ccount_number,` but in some institutions, such as Great Lakes (`ins_116861`), it will be different. |
-| `pslfStatus` | [`PSLFStatus`](../../doc/models/pslf-status.md) | Required | Information about the student's eligibility in the Public Service Loan Forgiveness program. This is only returned if the institution is Fedloan (`ins_116527`). |
+| `pslfStatus` | [`PslfStatus`](../../doc/models/pslf-status.md) | Required | Information about the student's eligibility in the Public Service Loan Forgiveness program. This is only returned if the institution is Fedloan (`ins_116527`). |
 | `repaymentPlan` | [`StudentRepaymentPlan`](../../doc/models/student-repayment-plan.md) | Required | An object representing the repayment plan for the student loan |
 | `sequenceNumber` | `string \| null` | Required | The sequence number of the student loan. Heartland ECSI (`ins_116948`) does not make this field available. |
 | `servicerAddress` | [`ServicerAddressData`](../../doc/models/servicer-address-data.md) | Required | The address of the student loan servicer. This is generally the remittance address to which payments should be sent. |
 | `ytdInterestPaid` | `number \| null` | Required | The year to date (YTD) interest paid. Availability for this field is limited. |
 | `ytdPrincipalPaid` | `number \| null` | Required | The year to date (YTD) principal paid. Availability for this field is limited. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -56,7 +59,11 @@ Contains details about a student loan account
   "loan_name": "loan_name4",
   "loan_status": {
     "end_date": "2016-03-13T12:52:32.123Z",
-    "type": "cancelled"
+    "type": "cancelled",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "minimum_payment_amount": 153.02,
   "next_payment_due_date": "2016-03-13T12:52:32.123Z",
@@ -67,11 +74,19 @@ Contains details about a student loan account
   "pslf_status": {
     "estimated_eligibility_date": "2016-03-13T12:52:32.123Z",
     "payments_made": 175.34,
-    "payments_remaining": 221.32
+    "payments_remaining": 221.32,
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "repayment_plan": {
     "description": "description6",
-    "type": "income-based repayment"
+    "type": "income-based repayment",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "sequence_number": "sequence_number8",
   "servicer_address": {
@@ -79,10 +94,18 @@ Contains details about a student loan account
     "region": "region8",
     "street": "street2",
     "postal_code": "postal_code4",
-    "country": "country6"
+    "country": "country6",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "ytd_interest_paid": 136.66,
-  "ytd_principal_paid": 86.36
+  "ytd_principal_paid": 86.36,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

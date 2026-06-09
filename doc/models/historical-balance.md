@@ -3,6 +3,8 @@
 
 An object representing a balance held by an account in the past
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `HistoricalBalance`
@@ -15,6 +17,7 @@ An object representing a balance held by an account in the past
 | `current` | `number` | Required | The total amount of funds in the account, calculated from the `current` balance in the `balance` object by subtracting inflows and adding back outflows according to the posted date of each transaction.<br><br>If the account has any pending transactions, historical balance amounts on or after the date of the earliest pending transaction may differ if retrieved in subsequent Asset Reports as a result of those pending transactions posting. |
 | `isoCurrencyCode` | `string \| null` | Required | The ISO-4217 currency code of the balance. Always `null` if `unofficial_currency_code` is non-`null`. |
 | `unofficialCurrencyCode` | `string \| null` | Required | The unofficial currency code associated with the balance. Always `null` if `iso_currency_code` is non-`null`.<br><br>See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -23,7 +26,11 @@ An object representing a balance held by an account in the past
   "date": "2016-03-13T12:52:32.123Z",
   "current": 121.48,
   "iso_currency_code": "iso_currency_code8",
-  "unofficial_currency_code": "unofficial_currency_code0"
+  "unofficial_currency_code": "unofficial_currency_code0",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

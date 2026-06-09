@@ -3,6 +3,8 @@
 
 Fired when Asset Report generation has failed. The resulting `error` will have an `error_type` of `ASSET_REPORT_ERROR`.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `AssetsErrorWebhook`
@@ -15,6 +17,7 @@ Fired when Asset Report generation has failed. The resulting `error` will have a
 | `webhookCode` | `string` | Required | `ERROR` |
 | `error` | [`Error`](../../doc/models/error.md) | Required | We use standard HTTP response codes for success and failure notifications, and our errors are further classified by `error_type`. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures, and 50X codes are for Plaid-related issues.  Error fields will be `null` if no error has occurred. |
 | `assetReportId` | `string` | Required | The ID associated with the Asset Report. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -44,9 +47,17 @@ Fired when Asset Report generation has failed. The resulting `error` will have a
     ],
     "status": 217.06,
     "documentation_url": "documentation_url6",
-    "suggested_action": "suggested_action0"
+    "suggested_action": "suggested_action0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
-  "asset_report_id": "asset_report_id0"
+  "asset_report_id": "asset_report_id0",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -3,6 +3,8 @@
 
 Specify the list of investments transactions on the account.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `InvestmentsTransactionsOverride`
@@ -19,6 +21,7 @@ Specify the list of investments transactions on the account.
 | `type` | `string` | Required | The type of the investment transaction. Possible values are:<br>`buy`: Buying an investment<br>`sell`: Selling an investment<br>`cash`: Activity that modifies a cash position<br>`fee`: A fee on the account<br>`transfer`: Activity that modifies a position, but not through buy/sell activity e.g. options exercise, portfolio transfer |
 | `currency` | `string` | Required | Either a valid `iso_currency_code` or `unofficial_currency_code` |
 | `security` | [`SecurityOverride \| undefined`](../../doc/models/security-override.md) | Optional | Specify the security associated with the holding or investment transaction. When inputting custom security data to the Sandbox, Plaid will perform post-data-retrieval normalization and enrichment. These processes may cause the data returned by the Sandbox to be slightly different from the data you input. An ISO-4217 currency code and a security identifier (`ticker_symbol`, `cusip`, `isin`, or `sedol`) are required. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -36,7 +39,15 @@ Specify the list of investments transactions on the account.
     "cusip": "cusip4",
     "sedol": "sedol0",
     "name": "name6",
-    "ticker_symbol": "ticker_symbol8"
+    "ticker_symbol": "ticker_symbol8",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

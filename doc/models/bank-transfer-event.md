@@ -3,6 +3,8 @@
 
 Represents an event in the Bank Transfers API.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `BankTransferEvent`
@@ -13,16 +15,17 @@ Represents an event in the Bank Transfers API.
 |  --- | --- | --- | --- |
 | `eventId` | `number` | Required | Plaid’s unique identifier for this event. IDs are sequential unsigned 64-bit integers.<br><br>**Constraints**: `>= 0` |
 | `timestamp` | `string` | Required | The datetime when this event occurred. This will be of the form `2006-01-02T15:04:05Z`. |
-| `eventType` | [`BankTransferEventTypeEnum`](../../doc/models/bank-transfer-event-type-enum.md) | Required | The type of event that this bank transfer represents.<br><br>`pending`: A new transfer was created; it is in the pending state.<br><br>`cancelled`: The transfer was cancelled by the client.<br><br>`failed`: The transfer failed, no funds were moved.<br><br>`posted`: The transfer has been successfully submitted to the payment network.<br><br>`reversed`: A posted transfer was reversed.<br><br>`receiver_pending`: The matching transfer was found as a pending transaction in the receiver's account<br><br>`receiver_posted`: The matching transfer was found as a posted transaction in the receiver's account |
+| `eventType` | [`BankTransferEventType`](../../doc/models/bank-transfer-event-type.md) | Required | The type of event that this bank transfer represents.<br><br>`pending`: A new transfer was created; it is in the pending state.<br><br>`cancelled`: The transfer was cancelled by the client.<br><br>`failed`: The transfer failed, no funds were moved.<br><br>`posted`: The transfer has been successfully submitted to the payment network.<br><br>`reversed`: A posted transfer was reversed.<br><br>`receiver_pending`: The matching transfer was found as a pending transaction in the receiver's account<br><br>`receiver_posted`: The matching transfer was found as a posted transaction in the receiver's account |
 | `accountId` | `string` | Required | The account ID associated with the bank transfer. |
 | `bankTransferId` | `string` | Required | Plaid’s unique identifier for a bank transfer. |
 | `originationAccountId` | `string \| null` | Required | The ID of the origination account that this balance belongs to. |
-| `bankTransferType` | [`BankTransferTypeEnum`](../../doc/models/bank-transfer-type-enum.md) | Required | The type of bank transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into the origination account; a `credit` indicates a transfer of money out of the origination account. |
+| `bankTransferType` | [`BankTransferType`](../../doc/models/bank-transfer-type.md) | Required | The type of bank transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into the origination account; a `credit` indicates a transfer of money out of the origination account. |
 | `bankTransferAmount` | `string` | Required | The bank transfer amount. |
 | `bankTransferIsoCurrencyCode` | `string` | Required | The currency of the bank transfer amount. |
 | `failureReason` | [`BankTransferFailure`](../../doc/models/bank-transfer-failure.md) | Required | The failure reason if the type of this transfer is `"failed"` or `"reversed"`. Null value otherwise. |
-| `direction` | [`BankTransferDirectionEnum`](../../doc/models/bank-transfer-direction-enum.md) | Required | Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account. |
+| `direction` | [`BankTransferDirection`](../../doc/models/bank-transfer-direction.md) | Required | Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account. |
 | `receiverDetails` | [`BankTransferReceiverDetails`](../../doc/models/bank-transfer-receiver-details.md) | Required | The receiver details if the type of this event is `reciever_pending` or `reciever_posted`. Null value otherwise. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -39,11 +42,23 @@ Represents an event in the Bank Transfers API.
   "bank_transfer_iso_currency_code": "bank_transfer_iso_currency_code6",
   "failure_reason": {
     "ach_return_code": "ach_return_code6",
-    "description": "description0"
+    "description": "description0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "direction": "outbound",
   "receiver_details": {
-    "available_balance": "positive"
+    "available_balance": "positive",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

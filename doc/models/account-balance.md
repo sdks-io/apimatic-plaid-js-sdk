@@ -3,6 +3,8 @@
 
 A set of fields describing the balance for an account. Balance information may be cached unless the balance object was returned by `/accounts/balance/get`.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `AccountBalance`
@@ -17,6 +19,7 @@ A set of fields describing the balance for an account. Balance information may b
 | `isoCurrencyCode` | `string \| null` | Required | The ISO-4217 currency code of the balance. Always null if `unofficial_currency_code` is non-null. |
 | `unofficialCurrencyCode` | `string \| null` | Required | The unofficial currency code associated with the balance. Always null if `iso_currency_code` is non-null. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.<br><br>See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s. |
 | `lastUpdatedDatetime` | `string \| null \| undefined` | Optional | Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDTHH:mm:ssZ`) indicating the last time that the balance for the given account has been updated<br><br>This is currently only provided when the `min_last_updated_datetime` is passed when calling `/accounts/balance/get` for `ins_128026` (Capital One). |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -27,7 +30,11 @@ A set of fields describing the balance for an account. Balance information may b
   "limit": 108.22,
   "iso_currency_code": "iso_currency_code4",
   "unofficial_currency_code": "unofficial_currency_code4",
-  "last_updated_datetime": "2016-03-13T12:52:32.123Z"
+  "last_updated_datetime": "2016-03-13T12:52:32.123Z",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -3,6 +3,8 @@
 
 ItemWebhookUpdateResponse defines the response schema for `/item/webhook/update`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `ItemWebhookUpdateResponse`
@@ -13,6 +15,7 @@ ItemWebhookUpdateResponse defines the response schema for `/item/webhook/update`
 |  --- | --- | --- | --- |
 | `item` | [`Item`](../../doc/models/item.md) | Required | Metadata about the Item. |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -44,7 +47,11 @@ ItemWebhookUpdateResponse defines the response schema for `/item/webhook/update`
       ],
       "status": 217.06,
       "documentation_url": "documentation_url6",
-      "suggested_action": "suggested_action0"
+      "suggested_action": "suggested_action0",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "available_products": [
       "transfer",
@@ -55,9 +62,17 @@ ItemWebhookUpdateResponse defines the response schema for `/item/webhook/update`
       "standing_orders"
     ],
     "consent_expiration_time": "2016-03-13T12:52:32.123Z",
-    "update_type": "background"
+    "update_type": "background",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
-  "request_id": "request_id4"
+  "request_id": "request_id4",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -3,6 +3,8 @@
 
 Fired when new or updated holdings have been detected on an investment account. The webhook typically fires once per day, after market close, in response to any newly added holdings or price changes to existing holdings.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `HoldingsDefaultUpdateWebhook`
@@ -17,6 +19,7 @@ Fired when new or updated holdings have been detected on an investment account. 
 | `error` | [`Error \| undefined`](../../doc/models/error.md) | Optional | We use standard HTTP response codes for success and failure notifications, and our errors are further classified by `error_type`. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures, and 50X codes are for Plaid-related issues.  Error fields will be `null` if no error has occurred. |
 | `newHoldings` | `number` | Required | The number of new holdings reported since the last time this webhook was fired. |
 | `updatedHoldings` | `number` | Required | The number of updated holdings reported since the last time this webhook was fired. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -47,10 +50,18 @@ Fired when new or updated holdings have been detected on an investment account. 
     ],
     "status": 217.06,
     "documentation_url": "documentation_url6",
-    "suggested_action": "suggested_action0"
+    "suggested_action": "suggested_action0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "new_holdings": 166.22,
-  "updated_holdings": 140.52
+  "updated_holdings": 140.52,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

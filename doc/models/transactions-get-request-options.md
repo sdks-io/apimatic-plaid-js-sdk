@@ -3,6 +3,8 @@
 
 An optional object to be used with the request. If specified, `options` must not be `null`.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `TransactionsGetRequestOptions`
@@ -16,6 +18,7 @@ An optional object to be used with the request. If specified, `options` must not
 | `offset` | `number \| undefined` | Optional | The number of transactions to skip. The default value is 0.<br><br>**Default**: `0`<br><br>**Constraints**: `>= 0` |
 | `includeOriginalDescription` | `boolean \| null \| undefined` | Optional | Include the raw unparsed transaction description from the financial institution. This field is disabled by default. If you need this information in addition to the parsed data provided, contact your Plaid Account Manager.<br><br>**Default**: `false` |
 | `includePersonalFinanceCategoryBeta` | `boolean \| undefined` | Optional | Include the `personal_finance_category` object in the response. This feature is currently in beta – to request access, contact transactions-feedback@plaid.com.<br><br>**Default**: `false` |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -27,7 +30,11 @@ An optional object to be used with the request. If specified, `options` must not
   "include_personal_finance_category_beta": false,
   "account_ids": [
     "account_ids9"
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

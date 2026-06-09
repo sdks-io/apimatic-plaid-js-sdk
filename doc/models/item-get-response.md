@@ -3,6 +3,8 @@
 
 ItemGetResponse defines the response schema for `/item/get` and `/item/webhook/update`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `ItemGetResponse`
@@ -14,6 +16,7 @@ ItemGetResponse defines the response schema for `/item/get` and `/item/webhook/u
 | `item` | [`Item`](../../doc/models/item.md) | Required | Metadata about the Item. |
 | `status` | [`ItemStatusNullable \| undefined`](../../doc/models/item-status-nullable.md) | Optional | - |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -45,7 +48,11 @@ ItemGetResponse defines the response schema for `/item/get` and `/item/webhook/u
       ],
       "status": 217.06,
       "documentation_url": "documentation_url6",
-      "suggested_action": "suggested_action0"
+      "suggested_action": "suggested_action0",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "available_products": [
       "transfer",
@@ -56,23 +63,47 @@ ItemGetResponse defines the response schema for `/item/get` and `/item/webhook/u
       "standing_orders"
     ],
     "consent_expiration_time": "2016-03-13T12:52:32.123Z",
-    "update_type": "background"
+    "update_type": "background",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "status": {
     "investments": {
       "last_successful_update": "2016-03-13T12:52:32.123Z",
-      "last_failed_update": "2016-03-13T12:52:32.123Z"
+      "last_failed_update": "2016-03-13T12:52:32.123Z",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "transactions": {
       "last_successful_update": "2016-03-13T12:52:32.123Z",
-      "last_failed_update": "2016-03-13T12:52:32.123Z"
+      "last_failed_update": "2016-03-13T12:52:32.123Z",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "last_webhook": {
       "sent_at": "2016-03-13T12:52:32.123Z",
-      "code_sent": "code_sent2"
+      "code_sent": "code_sent2",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
   },
-  "request_id": "request_id8"
+  "request_id": "request_id8",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

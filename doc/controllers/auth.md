@@ -1,12 +1,12 @@
 # Auth
 
 ```ts
-const authController = new AuthController(client);
+const authApi = new AuthApi(client);
 ```
 
 ## Class Name
 
-`AuthController`
+`AuthApi`
 
 
 # Auth Get
@@ -51,7 +51,7 @@ const body: AuthGetRequest = {
 };
 
 try {
-  const response = await authController.authGet(body);
+  const response = await authApi.authGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

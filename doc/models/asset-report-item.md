@@ -3,6 +3,8 @@
 
 A representation of an Item within an Asset Report.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `AssetReportItem`
@@ -16,6 +18,7 @@ A representation of an Item within an Asset Report.
 | `institutionId` | `string` | Required | The id of the financial institution associated with the Item. |
 | `dateLastUpdated` | `string` | Required | The date and time when this Item’s data was last retrieved from the financial institution, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format. |
 | `accounts` | [`AccountAssets[]`](../../doc/models/account-assets.md) | Required | Data about each of the accounts open on the Item. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -34,7 +37,11 @@ A representation of an Item within an Asset Report.
         "limit": 30.84,
         "iso_currency_code": "iso_currency_code6",
         "unofficial_currency_code": "unofficial_currency_code2",
-        "last_updated_datetime": "2016-03-13T12:52:32.123Z"
+        "last_updated_datetime": "2016-03-13T12:52:32.123Z",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       "mask": "mask4",
       "name": "name0",
@@ -60,7 +67,11 @@ A representation of an Item within an Asset Report.
             "country": "country8",
             "lat": 205.22,
             "lon": 217.68,
-            "store_number": "store_number0"
+            "store_number": "store_number0",
+            "exampleAdditionalProperty": {
+              "key1": "val1",
+              "key2": "val2"
+            }
           },
           "original_description": "original_description6",
           "account_id": "account_id0",
@@ -69,7 +80,11 @@ A representation of an Item within an Asset Report.
           "unofficial_currency_code": "unofficial_currency_code0",
           "date": "2016-03-13T12:52:32.123Z",
           "pending": false,
-          "transaction_id": "transaction_id6"
+          "transaction_id": "transaction_id6",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         }
       ],
       "owners": [
@@ -82,14 +97,22 @@ A representation of an Item within an Asset Report.
             {
               "data": "data0",
               "primary": false,
-              "type": "office"
+              "type": "office",
+              "exampleAdditionalProperty": {
+                "key1": "val1",
+                "key2": "val2"
+              }
             }
           ],
           "emails": [
             {
               "data": "data6",
               "primary": false,
-              "type": "other"
+              "type": "other",
+              "exampleAdditionalProperty": {
+                "key1": "val1",
+                "key2": "val2"
+              }
             }
           ],
           "addresses": [
@@ -99,11 +122,23 @@ A representation of an Item within an Asset Report.
                 "region": "region6",
                 "street": "street0",
                 "postal_code": "postal_code2",
-                "country": "country4"
+                "country": "country4",
+                "exampleAdditionalProperty": {
+                  "key1": "val1",
+                  "key2": "val2"
+                }
               },
-              "primary": false
+              "primary": false,
+              "exampleAdditionalProperty": {
+                "key1": "val1",
+                "key2": "val2"
+              }
             }
-          ]
+          ],
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         }
       ],
       "historical_balances": [
@@ -111,12 +146,24 @@ A representation of an Item within an Asset Report.
           "date": "2016-03-13T12:52:32.123Z",
           "current": 192.42,
           "iso_currency_code": "iso_currency_code2",
-          "unofficial_currency_code": "unofficial_currency_code6"
+          "unofficial_currency_code": "unofficial_currency_code6",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         }
       ],
-      "verification_status": "automatically_verified"
+      "verification_status": "automatically_verified",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

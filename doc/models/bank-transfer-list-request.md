@@ -3,6 +3,8 @@
 
 Defines the request schema for `/bank_transfer/list`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `BankTransferListRequest`
@@ -18,7 +20,8 @@ Defines the request schema for `/bank_transfer/list`
 | `count` | `number \| undefined` | Optional | The maximum number of bank transfers to return.<br><br>**Default**: `25`<br><br>**Constraints**: `>= 1`, `<= 25` |
 | `offset` | `number \| undefined` | Optional | The number of bank transfers to skip before returning results.<br><br>**Default**: `0`<br><br>**Constraints**: `>= 0` |
 | `originationAccountId` | `string \| null \| undefined` | Optional | Filter bank transfers to only those originated through the specified origination account. |
-| `direction` | [`BankTransferDirectionEnum \| undefined`](../../doc/models/bank-transfer-direction-enum.md) | Optional | Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account. |
+| `direction` | [`BankTransferDirection \| undefined`](../../doc/models/bank-transfer-direction.md) | Optional | Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -29,7 +32,11 @@ Defines the request schema for `/bank_transfer/list`
   "client_id": "client_id8",
   "secret": "secret2",
   "start_date": "2016-03-13T12:52:32.123Z",
-  "end_date": "2016-03-13T12:52:32.123Z"
+  "end_date": "2016-03-13T12:52:32.123Z",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

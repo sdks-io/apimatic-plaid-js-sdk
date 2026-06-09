@@ -3,6 +3,8 @@
 
 Defines the request schema for `/sandbox/transfer/simulate`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `SandboxTransferSimulateRequest`
@@ -16,6 +18,7 @@ Defines the request schema for `/sandbox/transfer/simulate`
 | `transferId` | `string` | Required | Plaid’s unique identifier for a transfer. |
 | `eventType` | `string` | Required | The asynchronous event to be simulated. May be: `posted`, `failed`, or `reversed`.<br><br>An error will be returned if the event type is incompatible with the current transfer status. Compatible status --> event type transitions include:<br><br>`pending` --> `failed`<br><br>`pending` --> `posted`<br><br>`posted` --> `reversed` |
 | `failureReason` | [`TransferFailure \| undefined`](../../doc/models/transfer-failure.md) | Optional | The failure reason if the type of this transfer is `"failed"` or `"reversed"`. Null value otherwise. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -27,7 +30,15 @@ Defines the request schema for `/sandbox/transfer/simulate`
   "event_type": "event_type6",
   "failure_reason": {
     "ach_return_code": "ach_return_code6",
-    "description": "description0"
+    "description": "description0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

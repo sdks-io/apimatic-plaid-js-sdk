@@ -3,6 +3,8 @@
 
 ProcessorTokenCreateRequest defines the request schema for `/processor/token/create`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `ProcessorTokenCreateRequest`
@@ -15,7 +17,8 @@ ProcessorTokenCreateRequest defines the request schema for `/processor/token/cre
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `accessToken` | `string` | Required | The access token associated with the Item data is being requested for. |
 | `accountId` | `string` | Required | The `account_id` value obtained from the `onSuccess` callback in Link |
-| `processor` | [`ProcessorEnum`](../../doc/models/processor-enum.md) | Required | The processor you are integrating with. |
+| `processor` | [`Processor`](../../doc/models/processor.md) | Required | The processor you are integrating with. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -25,7 +28,11 @@ ProcessorTokenCreateRequest defines the request schema for `/processor/token/cre
   "secret": "secret8",
   "access_token": "access_token0",
   "account_id": "account_id4",
-  "processor": "unit"
+  "processor": "unit",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

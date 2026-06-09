@@ -9,11 +9,11 @@ Documentation for accessing and setting credentials for PLAID-SECRET.
 
 | Name | Type | Description | Setter |
 |  --- | --- | --- | --- |
-| PLAID-SECRET | `string` | - | `pLAIDSECRET` |
+| PLAID-SECRET | `string` | - | `plaidSecret` |
 
 
 
-**Note:** Auth credentials can be set using `pLAIDSECRETCredentials` object in the client.
+**Note:** Auth credentials can be set using `plaidSecretCredentials` object in the client.
 
 ## Usage Example
 
@@ -25,7 +25,7 @@ You must provide credentials in the client as shown in the following code snippe
 import { Client } from 'apimatic-plaid-sdk';
 
 const client = new Client({
-  pLAIDSECRETCredentials: {
+  plaidSecretCredentials: {
     'PLAID-SECRET': 'PLAID-SECRET'
   },
 });

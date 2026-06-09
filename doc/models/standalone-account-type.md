@@ -3,6 +3,8 @@
 
 The schema below describes the various `types` and corresponding `subtypes` that Plaid recognizes and reports for financial institution accounts.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `StandaloneAccountType`
@@ -16,6 +18,7 @@ The schema below describes the various `types` and corresponding `subtypes` that
 | `loan` | [`LoanAccount`](../../doc/models/loan-account.md) | Required | A loan type account. Supported products for `loan` accounts are: Balance, Liabilities, and Transactions. |
 | `investment` | [`InvestmentAccountSubtype`](../../doc/models/investment-account-subtype.md) | Required | An investment account. Supported products for `investment` accounts are: Balance and Investments. |
 | `other` | `string` | Required | Other or unknown account type. Supported products for `other` accounts are: Balance, Transactions, Identity, and Assets. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -30,11 +33,19 @@ The schema below describes the various `types` and corresponding `subtypes` that
     "paypal": "paypal6",
     "prepaid": "prepaid4",
     "cash management": "cash management4",
-    "ebt": "ebt4"
+    "ebt": "ebt4",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "credit": {
     "credit card": "credit card2",
-    "paypal": "paypal4"
+    "paypal": "paypal4",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "loan": {
     "auto": "auto8",
@@ -48,7 +59,11 @@ The schema below describes the various `types` and corresponding `subtypes` that
     "overdraft": "overdraft8",
     "line of credit": "line of credit6",
     "student": "student2",
-    "other": "other4"
+    "other": "other4",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "investment": {
     "529a": "529a8",
@@ -97,9 +112,17 @@ The schema below describes the various `types` and corresponding `subtypes` that
     "trust": "trust8",
     "ugma": "ugma4",
     "utma": "utma2",
-    "variable annuity": "variable annuity2"
+    "variable annuity": "variable annuity2",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
-  "other": "other6"
+  "other": "other6",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

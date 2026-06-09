@@ -3,6 +3,8 @@
 
 Describes the connected application for a particular end user.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `ItemApplicationListResponse`
@@ -13,6 +15,7 @@ Describes the connected application for a particular end user.
 |  --- | --- | --- | --- |
 | `requestId` | `string \| undefined` | Optional | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
 | `applications` | [`ConnectedApplication[]`](../../doc/models/connected-application.md) | Required | A list of connected applications. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -37,32 +40,56 @@ Describes the connected application for a particular end user.
           "statements": false,
           "identity": false,
           "auth": false,
-          "transactions": false
+          "transactions": false,
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
         "accounts": [
           {
             "unique_id": "unique_id6",
-            "authorized": false
+            "authorized": false,
+            "exampleAdditionalProperty": {
+              "key1": "val1",
+              "key2": "val2"
+            }
           },
           {
             "unique_id": "unique_id6",
-            "authorized": false
+            "authorized": false,
+            "exampleAdditionalProperty": {
+              "key1": "val1",
+              "key2": "val2"
+            }
           }
         ],
-        "new_accounts": false
+        "new_accounts": false,
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       "requested_scopes": {
         "required_product_access": {
           "statements": false,
           "identity": false,
           "auth": false,
-          "transactions": false
+          "transactions": false,
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
         "optional_product_access": {
           "statements": false,
           "identity": false,
           "auth": false,
-          "transactions": false
+          "transactions": false,
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
         "account_filters": {
           "depository": [
@@ -79,13 +106,29 @@ Describes the connected application for a particular end user.
             "investment1",
             "investment2",
             "investment3"
-          ]
+          ],
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         },
-        "account_selection_cardinality": "MULTI_SELECT"
+        "account_selection_cardinality": "MULTI_SELECT",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
+      },
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
       }
     }
   ],
-  "request_id": "request_id4"
+  "request_id": "request_id4",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

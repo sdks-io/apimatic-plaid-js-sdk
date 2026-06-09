@@ -1,6 +1,8 @@
 
 # Address 2
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `Address2`
@@ -17,6 +19,7 @@
 | `region` | `string \| null \| undefined` | Optional | The region or state<br>Example: `"NC"` |
 | `stateCode` | `string \| null \| undefined` | Optional | The region or state<br>Example: `"NC"` |
 | `country` | `string \| null \| undefined` | Optional | The country of the address. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,7 +29,11 @@
   "street": "street0",
   "line1": "line12",
   "line2": "line24",
-  "postal_code": "postal_code2"
+  "postal_code": "postal_code2",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

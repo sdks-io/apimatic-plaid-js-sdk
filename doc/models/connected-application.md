@@ -3,6 +3,8 @@
 
 Describes the connected application for a particular end user.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `ConnectedApplication`
@@ -18,9 +20,10 @@ Describes the connected application for a particular end user.
 | `applicationUrl` | `string \| null` | Required | The URL for the application's website |
 | `reasonForAccess` | `string \| null` | Required | A string provided by the connected app stating why they use their respective enabled products. |
 | `createdAt` | `string` | Required | The date this application was linked in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format in UTC. |
-| `productDataTypes` | [`ProductDataTypeEnum[]`](../../doc/models/product-data-type-enum.md) | Required | (Deprecated) A list of enums representing the data collected and products enabled for this connected application. |
+| `productDataTypes` | [`ProductDataType[]`](../../doc/models/product-data-type.md) | Required | (Deprecated) A list of enums representing the data collected and products enabled for this connected application. |
 | `scopes` | [`ScopesNullable \| undefined`](../../doc/models/scopes-nullable.md) | Optional | - |
 | `requestedScopes` | [`RequestedScopes \| undefined`](../../doc/models/requested-scopes.md) | Optional | Scope of required and optional account features or content from a ConnectedApplication. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -41,32 +44,56 @@ Describes the connected application for a particular end user.
       "statements": false,
       "identity": false,
       "auth": false,
-      "transactions": false
+      "transactions": false,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "accounts": [
       {
         "unique_id": "unique_id6",
-        "authorized": false
+        "authorized": false,
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       {
         "unique_id": "unique_id6",
-        "authorized": false
+        "authorized": false,
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       }
     ],
-    "new_accounts": false
+    "new_accounts": false,
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "requested_scopes": {
     "required_product_access": {
       "statements": false,
       "identity": false,
       "auth": false,
-      "transactions": false
+      "transactions": false,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "optional_product_access": {
       "statements": false,
       "identity": false,
       "auth": false,
-      "transactions": false
+      "transactions": false,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "account_filters": {
       "depository": [
@@ -83,9 +110,21 @@ Describes the connected application for a particular end user.
         "investment1",
         "investment2",
         "investment3"
-      ]
+      ],
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
-    "account_selection_cardinality": "MULTI_SELECT"
+    "account_selection_cardinality": "MULTI_SELECT",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

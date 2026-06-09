@@ -3,6 +3,8 @@
 
 BankTransferSweepListRequest defines the request schema for `/bank_transfer/sweep/list`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `BankTransferSweepListRequest`
@@ -18,6 +20,7 @@ BankTransferSweepListRequest defines the request schema for `/bank_transfer/swee
 | `startTime` | `string \| null \| undefined` | Optional | The start datetime of sweeps to return (RFC 3339 format). |
 | `endTime` | `string \| null \| undefined` | Optional | The end datetime of sweeps to return (RFC 3339 format). |
 | `count` | `number \| null \| undefined` | Optional | The maximum number of sweeps to return.<br><br>**Default**: `25`<br><br>**Constraints**: `>= 1`, `<= 25` |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,7 +31,11 @@ BankTransferSweepListRequest defines the request schema for `/bank_transfer/swee
   "secret": "secret8",
   "origination_account_id": "origination_account_id2",
   "start_id": 4,
-  "start_time": "2016-03-13T12:52:32.123Z"
+  "start_time": "2016-03-13T12:52:32.123Z",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

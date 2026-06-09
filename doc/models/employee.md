@@ -3,6 +3,8 @@
 
 Data about the employee.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `Employee`
@@ -14,7 +16,8 @@ Data about the employee.
 | `name` | `string \| null` | Required | The name of the employee. |
 | `address` | [`Address2`](../../doc/models/address-2.md) | Required | - |
 | `maritalStatus` | `string \| null \| undefined` | Optional | Marital status of the employee. |
-| `taxpayerId` | [`TaxpayerID \| undefined`](../../doc/models/taxpayer-id.md) | Optional | - |
+| `taxpayerId` | [`TaxpayerId \| undefined`](../../doc/models/taxpayer-id.md) | Optional | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,12 +29,24 @@ Data about the employee.
     "street": "street6",
     "line1": "line18",
     "line2": "line20",
-    "postal_code": "postal_code8"
+    "postal_code": "postal_code8",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "marital_status": "marital_status4",
   "taxpayer_id": {
     "id_type": "id_type8",
-    "last_4_digits": "last_4_digits6"
+    "last_4_digits": "last_4_digits6",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

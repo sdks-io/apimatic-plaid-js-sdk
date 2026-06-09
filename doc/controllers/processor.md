@@ -1,12 +1,12 @@
 # Processor
 
 ```ts
-const processorController = new ProcessorController(client);
+const processorApi = new ProcessorApi(client);
 ```
 
 ## Class Name
 
-`ProcessorController`
+`ProcessorApi`
 
 ## Methods
 
@@ -55,8 +55,8 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const body: ProcessorBankTransferCreateRequest = {
   idempotencyKey: 'idempotency_key2',
   processorToken: 'processor_token4',
-  type: BankTransferTypeEnum.Debit,
-  network: BankTransferNetworkEnum.Samedayach,
+  type: BankTransferType.Debit,
+  network: BankTransferNetwork.Samedayach,
   amount: 'amount8',
   isoCurrencyCode: 'iso_currency_code0',
   description: 'description4',
@@ -66,7 +66,7 @@ const body: ProcessorBankTransferCreateRequest = {
 };
 
 try {
-  const response = await processorController.processorBankTransferCreate(body);
+  const response = await processorApi.processorBankTransferCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -137,7 +137,7 @@ const body: ProcessorBalanceGetRequest = {
 };
 
 try {
-  const response = await processorController.processorBalanceGet(body);
+  const response = await processorApi.processorBalanceGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -222,7 +222,7 @@ const body: ProcessorAuthGetRequest = {
 };
 
 try {
-  const response = await processorController.processorAuthGet(body);
+  const response = await processorApi.processorAuthGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -331,7 +331,7 @@ const body: ProcessorIdentityGetRequest = {
 };
 
 try {
-  const response = await processorController.processorIdentityGet(body);
+  const response = await processorApi.processorIdentityGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -480,7 +480,7 @@ const body: ProcessorApexProcessorTokenCreateRequest = {
 };
 
 try {
-  const response = await processorController.processorApexProcessorTokenCreate(body);
+  const response = await processorApi.processorApexProcessorTokenCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -540,11 +540,11 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const body: ProcessorTokenCreateRequest = {
   accessToken: 'access_token4',
   accountId: 'account_id8',
-  processor: ProcessorEnum.Astra,
+  processor: Processor.Astra,
 };
 
 try {
-  const response = await processorController.processorTokenCreate(body);
+  const response = await processorApi.processorTokenCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -616,7 +616,7 @@ const body: ProcessorStripeBankAccountTokenCreateRequest = {
 };
 
 try {
-  const response = await processorController.processorStripeBankAccountTokenCreate(body);
+  const response = await processorApi.processorStripeBankAccountTokenCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

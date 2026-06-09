@@ -3,6 +3,8 @@
 
 IncomeVerificationTaxformsGetResponse defines the response schema for `/income/verification/taxforms/get`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `IncomeVerificationTaxformsGetResponse`
@@ -15,6 +17,7 @@ IncomeVerificationTaxformsGetResponse defines the response schema for `/income/v
 | `taxforms` | [`Taxform[]`](../../doc/models/taxform.md) | Required | A list of taxforms. |
 | `documentMetadata` | [`DocumentMetadata[]`](../../doc/models/document-metadata.md) | Required | - |
 | `error` | [`Error \| undefined`](../../doc/models/error.md) | Optional | We use standard HTTP response codes for success and failure notifications, and our errors are further classified by `error_type`. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures, and 50X codes are for Plaid-related issues.  Error fields will be `null` if no error has occurred. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -31,7 +34,15 @@ IncomeVerificationTaxformsGetResponse defines the response schema for `/income/v
             "street": "street6",
             "line1": "line18",
             "line2": "line20",
-            "postal_code": "postal_code8"
+            "postal_code": "postal_code8",
+            "exampleAdditionalProperty": {
+              "key1": "val1",
+              "key2": "val2"
+            }
+          },
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
           }
         },
         "employee": {
@@ -41,17 +52,37 @@ IncomeVerificationTaxformsGetResponse defines the response schema for `/income/v
             "street": "street6",
             "line1": "line18",
             "line2": "line20",
-            "postal_code": "postal_code8"
+            "postal_code": "postal_code8",
+            "exampleAdditionalProperty": {
+              "key1": "val1",
+              "key2": "val2"
+            }
           },
           "marital_status": "marital_status6",
           "taxpayer_id": {
             "id_type": "id_type8",
-            "last_4_digits": "last_4_digits6"
+            "last_4_digits": "last_4_digits6",
+            "exampleAdditionalProperty": {
+              "key1": "val1",
+              "key2": "val2"
+            }
+          },
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
           }
         },
         "tax_year": "tax_year8",
         "employer_id_number": "employer_id_number8",
-        "wages_tips_other_comp": "wages_tips_other_comp4"
+        "wages_tips_other_comp": "wages_tips_other_comp4",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
+      },
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
       }
     }
   ],
@@ -59,7 +90,11 @@ IncomeVerificationTaxformsGetResponse defines the response schema for `/income/v
     {
       "name": "name2",
       "status": "status6",
-      "doc_id": "doc_id6"
+      "doc_id": "doc_id6",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
   ],
   "request_id": "request_id2",
@@ -85,7 +120,15 @@ IncomeVerificationTaxformsGetResponse defines the response schema for `/income/v
     ],
     "status": 217.06,
     "documentation_url": "documentation_url6",
-    "suggested_action": "suggested_action0"
+    "suggested_action": "suggested_action0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

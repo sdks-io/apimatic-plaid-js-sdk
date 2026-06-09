@@ -3,6 +3,8 @@
 
 IncomeVerificationSummaryGetRequest defines the request schema for `/income/verification/summary/get`.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `IncomeVerificationSummaryGetRequest`
@@ -15,6 +17,7 @@ IncomeVerificationSummaryGetRequest defines the request schema for `/income/veri
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `incomeVerificationId` | `string \| null \| undefined` | Optional | The ID of the verification. |
 | `accessToken` | `string \| null \| undefined` | Optional | The access token associated with the Item data is being requested for. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -23,7 +26,11 @@ IncomeVerificationSummaryGetRequest defines the request schema for `/income/veri
   "client_id": "client_id2",
   "secret": "secret6",
   "income_verification_id": "income_verification_id8",
-  "access_token": "access_token8"
+  "access_token": "access_token8",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

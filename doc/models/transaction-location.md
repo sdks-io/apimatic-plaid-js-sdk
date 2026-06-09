@@ -3,6 +3,8 @@
 
 A representation of where a transaction took place
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `TransactionLocation`
@@ -19,6 +21,7 @@ A representation of where a transaction took place
 | `lat` | `number \| null` | Required | The latitude where the transaction occurred. |
 | `lon` | `number \| null` | Required | The longitude where the transaction occurred. |
 | `storeNumber` | `string \| null` | Required | The merchant defined store number where the transaction occurred. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -31,7 +34,11 @@ A representation of where a transaction took place
   "country": "country6",
   "lat": 198.3,
   "lon": 224.6,
-  "store_number": "store_number8"
+  "store_number": "store_number8",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

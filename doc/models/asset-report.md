@@ -3,6 +3,8 @@
 
 An object representing an Asset Report
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `AssetReport`
@@ -17,6 +19,7 @@ An object representing an Asset Report
 | `daysRequested` | `number` | Required | The duration of transaction history you requested |
 | `user` | [`AssetReportUser`](../../doc/models/asset-report-user.md) | Required | The user object allows you to provide additional information about the user to be appended to the Asset Report. All fields are optional. The `first_name`, `last_name`, and `ssn` fields are required if you would like the Report to be eligible for Fannie Mae’s Day 1 Certainty™ program. |
 | `items` | [`AssetReportItem[]`](../../doc/models/asset-report-item.md) | Required | Data returned by Plaid about each of the Items included in the Asset Report. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -31,7 +34,11 @@ An object representing an Asset Report
     "first_name": "first_name0",
     "middle_name": "middle_name0",
     "last_name": "last_name8",
-    "ssn": "ssn6"
+    "ssn": "ssn6",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "items": [
     {
@@ -48,7 +55,11 @@ An object representing an Asset Report
             "limit": 30.84,
             "iso_currency_code": "iso_currency_code6",
             "unofficial_currency_code": "unofficial_currency_code2",
-            "last_updated_datetime": "2016-03-13T12:52:32.123Z"
+            "last_updated_datetime": "2016-03-13T12:52:32.123Z",
+            "exampleAdditionalProperty": {
+              "key1": "val1",
+              "key2": "val2"
+            }
           },
           "mask": "mask4",
           "name": "name0",
@@ -74,7 +85,11 @@ An object representing an Asset Report
                 "country": "country8",
                 "lat": 205.22,
                 "lon": 217.68,
-                "store_number": "store_number0"
+                "store_number": "store_number0",
+                "exampleAdditionalProperty": {
+                  "key1": "val1",
+                  "key2": "val2"
+                }
               },
               "original_description": "original_description6",
               "account_id": "account_id0",
@@ -83,7 +98,11 @@ An object representing an Asset Report
               "unofficial_currency_code": "unofficial_currency_code0",
               "date": "2016-03-13T12:52:32.123Z",
               "pending": false,
-              "transaction_id": "transaction_id6"
+              "transaction_id": "transaction_id6",
+              "exampleAdditionalProperty": {
+                "key1": "val1",
+                "key2": "val2"
+              }
             }
           ],
           "owners": [
@@ -96,14 +115,22 @@ An object representing an Asset Report
                 {
                   "data": "data0",
                   "primary": false,
-                  "type": "office"
+                  "type": "office",
+                  "exampleAdditionalProperty": {
+                    "key1": "val1",
+                    "key2": "val2"
+                  }
                 }
               ],
               "emails": [
                 {
                   "data": "data6",
                   "primary": false,
-                  "type": "other"
+                  "type": "other",
+                  "exampleAdditionalProperty": {
+                    "key1": "val1",
+                    "key2": "val2"
+                  }
                 }
               ],
               "addresses": [
@@ -113,11 +140,23 @@ An object representing an Asset Report
                     "region": "region6",
                     "street": "street0",
                     "postal_code": "postal_code2",
-                    "country": "country4"
+                    "country": "country4",
+                    "exampleAdditionalProperty": {
+                      "key1": "val1",
+                      "key2": "val2"
+                    }
                   },
-                  "primary": false
+                  "primary": false,
+                  "exampleAdditionalProperty": {
+                    "key1": "val1",
+                    "key2": "val2"
+                  }
                 }
-              ]
+              ],
+              "exampleAdditionalProperty": {
+                "key1": "val1",
+                "key2": "val2"
+              }
             }
           ],
           "historical_balances": [
@@ -125,14 +164,30 @@ An object representing an Asset Report
               "date": "2016-03-13T12:52:32.123Z",
               "current": 192.42,
               "iso_currency_code": "iso_currency_code2",
-              "unofficial_currency_code": "unofficial_currency_code6"
+              "unofficial_currency_code": "unofficial_currency_code6",
+              "exampleAdditionalProperty": {
+                "key1": "val1",
+                "key2": "val2"
+              }
             }
           ],
-          "verification_status": "automatically_verified"
+          "verification_status": "automatically_verified",
+          "exampleAdditionalProperty": {
+            "key1": "val1",
+            "key2": "val2"
+          }
         }
-      ]
+      ],
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

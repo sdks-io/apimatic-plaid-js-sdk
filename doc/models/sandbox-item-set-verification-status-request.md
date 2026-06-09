@@ -3,6 +3,8 @@
 
 SandboxItemSetVerificationStatusRequest defines the request schema for `/sandbox/item/set_verification_status`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `SandboxItemSetVerificationStatusRequest`
@@ -15,7 +17,8 @@ SandboxItemSetVerificationStatusRequest defines the request schema for `/sandbox
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `accessToken` | `string` | Required | The access token associated with the Item data is being requested for. |
 | `accountId` | `string` | Required | The `account_id` of the account whose verification status is to be modified |
-| `verificationStatus` | [`VerificationStatus1Enum`](../../doc/models/verification-status-1-enum.md) | Required | The verification status to set the account to. |
+| `verificationStatus` | [`VerificationStatus1`](../../doc/models/verification-status-1.md) | Required | The verification status to set the account to. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -25,7 +28,11 @@ SandboxItemSetVerificationStatusRequest defines the request schema for `/sandbox
   "secret": "secret4",
   "access_token": "access_token8",
   "account_id": "account_id2",
-  "verification_status": "automatically_verified"
+  "verification_status": "automatically_verified",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

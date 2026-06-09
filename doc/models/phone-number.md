@@ -3,6 +3,8 @@
 
 A phone number
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `PhoneNumber`
@@ -13,7 +15,8 @@ A phone number
 |  --- | --- | --- | --- |
 | `data` | `string` | Required | The phone number. |
 | `primary` | `boolean` | Required | When `true`, identifies the phone number as the primary number on an account. |
-| `type` | [`TypeEnum`](../../doc/models/type-enum.md) | Required | The type of phone number. |
+| `type` | [`Type`](../../doc/models/type.md) | Required | The type of phone number. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -21,7 +24,11 @@ A phone number
 {
   "data": "data2",
   "primary": false,
-  "type": "home"
+  "type": "home",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

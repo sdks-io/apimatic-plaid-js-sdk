@@ -3,6 +3,8 @@
 
 Defines the request schema for `/transfer/list`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `TransferListRequest`
@@ -18,6 +20,7 @@ Defines the request schema for `/transfer/list`
 | `count` | `number \| undefined` | Optional | The maximum number of transfers to return.<br><br>**Default**: `25`<br><br>**Constraints**: `>= 1`, `<= 25` |
 | `offset` | `number \| undefined` | Optional | The number of transfers to skip before returning results.<br><br>**Default**: `0`<br><br>**Constraints**: `>= 0` |
 | `originationAccountId` | `string \| null \| undefined` | Optional | Filter transfers to only those originated through the specified origination account. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,7 +31,11 @@ Defines the request schema for `/transfer/list`
   "client_id": "client_id0",
   "secret": "secret4",
   "start_date": "2016-03-13T12:52:32.123Z",
-  "end_date": "2016-03-13T12:52:32.123Z"
+  "end_date": "2016-03-13T12:52:32.123Z",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -1,11 +1,13 @@
 
-# MFA
+# Mfa
 
 Specifies the multi-factor authentication settings to use with this test account
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
-`MFA`
+`Mfa`
 
 ## Fields
 
@@ -16,6 +18,7 @@ Specifies the multi-factor authentication settings to use with this test account
 | `questionsPerRound` | `number` | Required | Number of questions per round. Required if value of `type` is `questions`. If value of type is `selections`, default value is 2. |
 | `selectionRounds` | `number` | Required | Number of rounds of selections, used if `type` is `selections`. Defaults to 1. |
 | `selectionsPerQuestion` | `number` | Required | Number of available answers per question, used if `type` is `selection`. Defaults to 2. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -25,7 +28,11 @@ Specifies the multi-factor authentication settings to use with this test account
   "question_rounds": 169.62,
   "questions_per_round": 161.58,
   "selection_rounds": 198.1,
-  "selections_per_question": 232.84
+  "selections_per_question": 232.84,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

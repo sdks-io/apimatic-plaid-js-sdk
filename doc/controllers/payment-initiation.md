@@ -1,12 +1,12 @@
 # Payment Initiation
 
 ```ts
-const paymentInitiationController = new PaymentInitiationController(client);
+const paymentInitiationApi = new PaymentInitiationApi(client);
 ```
 
 ## Class Name
 
-`PaymentInitiationController`
+`PaymentInitiationApi`
 
 ## Methods
 
@@ -60,7 +60,7 @@ const body: PaymentInitiationPaymentReverseRequest = {
 };
 
 try {
-  const response = await paymentInitiationController.paymentInitiationPaymentReverse(body);
+  const response = await paymentInitiationApi.paymentInitiationPaymentReverse(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -134,7 +134,7 @@ const body: PaymentInitiationRecipientCreateRequest = {
 };
 
 try {
-  const response = await paymentInitiationController.paymentInitiationRecipientCreate(body);
+  const response = await paymentInitiationApi.paymentInitiationRecipientCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -204,7 +204,7 @@ const body: PaymentInitiationRecipientListRequest = {
 };
 
 try {
-  const response = await paymentInitiationController.paymentInitiationRecipientList(body);
+  const response = await paymentInitiationApi.paymentInitiationRecipientList(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -290,7 +290,7 @@ const body: PaymentInitiationRecipientGetRequest = {
 };
 
 try {
-  const response = await paymentInitiationController.paymentInitiationRecipientGet(body);
+  const response = await paymentInitiationApi.paymentInitiationRecipientGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -375,13 +375,13 @@ const body: PaymentInitiationPaymentCreateRequest = {
   recipientId: 'recipient_id4',
   reference: 'reference8',
   amount: {
-    currency: CurrencyEnum.GBP,
+    currency: Currency.Gbp,
     value: 52.3,
   },
 };
 
 try {
-  const response = await paymentInitiationController.paymentInitiationPaymentCreate(body);
+  const response = await paymentInitiationApi.paymentInitiationPaymentCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -453,7 +453,7 @@ const body: PaymentInitiationPaymentGetRequest = {
 };
 
 try {
-  const response = await paymentInitiationController.paymentInitiationPaymentGet(body);
+  const response = await paymentInitiationApi.paymentInitiationPaymentGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -517,7 +517,7 @@ const body: PaymentInitiationPaymentTokenCreateRequest = {
 };
 
 try {
-  const response = await paymentInitiationController.createPaymentToken(body);
+  const response = await paymentInitiationApi.createPaymentToken(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -589,7 +589,7 @@ const body: PaymentInitiationPaymentListRequest = {
 };
 
 try {
-  const response = await paymentInitiationController.paymentInitiationPaymentList(body);
+  const response = await paymentInitiationApi.paymentInitiationPaymentList(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

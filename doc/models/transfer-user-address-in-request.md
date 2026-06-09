@@ -3,6 +3,8 @@
 
 The address associated with the account holder.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `TransferUserAddressInRequest`
@@ -16,6 +18,7 @@ The address associated with the account holder.
 | `region` | `string \| undefined` | Optional | The state or province (e.g., "California"). |
 | `postalCode` | `string \| undefined` | Optional | The postal code (e.g., "94103"). |
 | `country` | `string \| undefined` | Optional | A two-letter country code (e.g., "US"). |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -25,7 +28,11 @@ The address associated with the account holder.
   "city": "city0",
   "region": "region6",
   "postal_code": "postal_code2",
-  "country": "country4"
+  "country": "country4",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

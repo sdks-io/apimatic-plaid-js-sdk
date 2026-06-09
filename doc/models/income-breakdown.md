@@ -3,6 +3,8 @@
 
 An object representing a breakdown of the different income types on the paystub.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `IncomeBreakdown`
@@ -11,10 +13,11 @@ An object representing a breakdown of the different income types on the paystub.
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `type` | [`Type5Enum`](../../doc/models/type-5-enum.md) | Required | The type of income. Possible values include:<br>`"regular"`: regular income<br>`"overtime"`: overtime income<br>`"bonus"`: bonus income |
+| `type` | [`Type5`](../../doc/models/type-5.md) | Required | The type of income. Possible values include:<br>`"regular"`: regular income<br>`"overtime"`: overtime income<br>`"bonus"`: bonus income |
 | `rate` | `number \| null` | Required | The hourly rate at which the income is paid. |
 | `hours` | `number \| null` | Required | The number of hours logged for this income for this pay period. |
 | `total` | `number \| null` | Required | The total pay for this pay period. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -23,7 +26,11 @@ An object representing a breakdown of the different income types on the paystub.
   "type": "regular",
   "rate": 190.0,
   "hours": 102.08,
-  "total": 23.2
+  "total": 23.2,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

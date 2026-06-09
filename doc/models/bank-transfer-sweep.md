@@ -3,6 +3,8 @@
 
 BankTransferSweep describes a sweep transfer.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `BankTransferSweep`
@@ -17,6 +19,7 @@ BankTransferSweep describes a sweep transfer.
 | `amount` | `string` | Required | The amount of the sweep. |
 | `isoCurrencyCode` | `string` | Required | The currency of the sweep, e.g. "USD". |
 | `sweepAccount` | [`BankTransferSweepAccount`](../../doc/models/bank-transfer-sweep-account.md) | Required | The account where the funds are swept to. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -29,7 +32,15 @@ BankTransferSweep describes a sweep transfer.
   "iso_currency_code": "iso_currency_code8",
   "sweep_account": {
     "account_number": "account_number2",
-    "routing_number": "routing_number2"
+    "routing_number": "routing_number2",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

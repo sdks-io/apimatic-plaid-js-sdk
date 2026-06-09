@@ -3,6 +3,8 @@
 
 Account and bank identifier number data used to configure the test account. All values are optional.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `Numbers`
@@ -19,6 +21,7 @@ Account and bank identifier number data used to configure the test account. All 
 | `internationalBic` | `string \| undefined` | Optional | Bank identifier code (BIC). Must be specified alongside `international_iban`. |
 | `internationalIban` | `string \| undefined` | Optional | International bank account number (IBAN). If no account number is specified via `account`, will also be used as the account number by default. Must be specified alongside `international_bic`. |
 | `bacsSortCode` | `string \| undefined` | Optional | BACS sort code |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,7 +31,11 @@ Account and bank identifier number data used to configure the test account. All 
   "ach_routing": "ach_routing6",
   "ach_wire_routing": "ach_wire_routing6",
   "eft_institution": "eft_institution8",
-  "eft_branch": "eft_branch0"
+  "eft_branch": "eft_branch0",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

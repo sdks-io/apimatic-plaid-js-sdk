@@ -3,6 +3,8 @@
 
 Activity that modifies a position, but not through buy/sell activity e.g. options exercise, portfolio transfer
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `TransferType`
@@ -19,6 +21,7 @@ Activity that modifies a position, but not through buy/sell activity e.g. option
 | `spinOff` | `string \| undefined` | Optional | Inflow of stock from spin-off transaction of an existing holding |
 | `split` | `string \| undefined` | Optional | Inflow of stock from a forward split of an existing holding |
 | `transfer` | `string \| undefined` | Optional | Movement of assets into or out of an account |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,7 +31,11 @@ Activity that modifies a position, but not through buy/sell activity e.g. option
   "adjustment": "adjustment6",
   "exercise": "exercise4",
   "expire": "expire4",
-  "merger": "merger2"
+  "merger": "merger2",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

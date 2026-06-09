@@ -3,6 +3,8 @@
 
 PaymentInitiationPaymentCreateRequest defines the request schema for `/payment_initiation/payment/create`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `PaymentInitiationPaymentCreateRequest`
@@ -18,6 +20,7 @@ PaymentInitiationPaymentCreateRequest defines the request schema for `/payment_i
 | `amount` | [`PaymentAmount`](../../doc/models/payment-amount.md) | Required | The amount and currency of a payment |
 | `schedule` | [`ExternalPaymentScheduleRequest \| undefined`](../../doc/models/external-payment-schedule-request.md) | Optional | The schedule that the payment will be executed on. If a schedule is provided, the payment is automatically set up as a standing order. If no schedule is specified, the payment will be executed only once. |
 | `options` | [`PaymentOptions \| undefined`](../../doc/models/payment-options.md) | Optional | Additional payment options |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -29,23 +32,43 @@ PaymentInitiationPaymentCreateRequest defines the request schema for `/payment_i
   "reference": "reference6",
   "amount": {
     "currency": "GBP",
-    "value": 52.3
+    "value": 52.3,
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "schedule": {
     "interval": "WEEKLY",
     "interval_execution_day": 88,
     "start_date": "2016-03-13T12:52:32.123Z",
     "end_date": "2016-03-13T12:52:32.123Z",
-    "adjusted_start_date": "2016-03-13T12:52:32.123Z"
+    "adjusted_start_date": "2016-03-13T12:52:32.123Z",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "options": {
     "request_refund_details": false,
     "iban": "iban6",
     "bacs": {
       "account": "account4",
-      "sort_code": "sort_code4"
+      "sort_code": "sort_code4",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
-    "emi_account_id": "emi_account_id4"
+    "emi_account_id": "emi_account_id4",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

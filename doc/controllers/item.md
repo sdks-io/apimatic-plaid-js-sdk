@@ -1,12 +1,12 @@
 # Item
 
 ```ts
-const itemController = new ItemController(client);
+const itemApi = new ItemApi(client);
 ```
 
 ## Class Name
 
-`ItemController`
+`ItemApi`
 
 ## Methods
 
@@ -61,7 +61,7 @@ const body: ItemAccessTokenInvalidateRequest = {
 };
 
 try {
-  const response = await itemController.itemAccessTokenInvalidate(body);
+  const response = await itemApi.itemAccessTokenInvalidate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -136,7 +136,7 @@ const body: ItemRemoveRequest = {
 };
 
 try {
-  const response = await itemController.itemRemove(body);
+  const response = await itemApi.itemRemove(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -212,7 +212,7 @@ const body: ItemApplicationListRequest = {
 };
 
 try {
-  const response = await itemController.itemApplicationList(body);
+  const response = await itemApi.itemApplicationList(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -285,7 +285,7 @@ const body: ItemPublicTokenExchangeRequest = {
 };
 
 try {
-  const response = await itemController.itemPublicTokenExchange(body);
+  const response = await itemApi.itemPublicTokenExchange(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -357,7 +357,7 @@ const body: ItemGetRequest = {
 };
 
 try {
-  const response = await itemController.itemGet(body);
+  const response = await itemApi.itemGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -434,7 +434,7 @@ const body: ItemPublicTokenCreateRequest = {
 };
 
 try {
-  const response = await itemController.itemCreatePublicToken(body);
+  const response = await itemApi.itemCreatePublicToken(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -504,11 +504,11 @@ const body: ItemApplicationScopesUpdateRequest = {
   scopes: {
     newAccounts: true,
   },
-  context: ScopesContextEnum.ENROLLMENT,
+  context: ScopesContext.Enrollment,
 };
 
 try {
-  const response = await itemController.itemApplicationScopesUpdate(body);
+  const response = await itemApi.itemApplicationScopesUpdate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -580,7 +580,7 @@ const body: ItemWebhookUpdateRequest = {
 };
 
 try {
-  const response = await itemController.itemWebhookUpdate(body);
+  const response = await itemApi.itemWebhookUpdate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -639,7 +639,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```ts
 const body: ItemImportRequest = {
   products: [
-    ProductsEnum.Balance
+    Products.Balance
   ],
   userAuth: {
     userId: 'user_id2',
@@ -648,7 +648,7 @@ const body: ItemImportRequest = {
 };
 
 try {
-  const response = await itemController.itemImport(body);
+  const response = await itemApi.itemImport(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

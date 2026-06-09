@@ -3,6 +3,8 @@
 
 Specifies optional parameters for `/institutions/get_by_id`. If provided, must not be `null`.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `InstitutionsGetByIdRequestOptions`
@@ -15,6 +17,7 @@ Specifies optional parameters for `/institutions/get_by_id`. If provided, must n
 | `includeStatus` | `boolean \| undefined` | Optional | If `true`, the response will include status information about the institution. Default value is `false`.<br><br>**Default**: `false` |
 | `includeAuthMetadata` | `boolean \| undefined` | Optional | When `true`, returns metadata related to the Auth product indicating which auth methods are supported.<br><br>**Default**: `false` |
 | `includePaymentInitiationMetadata` | `boolean \| undefined` | Optional | When `true`, returns metadata related to the Payment Initiation product indicating which payment configurations are supported.<br><br>**Default**: `false` |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -23,7 +26,11 @@ Specifies optional parameters for `/institutions/get_by_id`. If provided, must n
   "include_optional_metadata": false,
   "include_status": false,
   "include_auth_metadata": false,
-  "include_payment_initiation_metadata": false
+  "include_payment_initiation_metadata": false,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

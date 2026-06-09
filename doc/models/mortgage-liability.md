@@ -3,6 +3,8 @@
 
 Contains details about a mortgage account.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `MortgageLiability`
@@ -31,6 +33,7 @@ Contains details about a mortgage account.
 | `propertyAddress` | [`MortgagePropertyAddress`](../../doc/models/mortgage-property-address.md) | Required | Object containing fields describing property address. |
 | `ytdInterestPaid` | `number \| null` | Required | The year to date (YTD) interest paid. |
 | `ytdPrincipalPaid` | `number \| null` | Required | The YTD principal paid. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -44,7 +47,11 @@ Contains details about a mortgage account.
   "has_prepayment_penalty": false,
   "interest_rate": {
     "percentage": 105.9,
-    "type": "type2"
+    "type": "type2",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "last_payment_amount": 42.16,
   "last_payment_date": "2016-03-13T12:52:32.123Z",
@@ -61,10 +68,18 @@ Contains details about a mortgage account.
     "country": "country4",
     "postal_code": "postal_code2",
     "region": "region6",
-    "street": "street0"
+    "street": "street0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "ytd_interest_paid": 179.02,
-  "ytd_principal_paid": 212.0
+  "ytd_principal_paid": 212.0,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

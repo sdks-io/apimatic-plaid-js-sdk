@@ -1,12 +1,12 @@
 # Employers
 
 ```ts
-const employersController = new EmployersController(client);
+const employersApi = new EmployersApi(client);
 ```
 
 ## Class Name
 
-`EmployersController`
+`EmployersApi`
 
 
 # Employers Search
@@ -52,7 +52,7 @@ const body: EmployersSearchRequest = {
 };
 
 try {
-  const response = await employersController.employersSearch(body);
+  const response = await employersApi.employersSearch(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

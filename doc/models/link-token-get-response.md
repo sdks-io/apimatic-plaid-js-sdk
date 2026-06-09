@@ -3,6 +3,8 @@
 
 LinkTokenGetResponse defines the response schema for `/link/token/get`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `LinkTokenGetResponse`
@@ -16,6 +18,7 @@ LinkTokenGetResponse defines the response schema for `/link/token/get`
 | `expiration` | `string \| null` | Required | The expiration timestamp for the `link_token`, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format. |
 | `metadata` | [`LinkTokenGetMetadataResponse`](../../doc/models/link-token-get-metadata-response.md) | Required | An object specifying the arguments originally provided to the `/link/token/create` call. |
 | `requestId` | `string` | Required | A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -40,33 +43,61 @@ LinkTokenGetResponse defines the response schema for `/link/token/get`
         "account_subtypes": [
           "non-taxable brokerage account",
           "other"
-        ]
+        ],
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       "credit": {
         "account_subtypes": [
           "ugma",
           "utma",
           "variable annuity"
-        ]
+        ],
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       "loan": {
         "account_subtypes": [
           "checking",
           "savings",
           "money market"
-        ]
+        ],
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       "investment": {
         "account_subtypes": [
           "consumer",
           "home"
-        ]
+        ],
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
+      },
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
       }
     },
     "redirect_uri": "redirect_uri4",
-    "client_name": "client_name0"
+    "client_name": "client_name0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
-  "request_id": "request_id6"
+  "request_id": "request_id6",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -3,6 +3,8 @@
 
 Activity that modifies a cash position
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `CashType`
@@ -33,6 +35,7 @@ Activity that modifies a cash position
 | `trustFee` | `string \| undefined` | Optional | Fees related to adminstration of a trust account |
 | `unqualifiedGain` | `string \| undefined` | Optional | Unqualified capital gain received as cash |
 | `withdrawal` | `string \| undefined` | Optional | Outflow of cash from an account |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -42,7 +45,11 @@ Activity that modifies a cash position
   "contribution": "contribution0",
   "deposit": "deposit6",
   "dividend": "dividend6",
-  "stock distribution": "stock distribution2"
+  "stock distribution": "stock distribution2",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

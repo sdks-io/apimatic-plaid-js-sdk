@@ -7,6 +7,8 @@ For a full list of valid types and subtypes, see the [Account schema](https://pl
 
 For institutions using OAuth, the filter will not affect the list of institutions or accounts shown by the bank in the OAuth window.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `LinkTokenCreateRequestAccountSubtypes`
@@ -19,6 +21,7 @@ For institutions using OAuth, the filter will not affect the list of institution
 | `credit` | [`Credit \| undefined`](../../doc/models/credit.md) | Optional | A filter to apply to `credit`-type accounts |
 | `loan` | [`Loan \| undefined`](../../doc/models/loan.md) | Optional | A filter to apply to `loan`-type accounts |
 | `investment` | [`Investment \| undefined`](../../doc/models/investment.md) | Optional | A filter to apply to `investment`-type accounts |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,27 +31,47 @@ For institutions using OAuth, the filter will not affect the list of institution
     "account_subtypes": [
       "non-taxable brokerage account",
       "other"
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "credit": {
     "account_subtypes": [
       "ugma",
       "utma",
       "variable annuity"
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "loan": {
     "account_subtypes": [
       "checking",
       "savings",
       "money market"
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "investment": {
     "account_subtypes": [
       "consumer",
       "home"
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

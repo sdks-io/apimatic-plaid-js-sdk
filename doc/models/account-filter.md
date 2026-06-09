@@ -3,6 +3,8 @@
 
 Enumerates the account subtypes that the application wishes for the user to be able to select from. For more details refer to Plaid documentation on account filters.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `AccountFilter`
@@ -15,6 +17,7 @@ Enumerates the account subtypes that the application wishes for the user to be a
 | `credit` | `string[] \| undefined` | Optional | A list of account subtypes to be filtered. |
 | `loan` | `string[] \| undefined` | Optional | A list of account subtypes to be filtered. |
 | `investment` | `string[] \| undefined` | Optional | A list of account subtypes to be filtered. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -36,7 +39,11 @@ Enumerates the account subtypes that the application wishes for the user to be a
   "investment": [
     "investment9",
     "investment0"
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

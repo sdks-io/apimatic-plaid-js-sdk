@@ -3,6 +3,8 @@
 
 ProcessorApexProcessorTokenCreateRequest defines the request schema for `/processor/apex/processor_token/create`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `ProcessorApexProcessorTokenCreateRequest`
@@ -15,6 +17,7 @@ ProcessorApexProcessorTokenCreateRequest defines the request schema for `/proces
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `accessToken` | `string` | Required | The access token associated with the Item data is being requested for. |
 | `accountId` | `string` | Required | The `account_id` value obtained from the `onSuccess` callback in Link |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -23,7 +26,11 @@ ProcessorApexProcessorTokenCreateRequest defines the request schema for `/proces
   "client_id": "client_id0",
   "secret": "secret6",
   "access_token": "access_token6",
-  "account_id": "account_id0"
+  "account_id": "account_id0",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

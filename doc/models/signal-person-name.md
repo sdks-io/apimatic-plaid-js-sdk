@@ -3,6 +3,8 @@
 
 The user's legal name
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `SignalPersonName`
@@ -16,6 +18,7 @@ The user's legal name
 | `middleName` | `string \| null \| undefined` | Optional | The user's middle name |
 | `familyName` | `string \| null \| undefined` | Optional | The user's family name / surname |
 | `suffix` | `string \| null \| undefined` | Optional | The user's name suffix (e.g. "II") |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -25,7 +28,11 @@ The user's legal name
   "given_name": "given_name0",
   "middle_name": "middle_name8",
   "family_name": "family_name2",
-  "suffix": "suffix8"
+  "suffix": "suffix8",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

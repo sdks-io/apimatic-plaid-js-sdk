@@ -3,6 +3,8 @@
 
 Defines the request schema for `/bank_transfer/migrate_account`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `BankTransferMigrateAccountRequest`
@@ -16,6 +18,7 @@ Defines the request schema for `/bank_transfer/migrate_account`
 | `accountNumber` | `string` | Required | The user's account number. |
 | `routingNumber` | `string` | Required | The user's routing number. |
 | `accountType` | `string` | Required | The type of the bank account (`checking` or `savings`). |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -25,7 +28,11 @@ Defines the request schema for `/bank_transfer/migrate_account`
   "secret": "secret0",
   "account_number": "account_number4",
   "routing_number": "routing_number8",
-  "account_type": "account_type0"
+  "account_type": "account_type0",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

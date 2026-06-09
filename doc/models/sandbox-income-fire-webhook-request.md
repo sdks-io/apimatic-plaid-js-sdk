@@ -3,6 +3,8 @@
 
 SandboxIncomeFireWebhookRequest defines the request schema for `/sandbox/income/fire_webhook`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `SandboxIncomeFireWebhookRequest`
@@ -15,7 +17,8 @@ SandboxIncomeFireWebhookRequest defines the request schema for `/sandbox/income/
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `incomeVerificationId` | `string` | Required | The ID of the verification. |
 | `webhook` | `string` | Required | The URL to which the webhook should be sent. |
-| `verificationStatus` | [`VerificationStatus3Enum`](../../doc/models/verification-status-3-enum.md) | Required | `VERIFICATION_STATUS_PROCESSING_COMPLETE`: The income verification status processing has completed.<br><br>`VERIFICATION_STATUS_DOCUMENT_REJECTED`: The documentation uploaded by the end user was recognized as a supported file format, but not recognized as a valid paystub.<br><br>`VERIFICATION_STATUS_PROCESSING_FAILED`: A failure occurred when attempting to process the verification documentation. |
+| `verificationStatus` | [`VerificationStatus3`](../../doc/models/verification-status-3.md) | Required | `VERIFICATION_STATUS_PROCESSING_COMPLETE`: The income verification status processing has completed.<br><br>`VERIFICATION_STATUS_DOCUMENT_REJECTED`: The documentation uploaded by the end user was recognized as a supported file format, but not recognized as a valid paystub.<br><br>`VERIFICATION_STATUS_PROCESSING_FAILED`: A failure occurred when attempting to process the verification documentation. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -25,7 +28,11 @@ SandboxIncomeFireWebhookRequest defines the request schema for `/sandbox/income/
   "secret": "secret8",
   "income_verification_id": "income_verification_id0",
   "webhook": "webhook0",
-  "verification_status": "VERIFICATION_STATUS_DOCUMENT_REJECTED"
+  "verification_status": "VERIFICATION_STATUS_DOCUMENT_REJECTED",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

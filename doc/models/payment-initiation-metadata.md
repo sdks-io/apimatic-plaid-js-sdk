@@ -3,6 +3,8 @@
 
 Metadata that captures what specific payment configurations an institution supports when making Payment Initiation requests.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `PaymentInitiationMetadata`
@@ -15,6 +17,7 @@ Metadata that captures what specific payment configurations an institution suppo
 | `maximumPaymentAmount` | `Record<string, string>` | Required | A mapping of currency to maximum payment amount (denominated in the smallest unit of currency) supported by the insitution.<br><br>Example: `{"GBP": "10000"}` |
 | `supportsRefundDetails` | `boolean` | Required | Indicates whether the institution supports returning refund details when initiating a payment. |
 | `standingOrderMetadata` | [`PaymentInitiationStandingOrderMetadata`](../../doc/models/payment-initiation-standing-order-metadata.md) | Required | Metadata specifically related to valid Payment Initiation standing order configurations for the institution. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -33,7 +36,15 @@ Metadata that captures what specific payment configurations an institution suppo
     "valid_standing_order_intervals": [
       "WEEKLY",
       "MONTHLY"
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

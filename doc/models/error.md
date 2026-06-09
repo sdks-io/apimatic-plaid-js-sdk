@@ -3,6 +3,8 @@
 
 We use standard HTTP response codes for success and failure notifications, and our errors are further classified by `error_type`. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures, and 50X codes are for Plaid-related issues.  Error fields will be `null` if no error has occurred.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `Error`
@@ -11,7 +13,7 @@ We use standard HTTP response codes for success and failure notifications, and o
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `errorType` | [`ErrorTypeEnum`](../../doc/models/error-type-enum.md) | Required | A broad categorization of the error. Safe for programatic use. |
+| `errorType` | [`ErrorType`](../../doc/models/error-type.md) | Required | A broad categorization of the error. Safe for programatic use. |
 | `errorCode` | `string` | Required | The particular error code. Safe for programmatic use. |
 | `errorMessage` | `string` | Required | A developer-friendly representation of the error code. This may change over time and is not safe for programmatic use. |
 | `displayMessage` | `string \| null` | Required | A user-friendly representation of the error code. `null` if the error is not related to user action.<br><br>This may change over time and is not safe for programmatic use. |
@@ -20,6 +22,7 @@ We use standard HTTP response codes for success and failure notifications, and o
 | `status` | `number \| null \| undefined` | Optional | The HTTP status code associated with the error. This will only be returned in the response body when the error information is provided via a webhook. |
 | `documentationUrl` | `string \| undefined` | Optional | The URL of a Plaid documentation page with more information about the error |
 | `suggestedAction` | `string \| undefined` | Optional | Suggested steps for resolving the error |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -46,7 +49,11 @@ We use standard HTTP response codes for success and failure notifications, and o
   ],
   "status": 45.24,
   "documentation_url": "documentation_url6",
-  "suggested_action": "suggested_action0"
+  "suggested_action": "suggested_action0",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

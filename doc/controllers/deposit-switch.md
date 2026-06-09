@@ -1,12 +1,12 @@
 # Deposit Switch
 
 ```ts
-const depositSwitchController = new DepositSwitchController(client);
+const depositSwitchApi = new DepositSwitchApi(client);
 ```
 
 ## Class Name
 
-`DepositSwitchController`
+`DepositSwitchApi`
 
 ## Methods
 
@@ -54,7 +54,7 @@ const body: DepositSwitchGetRequest = {
 };
 
 try {
-  const response = await depositSwitchController.depositSwitchGet(body);
+  const response = await depositSwitchApi.depositSwitchGet(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -139,7 +139,7 @@ const body: DepositSwitchAltCreateRequest = {
     accountNumber: 'account_number8',
     routingNumber: 'routing_number6',
     accountName: 'account_name0',
-    accountSubtype: AccountSubtype1Enum.Checking,
+    accountSubtype: AccountSubtype1.Checking,
   },
   targetUser: {
     givenName: 'given_name6',
@@ -150,7 +150,7 @@ const body: DepositSwitchAltCreateRequest = {
 };
 
 try {
-  const response = await depositSwitchController.depositSwitchAltCreate(body);
+  const response = await depositSwitchApi.depositSwitchAltCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -222,7 +222,7 @@ const body: DepositSwitchCreateRequest = {
 };
 
 try {
-  const response = await depositSwitchController.depositSwitchCreate(body);
+  const response = await depositSwitchApi.depositSwitchCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -293,7 +293,7 @@ const body: DepositSwitchTokenCreateRequest = {
 };
 
 try {
-  const response = await depositSwitchController.depositSwitchTokenCreate(body);
+  const response = await depositSwitchApi.depositSwitchTokenCreate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

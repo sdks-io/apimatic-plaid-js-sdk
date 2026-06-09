@@ -3,6 +3,8 @@
 
 Specifies options for initializing Link for use with the Deposit Switch (beta) product. This field is required if `deposit_switch` is included in the `products` array.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `LinkTokenCreateRequestDepositSwitch`
@@ -12,12 +14,17 @@ Specifies options for initializing Link for use with the Deposit Switch (beta) p
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `depositSwitchId` | `string` | Required | The `deposit_switch_id` provided by the `/deposit_switch/create` endpoint. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
 ```json
 {
-  "deposit_switch_id": "deposit_switch_id0"
+  "deposit_switch_id": "deposit_switch_id0",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

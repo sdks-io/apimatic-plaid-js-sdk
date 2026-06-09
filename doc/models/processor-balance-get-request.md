@@ -3,6 +3,8 @@
 
 ProcessorBalanceGetRequest defines the request schema for `/processor/balance/get`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `ProcessorBalanceGetRequest`
@@ -15,6 +17,7 @@ ProcessorBalanceGetRequest defines the request schema for `/processor/balance/ge
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `processorToken` | `string` | Required | The processor token obtained from the Plaid integration partner. Processor tokens are in the format: `processor-<environment>-<identifier>` |
 | `options` | [`ProcessorBalanceGetRequestOptions \| undefined`](../../doc/models/processor-balance-get-request-options.md) | Optional | An optional object to filter `/processor/balance/get` results. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -24,7 +27,15 @@ ProcessorBalanceGetRequest defines the request schema for `/processor/balance/ge
   "secret": "secret0",
   "processor_token": "processor_token6",
   "options": {
-    "min_last_updated_datetime": "2016-03-13T12:52:32.123Z"
+    "min_last_updated_datetime": "2016-03-13T12:52:32.123Z",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

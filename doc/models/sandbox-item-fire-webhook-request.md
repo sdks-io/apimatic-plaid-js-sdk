@@ -3,6 +3,8 @@
 
 SandboxItemFireWebhookRequest defines the request schema for `/sandbox/item/fire_webhook`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `SandboxItemFireWebhookRequest`
@@ -15,6 +17,7 @@ SandboxItemFireWebhookRequest defines the request schema for `/sandbox/item/fire
 | `secret` | `string \| undefined` | Optional | Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body. |
 | `accessToken` | `string` | Required | The access token associated with the Item data is being requested for. |
 | `webhookCode` | `string` | Required | The following values for `webhook_code` are supported:<br><br>* `DEFAULT_UPDATE` |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -23,7 +26,11 @@ SandboxItemFireWebhookRequest defines the request schema for `/sandbox/item/fire
   "access_token": "access_token6",
   "webhook_code": "DEFAULT_UPDATE",
   "client_id": "client_id0",
-  "secret": "secret6"
+  "secret": "secret6",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

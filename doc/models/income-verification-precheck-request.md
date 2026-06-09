@@ -3,6 +3,8 @@
 
 IncomeVerificationPrecheckRequest defines the request schema for `/income/verification/precheck`
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `IncomeVerificationPrecheckRequest`
@@ -17,6 +19,7 @@ IncomeVerificationPrecheckRequest defines the request schema for `/income/verifi
 | `employer` | [`IncomeVerificationPrecheckEmployer \| undefined`](../../doc/models/income-verification-precheck-employer.md) | Optional | - |
 | `transactionsAccessToken` | `string \| null \| undefined` | Optional | The access token associated with the Item data is being requested for. |
 | `usMilitaryInfo` | [`IncomeVerificationPrecheckMilitaryInfo \| undefined`](../../doc/models/income-verification-precheck-military-info.md) | Optional | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -33,14 +36,30 @@ IncomeVerificationPrecheckRequest defines the request schema for `/income/verifi
       "region": "region6",
       "street": "street0",
       "postal_code": "postal_code2",
-      "country": "country4"
+      "country": "country4",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
   },
   "employer": {
     "name": "name2",
-    "tax_id": "tax_id2"
+    "tax_id": "tax_id2",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
-  "transactions_access_token": "transactions_access_token2"
+  "transactions_access_token": "transactions_access_token2",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

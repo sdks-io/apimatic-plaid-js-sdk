@@ -3,6 +3,8 @@
 
 Fired when an Item's historical transaction pull is completed and Plaid has prepared as much historical transaction data as possible for the Item. Once this webhook has been fired, transaction data beyond the most recent 30 days can be fetched for the Item. If [Account Select v2](https://plaid.com/docs/link/customization/#account-select) is enabled, this webhook will also be fired if account selections for the Item are updated, with `num_transactions` set to the number of net new transactions pulled after the account selection update.
 
+*This model accepts additional fields of type unknown.*
+
 ## Structure
 
 `HistoricalUpdateWebhook`
@@ -16,6 +18,7 @@ Fired when an Item's historical transaction pull is completed and Plaid has prep
 | `error` | [`Error \| undefined`](../../doc/models/error.md) | Optional | We use standard HTTP response codes for success and failure notifications, and our errors are further classified by `error_type`. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures, and 50X codes are for Plaid-related issues.  Error fields will be `null` if no error has occurred. |
 | `newTransactions` | `number` | Required | The number of new, unfetched transactions available |
 | `itemId` | `string` | Required | The `item_id` of the Item associated with this webhook, warning, or error |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 ## Example (as JSON)
 
@@ -45,10 +48,18 @@ Fired when an Item's historical transaction pull is completed and Plaid has prep
     ],
     "status": 217.06,
     "documentation_url": "documentation_url6",
-    "suggested_action": "suggested_action0"
+    "suggested_action": "suggested_action0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "new_transactions": 146.76,
-  "item_id": "item_id4"
+  "item_id": "item_id4",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 
